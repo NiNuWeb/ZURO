@@ -1,0 +1,53 @@
+#
+# SECURITY WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
+#
+# If you don't protect this directory from direct web access, anybody will be able to see your passwords.
+# http://nette.org/security-warning
+#
+common:
+	parameters:
+
+	php:
+		date.timezone: Europe/Prague
+		# zlib.output_compression: yes
+
+	nette:
+		application:
+			errorPresenter: Error
+
+		session:
+			expiration: 14 days
+
+
+	services:
+		routerFactory: RouterFactory
+		router: @routerFactory::createRouter
+		usersRepository: Main\UsersRepository
+		pagesRepository: Main\PagesRepository
+
+		database:
+			class: Nette\Database\Connection
+			arguments: ['mysql:host=localhost;dbname=zuro_db', zuro, zuro]
+
+		authenticator: Acl\Security\Authenticator
+
+		authorizator:
+			class: Nette\Security\Permission
+			setup: 
+				- addRole('guest')
+				- addRole('editor')
+				- addRole('admin')
+				- addResource('Admin:Default')
+				- addResource('Admin:Pages')
+				- addResource('Admin:Users')
+				- allow('editor', 'Admin:Default')
+				- allow('editor', 'Admin:Pages')
+				- allow('admin')
+
+
+	factories:
+
+
+production < common:
+
+development < common:

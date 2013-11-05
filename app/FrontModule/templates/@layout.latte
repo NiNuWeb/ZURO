@@ -1,0 +1,82 @@
+{**
+ * My Application layout template.
+ *
+ * @param string   $basePath web base path
+ * @param string   $robots   tell robots how to index the content of a page (optional)
+ * @param array    $flashes  flash messages
+ *}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="robots" content="{$robots}" n:ifset="$robots">
+
+	<title>{block title|striptags|upper}ZURO App{/block}</title>
+
+	<!-- <link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/screen.css">
+	<link rel="stylesheet" media="print" href="{$basePath}/css/print.css"> -->
+	<link rel="stylesheet" href="{$basePath}/css/bootstrap.css">
+	<link rel="stylesheet" href="{$basePath}/css/zuro.css">
+	<link rel="shortcut icon" href="{$basePath}/favicon.ico">
+</head>
+
+<body class="front">
+	<script> document.documentElement.className+=' js' </script>
+
+	<div id="header">
+		<div class="container header-bg well">
+			<div class="row">
+				<div class="col-md-8">
+					<h1 class="header-a"><a n:href="Homepage:page"><b>ZURO</b> Development</a><img src="{$basePath}/images/header-img.jpg"></h1>
+				</div>
+				<div class="col-md-4">
+					{block MiniLogin}{/block}
+				</div>
+			</div>
+		</div>
+		<div class="container navig">
+			<div class="navbar navbar-default">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<div class="navbar-collapse collapse">
+					<ul class="nav nav-pills">
+						<li n:foreach="$menu as $slug => $title">
+							{first}<a n:href="this, 'slug' => $slug" n:class="$presenter->linkCurrent ? active">Home</a>{/first}
+							{if !$iterator->first}<a n:href="this, 'slug' => $slug" n:class="$presenter->linkCurrent ? active">{$title}</a>{/if}
+						</li>
+					</ul>	
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div id="content">
+		<div class="container well">
+			<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
+			{include #content}
+		</div>
+	</div>
+
+	<div id="footer">
+		<div class="container well">
+			<p>Copyright &copy; 2013 | NiNuWeb | <img src="images/nette-powered.gif" alt="Powered by Nette Framework" /></p>
+		</div>
+	</div>
+
+	{block scripts}
+	<script src="{$basePath}/js/jquery.js"></script>
+	<script src="{$basePath}/js/bootstrap.js"></script>
+	<script src="{$basePath}/js/netteForms.js"></script>
+	<script src="{$basePath}/js/main.js"></script>
+	{/block}
+</body>
+</html>

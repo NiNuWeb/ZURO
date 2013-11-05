@@ -1,0 +1,75 @@
+{**
+ * My Application layout template.
+ *
+ * @param string   $basePath web base path
+ * @param string   $robots   tell robots how to index the content of a page (optional)
+ * @param array    $flashes  flash messages
+ *}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="robots" content="{$robots}" n:ifset="$robots">
+
+	<title>{block title|striptags|upper}Admin | ZURO App{/block}</title>
+
+	<!-- <link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/screen.css">
+	<link rel="stylesheet" media="print" href="{$basePath}/css/print.css"> -->
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="{$basePath}/css/bootstrap.css">
+	<link rel="stylesheet" href="{$basePath}/css/zuro.css">
+	<link rel="shortcut icon" href="{$basePath}/favicon.ico">
+</head>
+
+<body>
+	<script> document.documentElement.className+=' js' </script>
+
+{if$user->isLoggedIn()}
+<div id="header">
+	<div class="navbar navbar-default-admin navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a n:href="default:" class="navbar-brand">ZURO Development | Administration</a>
+			</div>
+			
+			<div class="navbar-collapse collapse">
+				<ul class="admin-nav nav navbar-nav">
+					<li><a n:href="Users:default"><i class="glyphicon glyphicon-user">&nbsp;</i>Manage Users</a></li>
+					<li><a n:href="Pages:default"><i class="glyphicon glyphicon-file">&nbsp;</i>Manage Pages</a></li>
+					<li><a href="#"><i class="glyphicon glyphicon-globe">&nbsp;</i>Manage News</a></li>
+					<li><a n:href="logout!"><i class="glyphicon glyphicon-off">&nbsp;</i>{$user->getIdentity()->username} - Logout</a></li>
+				</ul>
+			</div>	
+		</div>
+	</div>
+</div>
+{/if}
+<div id="admincontent">
+	<div class="container well2">
+		<a n:href=":Front:Homepage:page">Back To Homepage</a>
+
+		<div n:foreach="$flashes as $flash" class="flash {$flash->type}">
+			<p>{$flash->message}</p>
+		</div>
+
+		{block content}
+		
+		{/block}		
+
+	</div>
+</div>	
+	{block scripts}
+	<script src="{$basePath}/js/jquery.js"></script>
+	<script src="{$basePath}/js/netteForms.js"></script>
+	<script src="{$basePath}/js/main.js"></script>
+	<script src="{$basePath}/js/bootstrap.js"></script>
+	{/block}
+</body>
+</html>
