@@ -1,0 +1,40 @@
+{block content}
+
+<div class="row">
+
+	<div class="col-md-2 right-border">
+		<div id="sidebar">
+			<h3>Lists Category</h3>
+			<div class="task-list">
+				<ul>
+					<li n:foreach="$lists as $listum"><a n:href="Task: $listum->id">{$listum->title}</a></li>
+				</ul>
+			</div>		
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<h2 n:block="title">{$list->title}</h2>
+
+		{control taskList}
+
+		{snippet form}
+			<fieldset id="newTask">
+				<legend>Add New Task</legend>
+				{form taskForm class => ajax}
+					<div class="task-form">
+					    {control $form errors}
+
+					    {label text /} {input text size => 30, autofocus => true} {label userId /} {input userId} {input create}
+					</div>
+				{/form}
+			</fieldset>
+		{/snippet}
+
+	</div>
+
+</div> <!-- End Row -->
+
+<a n:href="default:">Back to Admin Homepage</a>
+
+{/block}

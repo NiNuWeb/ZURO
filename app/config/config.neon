@@ -24,6 +24,8 @@ common:
 		router: @routerFactory::createRouter
 		usersRepository: Main\UsersRepository
 		pagesRepository: Main\PagesRepository
+		taskRepository: ToDo\TaskRepository
+		listRepository: ToDo\ListRepository
 
 		database:
 			class: Nette\Database\Connection
@@ -40,6 +42,7 @@ common:
 				- addResource('Admin:Default')
 				- addResource('Admin:Pages')
 				- addResource('Admin:Users')
+				- addResource('Admin:Task')
 				- allow('editor', 'Admin:Default')
 				- allow('editor', 'Admin:Pages')
 				- allow('admin')

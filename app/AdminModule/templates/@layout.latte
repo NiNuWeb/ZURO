@@ -13,7 +13,7 @@
 	<meta name="description" content="">
 	<meta name="robots" content="{$robots}" n:ifset="$robots">
 
-	<title>{block title|striptags|upper}Admin | ZURO App{/block}</title>
+	<title>{block title|stripTags|strip|upper}Admin | ZURO App{/block}</title>
 
 	<!-- <link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/screen.css">
 	<link rel="stylesheet" media="print" href="{$basePath}/css/print.css"> -->
@@ -53,11 +53,13 @@
 {/if}
 <div id="admincontent">
 	<div class="container well2">
-		<a n:href=":Front:Homepage:page">Back To Homepage</a>
+		<a n:href=":Front:Homepage:page">Back To Front Homepage</a>
 
+		{snippet flashMessages}
 		<div n:foreach="$flashes as $flash" class="flash {$flash->type}">
 			<p>{$flash->message}</p>
 		</div>
+		{/snippet}
 
 		{block content}
 		
@@ -67,9 +69,10 @@
 </div>	
 	{block scripts}
 	<script src="{$basePath}/js/jquery.js"></script>
-	<script src="{$basePath}/js/netteForms.js"></script>
-	<script src="{$basePath}/js/main.js"></script>
 	<script src="{$basePath}/js/bootstrap.js"></script>
+	<script src="{$basePath}/js/netteForms.js"></script>
+	<script src="{$basePath}/js/jquery.nette.js"></script>
+	<script src="{$basePath}/js/main.js"></script>
 	{/block}
 </body>
 </html>

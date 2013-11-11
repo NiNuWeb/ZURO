@@ -6,6 +6,7 @@ use Nette\Security\User;
 
 abstract class BasePresenter extends \BasePresenter {
 
+
 	public function startup() {
 
 		parent::startup();

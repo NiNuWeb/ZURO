@@ -1,0 +1,24 @@
+{snippet}
+	<table class="tasks table table-striped">
+		<thead class="todo">
+			<tr>
+				<th class="created">&nbsp;</th>
+				<th class="list" n:if="$displayList">List</th>
+				<th class="text">Task</th>
+				<th class="user" n:if="$displayUser">For</th>
+				<th class="action">&nbsp;</th>
+			</tr>	
+		</thead>
+		<tbody>
+		{foreach $tasks as $task}
+			<tr n:class="$task->done ? done">
+				<td class="created">{$task->created|date:'j.n.Y'}</td>	
+				<td class="list" n:if="$displayList">{$task->list->title}</td>	
+				<td class="text">{$task->text}</td>	
+				<td class="user" n:if="$displayUser">{$task->users->username}</td>
+				<td class="action"><a n:if="!$task->done" n:href="markDone! $task->id" class="icon tick ajax">Done</a></td>
+			</tr>
+		{/foreach}		
+		</tbody>
+	</table>
+{/snippet}

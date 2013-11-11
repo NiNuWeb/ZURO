@@ -1,23 +1,33 @@
-<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.79658100 1383502614";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\@layout.latte";i:2;i:1383502611;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.98498900 1383912591";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\@layout.latte";i:2;i:1383912496;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\AdminModule\templates\@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'lonosl1d78')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'keswvxxszu')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb832d4eeefc_title')) { function _lb832d4eeefc_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb31f8c06f33_title')) { function _lb31f8c06f33_title($_l, $_args) { extract($_args)
 ?>Admin | ZURO App<?php
+}}
+
+//
+// block _flashMessages
+//
+if (!function_exists($_l->blocks['_flashMessages'][] = '_lb1d898693d0__flashMessages')) { function _lb1d898693d0__flashMessages($_l, $_args) { extract($_args); $_control->validateControl('flashMessages')
+;$iterations = 0; foreach ($flashes as $flash): ?>		<div class="flash <?php echo htmlSpecialChars($flash->type) ?>">
+			<p><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></p>
+		</div>
+<?php $iterations++; endforeach ;
 }}
 
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb7963385d2b_content')) { function _lb7963385d2b_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbcf9100647f_content')) { function _lbcf9100647f_content($_l, $_args) { extract($_args)
 ?>		
 <?php
 }}
@@ -25,11 +35,12 @@ if (!function_exists($_l->blocks['content'][] = '_lb7963385d2b_content')) { func
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb474e687e89_scripts')) { function _lb474e687e89_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb90da090b1d_scripts')) { function _lb90da090b1d_scripts($_l, $_args) { extract($_args)
 ?>	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/jquery.js"></script>
-	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/netteForms.js"></script>
-	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/main.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/bootstrap.js"></script>
+	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/netteForms.js"></script>
+	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/jquery.nette.js"></script>
+	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/main.js"></script>
 <?php
 }}
 
@@ -62,7 +73,7 @@ if ($_l->extends) {
 <?php endif ?>
 
 	<title><?php if ($_l->extends) { ob_end_clean(); return Nette\Latte\Macros\CoreMacros::includeTemplate($_l->extends, get_defined_vars(), $template)->render(); }
-ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars()); echo $template->upper($template->striptags(ob_get_clean()))  ?></title>
+ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars()); echo $template->upper($template->strip($template->stripTags(ob_get_clean())))  ?></title>
 
 	<!-- <link rel="stylesheet" media="screen,projection,tv" href="<?php echo Nette\Templating\Helpers::escapeHtmlComment($basePath) ?>/css/screen.css">
 	<link rel="stylesheet" media="print" href="<?php echo Nette\Templating\Helpers::escapeHtmlComment($basePath) ?>/css/print.css"> -->
@@ -106,13 +117,10 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
 <div id="admincontent">
 	<div class="container well2">
 		<a href="<?php echo htmlSpecialChars($_control->link(":Front:Homepage:page")) ?>
-">Back To Homepage</a>
+">Back To Front Homepage</a>
 
-<?php $iterations = 0; foreach ($flashes as $flash): ?>		<div class="flash <?php echo htmlSpecialChars($flash->type) ?>">
-			<p><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></p>
-		</div>
-<?php $iterations++; endforeach ?>
-
+<div id="<?php echo $_control->getSnippetId('flashMessages') ?>"><?php call_user_func(reset($_l->blocks['_flashMessages']), $_l, $template->getParameters()) ?>
+</div>
 <?php call_user_func(reset($_l->blocks['content']), $_l, get_defined_vars())  ?>
 
 	</div>

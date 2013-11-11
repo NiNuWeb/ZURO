@@ -1,6 +1,44 @@
 {block #content}
 <h1>Admin Page</h1>
 
-<h2>Sem pôjde ToDo list</h2>
+<div class="row">
 
-<p>V tomto default.latte bude todo list</p>
+	<div class="col-md-2 right-border">
+		<div id="sidebar">
+			<h3>Lists Category</h3>
+
+			<div class="task-list">
+				<ul>
+					<li n:foreach="$lists as $list"><a n:href="Task: $list->id">{$list->title}</a></li>
+				</ul>
+			</div>
+
+			<div id="new-list">
+				<h4>Add New List</h4>
+				{control newListForm}
+			</div>
+
+			<div id="list-task-option">
+				<h4>List/Task Options</h4>
+				<p><a n:href="Default:editDeleteLists" class="btn btn-danger col-md-12">Edit/Delete Lists</a></p>
+				<p><a n:href="Default:editDeleteTasks" class="btn btn-danger col-md-12">Edit/Delete Tasks</a></p>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="col-md-6">
+
+		<h3>My Incomplete Tasks</h3>
+		{control userTasks}
+		<p>&nbsp;</p>
+		<h3>All Incomplete Tasks</h3>
+		{control incompleteTasks}
+
+	</div>
+
+	<div class="col-md-4">
+		<h3>Last Added News</h3>
+	</div>
+
+</div> <!-- End Row -->

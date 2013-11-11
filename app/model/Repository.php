@@ -53,4 +53,12 @@ class Repository extends \Nette\Object {
 		return $this->findBy(array('id' => $id))->fetch();
 	}
 
+	/**
+	 * Vracia riadok podľa primárneho kľúča, ale vracia ActiveRow namiesto TableSelection !
+	 * @return Nette\Database\Table\ActiveRow
+	 */
+	public function find($id) {
+		return $this->getTable()->get($id);
+	}
+
 }

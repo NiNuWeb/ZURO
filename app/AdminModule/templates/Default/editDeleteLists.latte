@@ -1,0 +1,49 @@
+{block #content}
+<h1>Edit/Delete Lists</h1>
+
+<div class="row">
+
+	<div class="col-md-2 right-border">
+		<div id="sidebar">
+			<h3>Lists Category</h3>
+
+			<div class="task-list">
+				<ul>
+					<li n:foreach="$lists as $list"><a n:href="Task: $list->id">{$list->title}</a></li>
+				</ul>
+			</div>
+
+			<div id="new-list">
+				<h4>Add New List</h4>
+				{control newListForm}
+			</div>
+
+		<p>&nbsp;</p>	
+		<a n:href="default:">Back to Admin Homepage</a>
+
+		</div>
+	</div>
+
+	<div class="col-md-6">
+
+		<h3>Edit/Delete Lists</h3>
+		<small>WARNING! If you delete list, all tasks belongs to this list will be deleted too!</small>
+		<table class="lists table table-striped">
+		<thead class="todo">
+			<tr>
+				<th>Title</th>
+				<th class="action">Action</th>
+			</tr>	
+		</thead>
+		<tbody>
+		{foreach $lists as $list}
+			<tr>
+				<td class="title">{$list->title}</td>	
+				<td class="action"><a n:href="Default:editList $list->id"><i class="glyphicon glyphicon-pencil">&nbsp;</i>Edit</a> | <a n:href="deleteList! $list->id"><i class="glyphicon glyphicon-trash">&nbsp;</i>Delete</a></td>
+			</tr>
+		{/foreach}		
+		</tbody>
+	</table>
+	</div>
+
+</div> <!-- End Row -->
