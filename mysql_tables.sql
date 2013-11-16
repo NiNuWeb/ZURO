@@ -47,3 +47,16 @@ CREATE TABLE `task` (
   CONSTRAINT `fk_list` FOREIGN KEY (`list_id`) REFERENCES `list` (`id`),
   CONSTRAINT `fk_user` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `news`;
+CREATE TABLE `news` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(128) NOT NULL,
+  `body` text NOT NULL,
+  `date` datetime NOT NULL,
+  `users_id` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `users_id` (`users_id`),
+  CONSTRAINT `users_id` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;

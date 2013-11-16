@@ -24,6 +24,7 @@ common:
 		router: @routerFactory::createRouter
 		usersRepository: Main\UsersRepository
 		pagesRepository: Main\PagesRepository
+		newsRepository: Main\NewsRepository
 		taskRepository: ToDo\TaskRepository
 		listRepository: ToDo\ListRepository
 
@@ -43,8 +44,11 @@ common:
 				- addResource('Admin:Pages')
 				- addResource('Admin:Users')
 				- addResource('Admin:Task')
+				- addResource('Admin:News')
 				- allow('editor', 'Admin:Default')
 				- allow('editor', 'Admin:Pages')
+				- allow('editor', 'Admin:Task')
+				- allow('editor', 'Admin:News')
 				- allow('admin')
 
 

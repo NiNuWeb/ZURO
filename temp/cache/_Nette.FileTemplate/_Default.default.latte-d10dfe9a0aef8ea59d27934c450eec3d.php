@@ -1,16 +1,16 @@
-<?php //netteCache[01]000390a:2:{s:4:"time";s:21:"0.76675500 1384020193";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:68:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\Default\default.latte";i:2;i:1384020189;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000390a:2:{s:4:"time";s:21:"0.39027000 1384537462";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:68:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\Default\default.latte";i:2;i:1384537460;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\AdminModule\templates\Default\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '7hg610cflr')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'tqi7txcj3i')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb4fc310d567_content')) { function _lb4fc310d567_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbb8f40bff25_content')) { function _lbb8f40bff25_content($_l, $_args) { extract($_args)
 ?><h1>Admin Page</h1>
 
 <div class="row">
@@ -53,8 +53,14 @@ if (!function_exists($_l->blocks['content'][] = '_lb4fc310d567_content')) { func
 
 	</div>
 
-	<div class="col-md-4">
+	<div class="col-md-4 left-border">
 		<h3>Last Added News</h3>
+		<br />
+<?php $iterations = 0; foreach ($news as $new): ?>
+			<p><small class="last-news"><?php echo Nette\Templating\Helpers::escapeHtml($template->date($new->date, 'j.n.Y'), ENT_NOQUOTES) ?>
+ - <?php echo Nette\Templating\Helpers::escapeHtml($new->users->username, ENT_NOQUOTES) ?>
+</small> | <b><?php echo Nette\Templating\Helpers::escapeHtml($new->title, ENT_NOQUOTES) ?></b></p>
+<?php $iterations++; endforeach ?>
 	</div>
 
 </div> <!-- End Row --><?php

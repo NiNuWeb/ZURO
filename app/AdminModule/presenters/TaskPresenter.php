@@ -20,8 +20,8 @@ class TaskPresenter extends BasePresenter {
 	private $list;
 
 	/**
-	 * Inject ListRepository
-	 * @var \ToDo\ListRepository
+	 * Inject repozirárov
+	 * 
 	 */
 	public function inject(\ToDo\ListRepository $listRepository, \Main\UsersRepository $usersRepository, \ToDo\TaskRepository $taskRepository) {
 		$this->listRepository = $listRepository;
@@ -41,6 +41,7 @@ class TaskPresenter extends BasePresenter {
 
 	/**
 	 * Do šablóny pošle úlohy, ktoré zodpovedajú zoznamu, napr. len pre Home
+	 * @param int $id
 	 */
 	public function renderDefault($id) {
 		$this->template->list = $this->list;
@@ -48,7 +49,7 @@ class TaskPresenter extends BasePresenter {
 	}
 
 	/**
-	 * Vlastná komponenta
+	 * Vlastná komponenta TaskList
 	 */
 	protected function createComponentTaskList() {
 		if ($this->list === NULL) {

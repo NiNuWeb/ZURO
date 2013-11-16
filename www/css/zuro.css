@@ -15,6 +15,10 @@ html.js .jshidden {
 	border-right: 1px solid #BCBCBC;
 }
 
+.left-border {
+	border-left: 1px solid #BCBCBC;
+}
+
 /* ===== HEADER ===== */
 .header-a a, .header-a a:hover {
 	text-decoration: none;
@@ -156,10 +160,10 @@ input[type="checkbox"] {
 	border-left: 1px solid #4CAE4C;
 }
 
-.tb-pages td > a { color: #5CB85C; }
+.tb-pages  a { color: #5CB85C; }
 
-.tb-pages td > a:hover, a:focus {
-	color: #458845;
+.tb-pages  a:hover, .tb-pages a:focus {
+	color: #3B863B;
 	text-decoration: underline;
 }
 
@@ -208,6 +212,32 @@ table.tasks .big-action {
 
 table.tasks .for-user {
         width: 100px;
+}
+
+table.news > thead {
+	background-color: #D37B3A;
+	color: #ffffff;
+	border-top: 1px solid #AF6020;
+	border-right: 1px solid #AF6020;
+	border-left: 1px solid #AF6020;
+}
+
+table.news > tbody {
+	background-color: #ffffff;
+	color: #7C461A;
+	font-weight: bold;
+	border-bottom: 1px solid #AF6020;
+	border-right: 1px solid #AF6020;
+	border-left: 1px solid #AF6020;
+}
+
+table.news a {
+	color: #BF4F1C;
+}
+
+table.news a:hover, a:focus {
+	color: #7C461A;
+	text-decoration: underline;
 }
 
 /* ===== TODO TASK LIST NAV ===== */
@@ -271,3 +301,52 @@ legend {
 .icon.edit {
         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAXxJREFUeNqU0s1LAkEYBvDHsK4FJXmQOmR1iaLyov9Ah4g+Dt3qVEJU9xCkIFAp6LAlBIYQ3oMIukhKSUaFH+mlukggRWuipeLX2jS7ZGDaMg3swszu79l93xngH+Nhy0eitjNSnRNC0MSK161W0jrUC9KlRnTb8xPCFGCy7JKVpWXsh53I81nEsxUEzUeEKeDaPEJMc33g7E6Mj03A/XmOcqYMIclLzxVy2G/WE/20CkjEEWtZgOuWYHBAC++VF9ymTUd7EFDI4hk1wL8BKXplXhFpW8VhSIEdy4aOvhIQm6iQx0mKU0D2na4W4AprML8XlPCfu1CPP2ihAg4i/TW44S40xmU47rRY5Hx1uCbgUgYbuYuGWBxK8eZb0xHDlOq7YWlmLAUkjidJx7AeeHQDSRqQy9H/EpiwVAIpVmhMJ0rds0BRoF8uMmMp4OS+HaeeJyhLeUBjgCPUw4ylEmJ8CS/PN9Cmm1EoKGG0+5lx9SiP/lpjxuJB+hJgAG9My8C+hsJpAAAAAElFTkSuQmCC");
 }
+
+/* ===== NEWS ===== */
+.new {
+	padding: 0 10px 10px 10px;
+	border: 1px outset #000000;
+  	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	/* Old Browsers */
+	background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #f5f5f5 47%, #cccccc 100%);
+ 	/* FF3.6+ */
+ 	background: -webkit-gradient(radial, center center, 0px, center center, 100%, , color-stop(0%, #ffffff), color-stop(47%, #f5f5f5), color-stop(100%, #cccccc));
+	/* Chrome,Safari4+  */
+	background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%, #f5f5f5 47%, #cccccc 100%);
+ 	/* Chrome10+,Safari5.1+ */
+ 	background: -o-radial-gradient(center, ellipse cover, #ffffff 0%, #f5f5f5 47%, #cccccc 100%);
+ 	/* Opera 11.10+ */
+ 	background: -ms-radial-gradient(center, ellipse cover, #ffffff 0%, #f5f5f5 47%, #cccccc 100%);
+ 	/* IE 10+ */
+ 	background: radial-gradient(ellipse at center, #ffffff 0%, #f5f5f5 47%, #cccccc 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cccccc', GradientType=1 );
+	/* IE6-9 fallback on horizontal gradient */
+}
+
+.new p {
+	font-size: 110%;
+}
+
+.news-header {
+	margin: 0 -10px;
+	background: url('../images/news-header.png') top left repeat-x;
+	color: #A4A4A4;
+	padding: 0 10px 10px 10px;
+	border-top: 1px solid #fff;
+	border-left: 1px solid #fff;
+	border-right: 1px solid #fff;
+  	border-radius: 10px 10px 0px 0px;
+	-moz-border-radius: 10px 10px 0px 0px;
+	-webkit-border-radius: 10px 10px 0px 0px;
+}
+
+.news-header > h3 {
+	color: white;
+}
+
+.last-news {
+	color:#0606BF;
+} 

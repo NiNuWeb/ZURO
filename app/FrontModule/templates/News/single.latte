@@ -1,0 +1,7 @@
+{block #content}
+<h3 n:block="title">{$singleNews->title}</h3>
+<small>Added by: {$singleNews->users->username} - {$singleNews->date|date:'j.n.Y H:i:s'}</small>
+<p></p>
+<p>{$singleNews->body}</p>
+<a n:href=":Front:Homepage:page" class="btn btn-primary"> << Back</a>
+{/block}

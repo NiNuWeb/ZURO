@@ -1,0 +1,31 @@
+{block #content}
+
+<h2>Manage News</h2>
+<br />
+<div class="table-responsive col-md-9">
+	{snippet tableNews}
+	<table class="table table-hover news">
+		<thead>
+			<tr>
+				<th>News Title</th>
+				<th>Body</th>
+				<th>Creation Time</th>
+				<th>Created By</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+		{foreach $allNews as $news}
+			<tr>
+				<td>{$news->title}</td>
+				<td>{$news->body|truncate:30}</td>
+				<td>{$news->date|date:'j.n.Y H:i:s'}</td>
+				<td>{$news->users->username}</td>
+				<td><a n:href="News:editNews $news->id"><i class="glyphicon glyphicon-pencil">&nbsp;</i>Edit</a> | <a n:href="deleteNews! $news->id" class="ajax"><i class="glyphicon glyphicon-trash">&nbsp;</i>Delete</a></td>
+			</tr>
+		{/foreach}
+		</tbody>
+	</table>
+	{/snippet}
+	<a n:href="News:AddNews" class="btn btn-danger"><i class="glyphicon glyphicon-plus-sign">&nbsp;</i><b>Add News</b></a>
+</div>

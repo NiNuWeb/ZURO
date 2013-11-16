@@ -1,16 +1,16 @@
-<?php //netteCache[01]000398a:2:{s:4:"time";s:21:"0.20967900 1384020751";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:76:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\Default\editDeleteTasks.latte";i:2;i:1384020749;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000398a:2:{s:4:"time";s:21:"0.66102700 1384348651";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:76:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\Default\editDeleteTasks.latte";i:2;i:1384348642;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\AdminModule\templates\Default\editDeleteTasks.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'w7guwha717')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '8hncbigi7x')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lbb5a5eafadc_content')) { function _lbb5a5eafadc_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbce1fee53ea_content')) { function _lbce1fee53ea_content($_l, $_args) { extract($_args)
 ?><h1>Edit/Delete Tasks</h1>
 
 <div class="row">
@@ -41,8 +41,17 @@ if (!function_exists($_l->blocks['content'][] = '_lbb5a5eafadc_content')) { func
 	<div class="col-md-6">
 
 		<h3>Edit/Delete Tasks</h3>
-		
-		<table class="tasks table table-striped">
+<div id="<?php echo $_control->getSnippetId('tableTasks') ?>"><?php call_user_func(reset($_l->blocks['_tableTasks']), $_l, $template->getParameters()) ?>
+</div>	</div>
+
+</div> <!-- End Row --><?php
+}}
+
+//
+// block _tableTasks
+//
+if (!function_exists($_l->blocks['_tableTasks'][] = '_lb4c71876679__tableTasks')) { function _lb4c71876679__tableTasks($_l, $_args) { extract($_args); $_control->validateControl('tableTasks')
+?>		<table class="tasks table table-striped">
 			<thead class="todo">
 				<tr>
 					<th>Text</th>
@@ -60,15 +69,13 @@ if (!function_exists($_l->blocks['content'][] = '_lbb5a5eafadc_content')) { func
 					<td><?php echo Nette\Templating\Helpers::escapeHtml($task->users->username, ENT_NOQUOTES) ?></td>	
 					<td><?php echo Nette\Templating\Helpers::escapeHtml($task->list->title, ENT_NOQUOTES) ?></td>
 					<td class="big-action"><a href="<?php echo htmlSpecialChars($_control->link("Default:editTask", array($task->id))) ?>
-"><i class="glyphicon glyphicon-pencil">&nbsp;</i>Edit</a> | <a href="<?php echo htmlSpecialChars($_control->link("deleteTask!", array($task->id))) ?>
+"><i class="glyphicon glyphicon-pencil">&nbsp;</i>Edit</a> | <a class="ajax" href="<?php echo htmlSpecialChars($_control->link("deleteTask!", array($task->id))) ?>
 "><i class="glyphicon glyphicon-trash">&nbsp;</i>Delete</a></td>
 				</tr>
 <?php $iterations++; endforeach ?>
 			</tbody>
 		</table>
-	</div>
-
-</div> <!-- End Row --><?php
+<?php
 }}
 
 //

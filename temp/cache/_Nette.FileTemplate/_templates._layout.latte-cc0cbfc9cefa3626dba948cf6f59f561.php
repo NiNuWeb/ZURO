@@ -1,24 +1,24 @@
-<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.98498900 1383912591";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\@layout.latte";i:2;i:1383912496;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.20181200 1384538652";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\@layout.latte";i:2;i:1384538649;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\AdminModule\templates\@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'keswvxxszu')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'x1ovsivxhe')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb31f8c06f33_title')) { function _lb31f8c06f33_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb89522d3837_title')) { function _lb89522d3837_title($_l, $_args) { extract($_args)
 ?>Admin | ZURO App<?php
 }}
 
 //
 // block _flashMessages
 //
-if (!function_exists($_l->blocks['_flashMessages'][] = '_lb1d898693d0__flashMessages')) { function _lb1d898693d0__flashMessages($_l, $_args) { extract($_args); $_control->validateControl('flashMessages')
-;$iterations = 0; foreach ($flashes as $flash): ?>		<div class="flash <?php echo htmlSpecialChars($flash->type) ?>">
+if (!function_exists($_l->blocks['_flashMessages'][] = '_lbee1cbeb3ab__flashMessages')) { function _lbee1cbeb3ab__flashMessages($_l, $_args) { extract($_args); $_control->validateControl('flashMessages')
+;$iterations = 0; foreach ($flashes as $flash): ?>		<div class="flash <?php echo htmlSpecialChars($flash->type) ?> ajax">
 			<p><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></p>
 		</div>
 <?php $iterations++; endforeach ;
@@ -27,7 +27,7 @@ if (!function_exists($_l->blocks['_flashMessages'][] = '_lb1d898693d0__flashMess
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lbcf9100647f_content')) { function _lbcf9100647f_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lba0b18cddce_content')) { function _lba0b18cddce_content($_l, $_args) { extract($_args)
 ?>		
 <?php
 }}
@@ -35,7 +35,7 @@ if (!function_exists($_l->blocks['content'][] = '_lbcf9100647f_content')) { func
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb90da090b1d_scripts')) { function _lb90da090b1d_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb113ff27337_scripts')) { function _lb113ff27337_scripts($_l, $_args) { extract($_args)
 ?>	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/jquery.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/bootstrap.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/netteForms.js"></script>
@@ -92,9 +92,7 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
+					<span class="glyphicon glyphicon-list"></span>
 				</button>
 				<a class="navbar-brand" href="<?php echo htmlSpecialChars($_control->link("default:")) ?>
 ">ZURO Development | Administration</a>
@@ -106,7 +104,8 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
 "><i class="glyphicon glyphicon-user">&nbsp;</i>Manage Users</a></li>
 					<li><a href="<?php echo htmlSpecialChars($_control->link("Pages:default")) ?>
 "><i class="glyphicon glyphicon-file">&nbsp;</i>Manage Pages</a></li>
-					<li><a href="#"><i class="glyphicon glyphicon-globe">&nbsp;</i>Manage News</a></li>
+					<li><a href="<?php echo htmlSpecialChars($_control->link("News:default")) ?>
+"><i class="glyphicon glyphicon-globe">&nbsp;</i>Manage News</a></li>
 					<li><a href="<?php echo htmlSpecialChars($_control->link("logout!")) ?>"><i class="glyphicon glyphicon-off">&nbsp;</i><?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->username, ENT_NOQUOTES) ?> - Logout</a></li>
 				</ul>
 			</div>	

@@ -6,7 +6,7 @@ namespace ToDo;
 class TaskRepository extends \Main\Repository {
 
 	/**
-	 * Vráti zoznam nehotových úloh
+	 * Vráti zoznam nedokončených úloh
 	 * @return Nette\Database\Table\Selection
 	 */
 	public function findIncomplete() {
@@ -14,7 +14,7 @@ class TaskRepository extends \Main\Repository {
 	}
 
 	/**
-	 * Vráti zoznam nehotových úloh konkrétneho používateľa
+	 * Vráti zoznam nedokončených úloh konkrétneho používateľa
 	 * @param int $userId
 	 * @return Nette\Database\Table\Selection
 	 */
@@ -23,7 +23,7 @@ class TaskRepository extends \Main\Repository {
 	}
 
 	/**
-	 * Vloží do DB úlohu z formulára
+	 * Vloží do DB úlohu
 	 * @param int $listId
 	 * @param string $task
 	 * @param int $assignedUser
@@ -39,7 +39,7 @@ class TaskRepository extends \Main\Repository {
 	}
 
 	/**
-	 * Edituje úlohu z formulára
+	 * Edituje úlohu
 	 * @param int $id
 	 * @param array $data
 	 * @return Nette\Database\Table\Selection

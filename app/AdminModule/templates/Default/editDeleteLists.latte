@@ -28,22 +28,24 @@
 
 		<h3>Edit/Delete Lists</h3>
 		<small>WARNING! If you delete list, all tasks belongs to this list will be deleted too!</small>
+		{snippet tableLists}
 		<table class="lists table table-striped">
-		<thead class="todo">
-			<tr>
-				<th>Title</th>
-				<th class="action">Action</th>
-			</tr>	
-		</thead>
-		<tbody>
-		{foreach $lists as $list}
-			<tr>
-				<td class="title">{$list->title}</td>	
-				<td class="action"><a n:href="Default:editList $list->id"><i class="glyphicon glyphicon-pencil">&nbsp;</i>Edit</a> | <a n:href="deleteList! $list->id"><i class="glyphicon glyphicon-trash">&nbsp;</i>Delete</a></td>
-			</tr>
-		{/foreach}		
-		</tbody>
-	</table>
+			<thead class="todo">
+				<tr>
+					<th>Title</th>
+					<th class="action">Action</th>
+				</tr>	
+			</thead>
+			<tbody>
+			{foreach $lists as $list}
+				<tr>
+					<td class="title">{$list->title}</td>	
+					<td class="action"><a n:href="Default:editList $list->id"><i class="glyphicon glyphicon-pencil">&nbsp;</i>Edit</a> | <a n:href="deleteList! $list->id" class="ajax"><i class="glyphicon glyphicon-trash">&nbsp;</i>Delete</a></td>
+				</tr>
+			{/foreach}		
+			</tbody>
+		</table>
+		{/snippet}
 	</div>
 
 </div> <!-- End Row -->

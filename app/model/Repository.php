@@ -13,7 +13,10 @@ class Repository extends \Nette\Object {
 	/** @var Nette\Database\Connection */
 	protected $database;
 
-	/** Potrebné pripojenie k db */
+	/**
+	 * Potrebné pripojenie k db
+	 * @return \Nette\Database\Connection
+	 */
 	public function __construct(\Nette\Database\Connection $database) {
 		$this->database = $database;
 	}
@@ -39,6 +42,7 @@ class Repository extends \Nette\Object {
 
 	/**
 	 * Vráti riadky podľa filtra, napr. array('name' => 'John').
+	 * @param array $by
 	 * @return Nette\Database\Table\Selection
 	 */
 	public function findBy(array $by) {
@@ -47,14 +51,16 @@ class Repository extends \Nette\Object {
 
 	/**
 	 * Nájde podľa id
-	 * @return Nette\Database\Table\Selection
+	 * @param int $id
+	 * @return Nette\Database\Table\ActiveRow
 	 */
 	public function findById($id) {
 		return $this->findBy(array('id' => $id))->fetch();
 	}
 
 	/**
-	 * Vracia riadok podľa primárneho kľúča, ale vracia ActiveRow namiesto TableSelection !
+	 * Vracia riadok podľa primárneho kľúča
+	 * @param int $id
 	 * @return Nette\Database\Table\ActiveRow
 	 */
 	public function find($id) {

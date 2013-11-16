@@ -10,8 +10,9 @@ class UsersRepository extends Repository {
 	
 
 	/**
-	 * Vráti celý riadok o userovi
-	 * @return user object
+	 * Nájde usera podľa username
+	 * @param string $username
+	 * @return Nette\Database\Table\ActiveRow
 	 */
 	public function findByName($username) {
 		return $this->findAll()->where('username', $username)->fetch();
@@ -19,6 +20,7 @@ class UsersRepository extends Repository {
 
 	/**
 	 * Registrácia nového používateľa
+	 * @param array $data
 	 * @return Nette\Database\Table\Selection
 	 */
 	public function register($data) {
@@ -30,6 +32,7 @@ class UsersRepository extends Repository {
 
 	/**
 	 * Pridanie nového používateľa
+	 * @param array $data
 	 * @return Nette\Database\Table\Selection
 	 */
 	public function addUser($data) {
@@ -39,6 +42,8 @@ class UsersRepository extends Repository {
 
 	/**
 	 * Editovanie používateľa
+	 * @param int $id
+	 * @param array $data
 	 * @return Nette\Database\Table\Selection
 	 */
 	public function editUser($id, $data) {
@@ -50,6 +55,7 @@ class UsersRepository extends Repository {
 
 	/**
 	 * Signál na vymazanie usera
+	 * @param int $id
 	 * @return Nette\Database\Table\Selection
 	 */
 	public function deleteUser($id) {
@@ -66,7 +72,8 @@ class UsersRepository extends Repository {
 
 	/**
 	 * Vráti usera z tabuľky podľa id
-	 * @return Nette\Database\Table\Selection
+	 * @param int $id
+	 * @return Nette\Database\Table\ActiveRow
 	 */
 	public function findById($id) {
 		return $this->findBy(array('id' => $id))->fetch();

@@ -1,16 +1,16 @@
-<?php //netteCache[01]000388a:2:{s:4:"time";s:21:"0.46627900 1382796153";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:66:"C:\xampp\htdocs\ZURO\app\FrontModule\templates\Homepage\page.latte";i:2;i:1382796151;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000388a:2:{s:4:"time";s:21:"0.24364600 1384522032";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:66:"C:\xampp\htdocs\ZURO\app\FrontModule\templates\Homepage\page.latte";i:2;i:1384522030;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\FrontModule\templates\Homepage\page.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '19whlz59ba')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'vxobpmo6pm')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block MiniLogin
 //
-if (!function_exists($_l->blocks['MiniLogin'][] = '_lbeabe7098fb_MiniLogin')) { function _lbeabe7098fb_MiniLogin($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['MiniLogin'][] = '_lb50bdc1b0e5_MiniLogin')) { function _lb50bdc1b0e5_MiniLogin($_l, $_args) { extract($_args)
 ;if ($user->isLoggedIn()): ?>
 		<div class="pull-right col-lg-7">
 			<p><b>Logged As:</b> <?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->username, ENT_NOQUOTES) ?></p>
@@ -28,17 +28,49 @@ if (!function_exists($_l->blocks['MiniLogin'][] = '_lbeabe7098fb_MiniLogin')) { 
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb17cad5f339_content')) { function _lb17cad5f339_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb52447f10f7_content')) { function _lb52447f10f7_content($_l, $_args) { extract($_args)
 ;call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())  ?>
-<p><?php echo $page->text ?></p><?php
+<p><?php echo $page->text ?></p>
+
+<?php
 }}
 
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb7edbd688f0_title')) { function _lb7edbd688f0_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbc22a3a9043_title')) { function _lbc22a3a9043_title($_l, $_args) { extract($_args)
 ?><h2><?php echo Nette\Templating\Helpers::escapeHtml($page->title, ENT_NOQUOTES) ?></h2>
 <?php
+}}
+
+//
+// block news
+//
+if (!function_exists($_l->blocks['news'][] = '_lb64274ec39a_news')) { function _lb64274ec39a_news($_l, $_args) { extract($_args)
+;if (count($news)): ?>
+		<div id="news">
+			<div class="container well">
+				<h2>News</h2>
+				<div class="row">
+<?php $iterations = 0; foreach ($news as $new): ?>
+						<div class="col-md-4">
+							<div class="new">
+								<div class="news-header">
+									<h3><?php echo Nette\Templating\Helpers::escapeHtml($new->title, ENT_NOQUOTES) ?></h3>
+									<small>Added by: <?php echo Nette\Templating\Helpers::escapeHtml($new->users->username, ENT_NOQUOTES) ?>
+ - <?php echo Nette\Templating\Helpers::escapeHtml($template->date($new->date, 'j.n.Y H:i:s'), ENT_NOQUOTES) ?></small>
+								</div>
+								<p></p>
+								<p><?php echo Nette\Templating\Helpers::escapeHtml($template->truncate($new->body, 310), ENT_NOQUOTES) ?></p>
+								<a class="btn btn-primary" href="<?php echo htmlSpecialChars($_control->link("News:single", array($new->id))) ?>
+">Read More</a>
+							</div>
+						</div>
+<?php $iterations++; endforeach ?>
+				</div>
+			</div>
+		</div>
+<?php endif ;
 }}
 
 //
@@ -64,4 +96,6 @@ if ($_l->extends) { ob_end_clean(); return Nette\Latte\Macros\CoreMacros::includ
 call_user_func(reset($_l->blocks['MiniLogin']), $_l, get_defined_vars())  ?>
 
 
-<?php call_user_func(reset($_l->blocks['content']), $_l, get_defined_vars()) ; 
+<?php call_user_func(reset($_l->blocks['content']), $_l, get_defined_vars())  ?>
+
+<?php call_user_func(reset($_l->blocks['news']), $_l, get_defined_vars()) ; 

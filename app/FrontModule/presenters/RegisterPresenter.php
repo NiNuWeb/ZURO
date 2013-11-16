@@ -7,26 +7,26 @@ use Nette\Application\UI,
 
 class RegisterPresenter extends BasePresenter {
 
-	/** @var Users */
+	/** @var \Main\UsersRepository */
 	public $users;
 
 
 	/**
 	 * Inject UsersRepository
-	 * @var usersRepository
+	 * 
 	 */
 	public function injectUsersRepository(\Main\UsersRepository $usersRepository) {
 		$this->users = $usersRepository;
 	}
 
-	// Tu sa nastvuje, čo sa posiela do template
+	// Pred vykreslením Registračného formulára
 	public function beforeRender() {
 		$this->setLayout('registration'); // nastavený iný layout, kde nie je menu
 	}
 
 	/**
 	 * Vytvorí registračný formulár
-	 * @return $form
+	 * @return Nette\Application\UI\Form
 	 */
 	protected function createComponentRegisterForm() {
 		$form = new Form;

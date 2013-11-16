@@ -39,6 +39,7 @@ class RouterFactory
 
 		$router[] = new Route('register/register', 'Front:Register:register');
 		$router[] = new Route('sign/in', 'Front:Sign:in');
+		$router[] = new Route('news/single/<id>', 'Front:News:single');
 
 		return $router;
 	}

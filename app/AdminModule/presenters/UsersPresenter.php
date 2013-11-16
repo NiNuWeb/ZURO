@@ -12,15 +12,15 @@ class UsersPresenter extends BasePresenter {
 	private $users;
 
 	/**
-	 * Inject UsersRepository
-	 * @var usersRepository
+	 * Inject repozirárov
+	 * 
 	 */
 	public function inject(\Main\UsersRepository $usersRepository) {
 		$this->users = $usersRepository;
 	}
 
 
-	// do render defaultu (pre Manage Users) poslem tabulku so vsetkymi usermi
+	// do render defaultu (pre Manage Users) pošle tabuľku so všetkými usermi
 	public function renderDefault() {
 		$this->template->userList = $this->users->findAllUsers();
 	}
@@ -29,13 +29,17 @@ class UsersPresenter extends BasePresenter {
 
 	}
 
+	/**
+	 * Vykreslenie formulára pre editáciu používateľov
+	 * @param int $id
+	 */
 	public function renderEditUser($id) {
 		$this->template->findedUser = $this->users->findById($id);
 	}
 
 	/**
 	 * Formulár pre pridávanie userov
-	 * @return Form
+	 * @return Nette\Application\UI\Form
 	 */
 	protected function createComponentAddUserForm() {
 		$form = new Form;
@@ -96,7 +100,7 @@ class UsersPresenter extends BasePresenter {
 
 	/**
 	 * Formulár pre editáciu userov
-	 * @return Form
+	 * @return Nette\Application\UI\Form
 	 */
 	protected function createComponentEditUserForm() {
 		$getUser = $this->users->findById($this->getParam('id'));
@@ -166,7 +170,7 @@ class UsersPresenter extends BasePresenter {
 
 	/**
 	 * Signál na vymazanie usera
-	 * Delete user from db
+	 * @param int $id
 	 */
 	public function handleDeleteUser($id) {
 		$this->users->deleteUser($id);

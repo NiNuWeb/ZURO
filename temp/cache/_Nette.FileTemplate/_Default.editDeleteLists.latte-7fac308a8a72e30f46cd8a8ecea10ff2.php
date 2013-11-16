@@ -1,16 +1,16 @@
-<?php //netteCache[01]000398a:2:{s:4:"time";s:21:"0.88817900 1384018451";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:76:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\Default\editDeleteLists.latte";i:2;i:1384018450;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000398a:2:{s:4:"time";s:21:"0.28663700 1384348734";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:76:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\Default\editDeleteLists.latte";i:2;i:1384348729;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\AdminModule\templates\Default\editDeleteLists.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'w7m1f1yqul')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '54du1z6hel')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb35ac14ffa5_content')) { function _lb35ac14ffa5_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb797000d15d_content')) { function _lb797000d15d_content($_l, $_args) { extract($_args)
 ?><h1>Edit/Delete Lists</h1>
 
 <div class="row">
@@ -42,27 +42,35 @@ if (!function_exists($_l->blocks['content'][] = '_lb35ac14ffa5_content')) { func
 
 		<h3>Edit/Delete Lists</h3>
 		<small>WARNING! If you delete list, all tasks belongs to this list will be deleted too!</small>
-		<table class="lists table table-striped">
-		<thead class="todo">
-			<tr>
-				<th>Title</th>
-				<th class="action">Action</th>
-			</tr>	
-		</thead>
-		<tbody>
-<?php $iterations = 0; foreach ($lists as $list): ?>
-			<tr>
-				<td class="title"><?php echo Nette\Templating\Helpers::escapeHtml($list->title, ENT_NOQUOTES) ?></td>	
-				<td class="action"><a href="<?php echo htmlSpecialChars($_control->link("Default:editList", array($list->id))) ?>
-"><i class="glyphicon glyphicon-pencil">&nbsp;</i>Edit</a> | <a href="<?php echo htmlSpecialChars($_control->link("deleteList!", array($list->id))) ?>
-"><i class="glyphicon glyphicon-trash">&nbsp;</i>Delete</a></td>
-			</tr>
-<?php $iterations++; endforeach ?>
-		</tbody>
-	</table>
-	</div>
+<div id="<?php echo $_control->getSnippetId('tableLists') ?>"><?php call_user_func(reset($_l->blocks['_tableLists']), $_l, $template->getParameters()) ?>
+</div>	</div>
 
 </div> <!-- End Row --><?php
+}}
+
+//
+// block _tableLists
+//
+if (!function_exists($_l->blocks['_tableLists'][] = '_lbf0cc7d4b54__tableLists')) { function _lbf0cc7d4b54__tableLists($_l, $_args) { extract($_args); $_control->validateControl('tableLists')
+?>		<table class="lists table table-striped">
+			<thead class="todo">
+				<tr>
+					<th>Title</th>
+					<th class="action">Action</th>
+				</tr>	
+			</thead>
+			<tbody>
+<?php $iterations = 0; foreach ($lists as $list): ?>
+				<tr>
+					<td class="title"><?php echo Nette\Templating\Helpers::escapeHtml($list->title, ENT_NOQUOTES) ?></td>	
+					<td class="action"><a href="<?php echo htmlSpecialChars($_control->link("Default:editList", array($list->id))) ?>
+"><i class="glyphicon glyphicon-pencil">&nbsp;</i>Edit</a> | <a class="ajax" href="<?php echo htmlSpecialChars($_control->link("deleteList!", array($list->id))) ?>
+"><i class="glyphicon glyphicon-trash">&nbsp;</i>Delete</a></td>
+				</tr>
+<?php $iterations++; endforeach ?>
+			</tbody>
+		</table>
+<?php
 }}
 
 //

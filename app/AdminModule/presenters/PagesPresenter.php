@@ -10,17 +10,20 @@ use Nette\Diagnostics\Debugger,
 
 class PagesPresenter extends BasePresenter {
 
-	/** @var Pages */
+	/** @var \Main\PagesRepository */
 	private $pages;
 
 	/**
-	 * Inject PagesRepository
-	 * @var pagesRepository
+	 * Inject repozitárov
+	 * 
 	 */
 	public function inject(\Main\PagesRepository $pagesRepository) {
 		$this->pages = $pagesRepository;
 	}
 
+	/**
+	 * Vykreslenie Pages
+	 */
 	public function renderDefault() {
 		$this->template->menu = $this->pages->getPages();
 	}
@@ -29,13 +32,17 @@ class PagesPresenter extends BasePresenter {
 
 	}
 
+	/**
+	 * Vykreslenie formulára pre editáciu Pages
+	 * @param int $id
+	 */
 	public function renderEditPage($id) {
 		$this->template->findedPage = $this->pages->findById($id);
 	}
 
 	/**
 	 * Formulár pre pridávanie stránok do Menu
-	 * @return Form
+	 * @return Nette\Application\UI\Form
 	 */
 	protected function createComponentAddPageForm() {
 		$countMenuItems = $this->pages->countMenuItems();
@@ -88,7 +95,7 @@ class PagesPresenter extends BasePresenter {
 
 	/**
 	 * Formulár pre editovanie stránok do Menu
-	 * @return Form
+	 * @return Nette\Application\UI\Form
 	 */
 	protected function createComponentEditPageForm() {
 		$countMenuItems = $this->pages->countMenuItems();
@@ -147,7 +154,8 @@ class PagesPresenter extends BasePresenter {
 
 	/**
 	 * Signál na vymazanie usera
-	 * Delete user from db
+	 * @param int $id
+	 * @return Nette\Database\Table\Selection
 	 */
 	public function handleDeletePage($id) {
 		$this->pages->deletePage($id);

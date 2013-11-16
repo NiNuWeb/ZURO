@@ -13,24 +13,31 @@ use Nette\Application\BadRequestException,
  */
 class HomepagePresenter extends BasePresenter
 {
-	/**	@var Pages */
+	/**	@var Nette\Database\Table\Selection */
 	public $pages;
+
+	/** @var \Main\NewsRepository */
+	public $newsRepository;
 
 	/** @var Nette\Database\Table\Selection */
 	private $page;
+
+	/** @var Nette\Database\Table\Selection */
 	private $menu;
 
 	/**
-	 * Inject PagesRepository
-	 * @var PagesRepository
+	 * Inject repozirátov
+	 *
 	 */
-	public function injectRepository(\Main\PagesRepository $pagesRepository) {
+	public function injectRepository(\Main\PagesRepository $pagesRepository, \Main\NewsRepository $newsRepository) {
 		$this->pages = $pagesRepository;
+		$this->newsRepository = $newsRepository;
 	}
 
 
 	/**
 	 * Vytiahne a nastaví $page a $menu
+	 * @param string $slug
 	 */
 	public function actionPage($slug = NULL) {
 
@@ -76,6 +83,9 @@ class HomepagePresenter extends BasePresenter
 		return $form;		
 	}
 
+	/**
+	 * Presmerovanie na registračný formulár z MiniLogin formulára
+	 */
 	public function redirectToRegistration($button) {
 		$this->redirect('Register:register');
 	}
@@ -96,7 +106,10 @@ class HomepagePresenter extends BasePresenter
 	}
 
 
-	/** V renderi sa všetko posiela do template */
+	/**
+	 * Render pre Page
+	 * @param string $slug
+	 */
 	public function renderPage($slug = NULL) {
 		if (is_null($slug)) {
 			$slug = $this->pages->findFirstPage()->slug; // Vyberie prvý záznam z tabuľky pages
@@ -106,11 +119,13 @@ class HomepagePresenter extends BasePresenter
 
 		$this->template->menu = $this->menu;
 
+		$this->template->news = $this->newsRepository->getXnews(3);
+
 	}
 
 
 	/**
-	 * Logout User
+	 * Odhlásenie usera
 	 */
 	public function handleLogout() {
 		$this->user->logOut();

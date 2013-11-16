@@ -16,14 +16,18 @@ class DefaultPresenter extends BasePresenter {
 	/** @var \Main\UsersRepository */
 	public $usersRepository;
 
+	/** @var \Main\NewsRepository */
+	public $newsRepository;
+
 	/**
 	 * Inject TaskRepository
-	 * @var \ToDo\TaskRepository
+	 * 
 	 */
-	public function inject(\ToDo\TaskRepository $taskRepository, \ToDo\ListRepository $listRepository, \Main\UsersRepository $usersRepository) {
+	public function inject(\ToDo\TaskRepository $taskRepository, \ToDo\ListRepository $listRepository, \Main\UsersRepository $usersRepository, \Main\NewsRepository $newsRepository) {
 		$this->taskRepository = $taskRepository;
 		$this->listRepository = $listRepository;
 		$this->usersRepository = $usersRepository;
+		$this->newsRepository = $newsRepository;
 	}
 
 	/**
@@ -32,15 +36,24 @@ class DefaultPresenter extends BasePresenter {
 	public function beforeRender() {
 		$this->template->lists = $this->listRepository->findAll()->order('title ASC');
 		$this->template->tasks = $this->taskRepository->findAll()->order('id ASC');
+		$this->template->news = $this->newsRepository->getXnews(5);
 		if ($this->isAjax()) {
 			$this->invalidateControl('flashMessages');
 		}
 	}
 
+	/**
+	 * Vykreslenie formulára pre editáciu zoznamu
+	 * @param int $id
+	 */
 	public function renderEditList($id) {
 		$this->template->actualList = $this->listRepository->findById($id);
 	}
 
+	/**
+	 * Vykreslenie formulára pre editáciu úlohy
+	 * @param int $id
+	 */
 	public function renderEditTask($id) {
 		$this->template->actualTask = $this->taskRepository->findById($id);
 	}
@@ -144,22 +157,34 @@ class DefaultPresenter extends BasePresenter {
 
 	/**
 	 * Signál na vymazanie zoznamu
-	 * Delete list from db
+	 * @param int $id
+	 * @return Nette\Database\Table\Selection
 	 */
 	public function handleDeleteList($id) {
 		$this->listRepository->deleteList($id);
-		$this->flashMessage('List was successfully deleted!', 'delete');
-		$this->redirect('Default:editDeleteLists');
+		if (!$this->presenter->isAjax()) {
+			$this->flashMessage('List was successfully deleted!', 'delete');
+			$this->redirect('Default:editDeleteLists');
+		} else {
+			$this->invalidateControl('tableLists');
+		}
+		
 	}
 
 	/**
 	 * Signál na vymazanie úlohy
-	 * Delete task from db
+	 * @param int $id
+	 * @return Nette\Database\Table\Selection
 	 */
 	public function handleDeleteTask($id) {
 		$this->taskRepository->deleteTask($id);
-		$this->flashMessage('Task was successfully deleted!', 'delete');
-		$this->redirect('Default:editDeleteTasks');
+		if (!$this->presenter->isAjax()) {
+			$this->flashMessage('Task was successfully deleted!', 'delete');
+			$this->redirect('Default:editDeleteTasks');
+		} else {
+			$this->invalidateControl('tableTasks');
+		}
+		
 	}
 
 	/**

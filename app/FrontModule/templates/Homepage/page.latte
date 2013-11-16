@@ -17,3 +17,30 @@
 
 <h2 n:block="title">{$page->title}</h2>
 <p>{!$page->text}</p>
+
+{/block}
+
+{block news}
+	{if count($news)}
+		<div id="news">
+			<div class="container well">
+				<h2>News</h2>
+				<div class="row">
+					{foreach $news as $new}
+						<div class="col-md-4">
+							<div class="new">
+								<div class="news-header">
+									<h3>{$new->title}</h3>
+									<small>Added by: {$new->users->username} - {$new->date|date:'j.n.Y H:i:s'}</small>
+								</div>
+								<p></p>
+								<p>{$new->body|truncate:310}</p>
+								<a n:href="News:single $new->id" class="btn btn-primary">Read More</a>
+							</div>
+						</div>
+					{/foreach}		
+				</div>
+			</div>
+		</div>
+	{/if}
+{/block}
