@@ -16,7 +16,12 @@ common:
 			errorPresenter: Error
 
 		session:
+			autoStart: smart
 			expiration: 14 days
+
+		latte:
+			macros:
+				- Nextras\Forms\Latte\Macros::install
 
 
 	services:

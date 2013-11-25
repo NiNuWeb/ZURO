@@ -1,23 +1,23 @@
-<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.20181200 1384538652";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\@layout.latte";i:2;i:1384538649;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.76520700 1384947645";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\@layout.latte";i:2;i:1384947641;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\AdminModule\templates\@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'x1ovsivxhe')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'bjrpxfldwp')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb89522d3837_title')) { function _lb89522d3837_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbda86afa072_title')) { function _lbda86afa072_title($_l, $_args) { extract($_args)
 ?>Admin | ZURO App<?php
 }}
 
 //
 // block _flashMessages
 //
-if (!function_exists($_l->blocks['_flashMessages'][] = '_lbee1cbeb3ab__flashMessages')) { function _lbee1cbeb3ab__flashMessages($_l, $_args) { extract($_args); $_control->validateControl('flashMessages')
+if (!function_exists($_l->blocks['_flashMessages'][] = '_lbd6361b3237__flashMessages')) { function _lbd6361b3237__flashMessages($_l, $_args) { extract($_args); $_control->validateControl('flashMessages')
 ;$iterations = 0; foreach ($flashes as $flash): ?>		<div class="flash <?php echo htmlSpecialChars($flash->type) ?> ajax">
 			<p><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></p>
 		</div>
@@ -27,7 +27,7 @@ if (!function_exists($_l->blocks['_flashMessages'][] = '_lbee1cbeb3ab__flashMess
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lba0b18cddce_content')) { function _lba0b18cddce_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb5d86f8de92_content')) { function _lb5d86f8de92_content($_l, $_args) { extract($_args)
 ?>		
 <?php
 }}
@@ -35,12 +35,13 @@ if (!function_exists($_l->blocks['content'][] = '_lba0b18cddce_content')) { func
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb113ff27337_scripts')) { function _lb113ff27337_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb420b3d9ab3_scripts')) { function _lb420b3d9ab3_scripts($_l, $_args) { extract($_args)
 ?>	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/jquery.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/bootstrap.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/netteForms.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/jquery.nette.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/main.js"></script>
+	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/jquery.ajaxform.js"></script>
 <?php
 }}
 

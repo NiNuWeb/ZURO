@@ -6,7 +6,7 @@ use Nette\Application\BadRequestException,
 	Nette\Application\UI\Form as Form,
 	Nette\Application\UI,
 	Nette\Security\AuthenticationException,
-	Nette\Diagnostics\Debugger;;
+	Nette\Diagnostics\Debugger;
 
 /**
  * Homepage presenter.
@@ -115,11 +115,16 @@ class HomepagePresenter extends BasePresenter
 			$slug = $this->pages->findFirstPage()->slug; // Vyberie prvý záznam z tabuľky pages
 		}
 
+		$vp = new \VisualPaginator($this, 'vp');
+		$paginator = $vp->getPaginator();
+		$paginator->itemsPerPage = 3;
+		$paginator->itemCount = $this->newsRepository->countAll();
+
 		$this->template->page = $this->page;
 
 		$this->template->menu = $this->menu;
 
-		$this->template->news = $this->newsRepository->getXnews(3);
+		$this->template->news = $this->newsRepository->getAllNews()->limit($paginator->itemsPerPage, $paginator->offset);
 
 	}
 

@@ -19,7 +19,7 @@ class NewsPresenter extends BasePresenter {
 	 */
 	public function inject(\Main\NewsRepository $newsRepository, \Main\UsersRepository $usersRepository) {
 		$this->newsRepository = $newsRepository;
-		$this->usersRepository = $usersRepository;
+		$this->usersRepository = $usersRepository; 
 	}
 
 	/**
@@ -105,10 +105,13 @@ class NewsPresenter extends BasePresenter {
 			->setAttribute('class', 'form-control')
 			->setDefaultValue($getNews->body)
 			->addRule(Form::FILLED, 'Body field must be filled.');
-		$form->addText('date', 'Created: *')
+		$form->addDateTimePicker('date', 'Created: *')
+			->setDefaultValue($getNews->date)
+			->addRule(Form::FILLED, 'Date and time is required!');
+		/*$form->addText('date', 'Created: *')
 			->setAttribute('class', 'form-control')
 			->setDefaultValue($getNews->date)
-			->addRule(Form::FILLED, 'Date must be filled!');
+			->addRule(Form::FILLED, 'Date must be filled!');*/
 		$form->addSelect('users_id', 'Added By: *', $createdBy)
 			->setAttribute('class', 'form-control')
 			->setDefaultValue($getNews->users_id);			
@@ -132,11 +135,39 @@ class NewsPresenter extends BasePresenter {
 
 
 	/**
+	 * Komponenta Confirmation Dialog pre delete News
+	 * @return Nette\Application\UI\Form
+	 */
+	public function createComponentConfirmForm() {
+		$form = new \ConfirmationDialog($this->getSession('news'));
+		$form->getFormElementPrototype()->addClass('ajax');
+
+		$form->addConfirmer(
+			'delete', // názov signálu bude confirmDelete!
+			array($this, 'deleteNews'), // callback na funkciu pri kliknutí na YES
+			array($this, 'questionDelete') // otázka
+		);
+
+		return $form;
+	}
+
+	/**
+	 * Zostavenie otázky pre ConfDialog s parametrom
+	 * @param Nette\Utils\Html $dialog
+	 * @param array $params
+	 * @return string $question
+	 */
+	public function questionDelete($dialog, $params) {
+		$dialog->getQuestionPrototype();
+		return "Do You Really Delete Item:  $params[title] ?";
+	}
+
+	/**
 	 * Signál na vymazanie novinky
 	 * @param int $id
 	 * @return Database\Table\Selection
 	 */
-	public function handleDeleteNews($id) {
+	public function deleteNews($id) {
 		$this->newsRepository->deleteNews($id);
 		if (!$this->presenter->isAjax()) {
 			$this->flashMessage('News was successfully deleted!', 'delete');

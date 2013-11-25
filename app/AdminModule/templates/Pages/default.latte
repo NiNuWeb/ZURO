@@ -3,6 +3,8 @@
 <h2>Manage Main Menu</h2>
 <br />
 <div class="table-responsive col-md-9">
+	{snippet tablePages}
+	{control confirmForm}
 	<table class="table table-hover">
 		<thead>
 			<tr class="th-pages">
@@ -20,10 +22,11 @@
 				<td>{$item->slug}</td>
 				<td>{$item->text|truncate:50}</td>
 				<td>{$item->position}</td>
-				<td><a n:href="Pages:editPage $item->id"><i class="glyphicon glyphicon-pencil">&nbsp;</i>Edit</a> | <a n:href="deletePage! $item->id"><i class="glyphicon glyphicon-trash">&nbsp;</i>Delete</a></td>
+				<td><a n:href="Pages:editPage $item->id"><i class="glyphicon glyphicon-pencil">&nbsp;</i>Edit</a> | <a n:href="confirmForm:confirmDelete! id => $item->id, title => $item->title"><i class="glyphicon glyphicon-trash">&nbsp;</i>Delete</a></td>
 			</tr>
 		{/foreach}
 		</tbody>
 	</table>
+	{/snippet}
 	<a n:href="Pages:AddPage" class="btn btn-warning"><i class="glyphicon glyphicon-plus-sign">&nbsp;</i><b>Add Page</b></a>
 </div>

@@ -5,6 +5,9 @@ namespace Main;
 
 class PagesRepository extends Repository {
 
+	/** @var Nette\Database\Table\Selection */
+	private $actualPosRow;
+
 	/**
 	 * Vráti pages zoradené podľa positon
 	 * @return Nette\Database\Table\Selection
@@ -52,7 +55,7 @@ class PagesRepository extends Repository {
 	 * @return int
 	 */
 	public function countMenuItems() {
-		return $this->getTable()->count()+1;
+		return $this->getTable()->count('*')+1;
 	}
 
 	/**
@@ -82,4 +85,60 @@ class PagesRepository extends Repository {
 	public function deletePage($id) {
 		return $this->getTable()->where('id = ?', $id)->delete();
 	}
+
+	/**
+	 * Zmena pozície ostatných položiek pri pridaní novej do menu
+	 * @param int $itemAddedToPosition
+	 */
+	public function editPositions($itemAddedToPosition) {
+		$allPages = $this->getPages();
+		foreach ($allPages as $page) {
+			if ($page->position >= $itemAddedToPosition) {
+				$page->position = $page->position + 1;
+				$this->editPage($page->id, array('position' => $page->position));
+			}
+		}
+	}
+
+	/**
+	 * Zmena pozície ostatných položiek pri vymazaní položky z menu
+	 * @param int $itemDeletedFromPosition
+	 */
+	public function deletedItemPositions($itemDeletedFromPosition) {
+		$allPages = $this->getPages();
+		foreach ($allPages as $page) {
+			if ($page->position >= $itemDeletedFromPosition) {
+				$page->position = $page->position - 1;
+				$this->editPage($page->id, array('position' => $page->position));
+			}
+		}
+	}
+
+
+	public function updatePositions($actualPosition, $newPosition) {
+		if ($actualPosition != $newPosition) {
+			if ($actualPosition < $newPosition) {
+				$changes = $newPosition - $actualPosition;
+				for ($i = 0; $i < $changes; $i++) {
+					$actualPosRow = $this->findBy(array('position' => $actualPosition))->fetch();
+					$nextRow = $this->findBy(array('position' => $actualPosition+1))->fetch();
+					$this->editPage($actualPosRow->id, array('position' => $nextRow->position));
+					$this->editPage($nextRow->id, array('position' => $actualPosition));
+					$actualPosition++;
+				}
+			} elseif ($actualPosition > $newPosition) {
+				$changes = $actualPosition - $newPosition;
+				for ($i = 0; $i < $changes; $i++) {
+					$actualPosRow = $this->findBy(array('position' => $actualPosition))->fetch();
+					$beforeRow = $this->findBy(array('position' => $actualPosition-1))->fetch();
+					$this->editPage($this->find($actualPosRow->id), array('position' => $beforeRow->position));
+					$this->editPage($beforeRow->id, array('position' => $actualPosition));
+					$actualPosition--;
+				}
+			}
+		}
+
+		return $this;
+	}
+
 }

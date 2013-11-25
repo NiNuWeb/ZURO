@@ -1,16 +1,16 @@
-<?php //netteCache[01]000387a:2:{s:4:"time";s:21:"0.99028100 1383912358";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:65:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\Task\default.latte";i:2;i:1383912109;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000387a:2:{s:4:"time";s:21:"0.49053900 1384866147";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:65:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\Task\default.latte";i:2;i:1383912109;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\AdminModule\templates\Task\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 't0n75sqj3m')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'l79c1fycba')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb1073bb80f8_content')) { function _lb1073bb80f8_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbcd46d1b47e_content')) { function _lbcd46d1b47e_content($_l, $_args) { extract($_args)
 ?><div class="row">
 
 	<div class="col-md-2 right-border">
@@ -45,7 +45,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb1073bb80f8_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbf72c29d4da_title')) { function _lbf72c29d4da_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb57a26ce748_title')) { function _lb57a26ce748_title($_l, $_args) { extract($_args)
 ?>		<h2><?php echo Nette\Templating\Helpers::escapeHtml($list->title, ENT_NOQUOTES) ?></h2>
 <?php
 }}
@@ -53,7 +53,7 @@ if (!function_exists($_l->blocks['title'][] = '_lbf72c29d4da_title')) { function
 //
 // block _form
 //
-if (!function_exists($_l->blocks['_form'][] = '_lbbe47e395ae__form')) { function _lbbe47e395ae__form($_l, $_args) { extract($_args); $_control->validateControl('form')
+if (!function_exists($_l->blocks['_form'][] = '_lb4dc33cb430__form')) { function _lb4dc33cb430__form($_l, $_args) { extract($_args); $_control->validateControl('form')
 ?>			<fieldset id="newTask">
 				<legend>Add New Task</legend>
 <?php Nette\Latte\Macros\FormMacros::renderFormBegin($form = $_form = (is_object("taskForm") ? "taskForm" : $_control["taskForm"]), array('class' => 'ajax')) ?>

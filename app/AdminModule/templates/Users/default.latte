@@ -3,6 +3,8 @@
 <h2>Manage Users</h2>
 <br />
 <div class="table-responsive col-md-8">
+	{snippet tableUsers}
+	{control confirmForm}
 	<table class="table table-hover">
 		<thead>
 			<tr class="th-user">
@@ -18,10 +20,11 @@
 				<td>{$user->username}</td>
 				<td>{$user->email}</td>
 				<td>{$user->role}</td>
-				<td><a n:href="Users:editUser $user->id"><i class="glyphicon glyphicon-pencil">&nbsp;</i>Edit</a> | <a n:href="deleteUser! $user->id"><i class="glyphicon glyphicon-trash">&nbsp;</i>Delete</a></td>
+				<td><a n:href="Users:editUser $user->id"><i class="glyphicon glyphicon-pencil">&nbsp;</i>Edit</a> | <a n:href="confirmForm:confirmDelete! id => $user->id, username => $user->username"><i class="glyphicon glyphicon-trash">&nbsp;</i>Delete</a></td>
 			</tr>
 		{/foreach}
 		</tbody>
 	</table>
+	{/snippet}
 	<a n:href="Users:addUser" class="btn btn-success"><i class="glyphicon glyphicon-plus-sign">&nbsp;</i><b>Add User</b></a>
 </div>

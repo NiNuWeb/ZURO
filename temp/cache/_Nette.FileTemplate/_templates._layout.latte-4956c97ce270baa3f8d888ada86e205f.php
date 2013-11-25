@@ -1,37 +1,37 @@
-<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.63771500 1384456628";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"C:\xampp\htdocs\ZURO\app\FrontModule\templates\@layout.latte";i:2;i:1384456626;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.06941700 1384868719";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"C:\xampp\htdocs\ZURO\app\FrontModule\templates\@layout.latte";i:2;i:1384456626;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\FrontModule\templates\@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'o9r637can3')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '6pnol3pyds')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb4f700ddd89_title')) { function _lb4f700ddd89_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbc252bb049d_title')) { function _lbc252bb049d_title($_l, $_args) { extract($_args)
 ?>ZURO App<?php
 }}
 
 //
 // block MiniLogin
 //
-if (!function_exists($_l->blocks['MiniLogin'][] = '_lb6ab80f7405_MiniLogin')) { function _lb6ab80f7405_MiniLogin($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['MiniLogin'][] = '_lb7e56e16858_MiniLogin')) { function _lb7e56e16858_MiniLogin($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block news
 //
-if (!function_exists($_l->blocks['news'][] = '_lb94054a24a4_news')) { function _lb94054a24a4_news($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['news'][] = '_lb854a921414_news')) { function _lb854a921414_news($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lbe58fe78406_scripts')) { function _lbe58fe78406_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb38a6a58c6a_scripts')) { function _lb38a6a58c6a_scripts($_l, $_args) { extract($_args)
 ?>	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/jquery.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/bootstrap.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/netteForms.js"></script>

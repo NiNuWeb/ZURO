@@ -167,15 +167,46 @@ class UsersPresenter extends BasePresenter {
 		}
 	}
 
+	/**
+	 * Komponenta Confirmation Dialog pre delete User
+	 * @return Nette\Application\UI\Form
+	 */
+	public function createComponentConfirmForm() {
+		$form = new \ConfirmationDialog($this->getSession('users'));
+		$form->getFormElementPrototype()->addClass('ajax');
+
+		$form->addConfirmer(
+			'delete', // názov signálu bude confirmDelete!
+			array($this, 'deleteUser'), // callback na funkciu pri kliknutí na YES
+			array($this, 'questionDelete') // otázka
+		);
+
+		return $form;
+	}
+
+	/**
+	 * Zostavenie otázky pre ConfDialog s parametrom
+	 * @param Nette\Utils\Html $dialog
+	 * @param array $params
+	 * @return string $question
+	 */
+	public function questionDelete($dialog, $params) {
+		$dialog->getQuestionPrototype();
+		return "Do You Really Want Delete User:  $params[username] ?";
+	}
 
 	/**
 	 * Signál na vymazanie usera
 	 * @param int $id
 	 */
-	public function handleDeleteUser($id) {
+	public function deleteUser($id) {
 		$this->users->deleteUser($id);
-		$this->flashMessage('User was successfully deleted!', 'delete');
-		$this->redirect('Users:default');
+		if (!$this->presenter->isAjax()) {
+			$this->flashMessage('User was successfully deleted!', 'delete');
+			$this->redirect('Users:default');
+		} else {
+			$this->invalidateControl('tableUsers');
+		}
 	}
 
 

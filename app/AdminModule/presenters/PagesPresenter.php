@@ -86,6 +86,8 @@ class PagesPresenter extends BasePresenter {
 			$this->flashMessage('This title already exists, please select another.', 'warning');
 			$this->redirect('this');
 		}
+		
+		$this->pages->editPositions($values['position']);
 		$new_page = $this->pages->addPage($values);
 		if ($new_page) {
 			$this->flashMessage('You have successfully added a new page to Main Menu.', 'success');
@@ -98,7 +100,7 @@ class PagesPresenter extends BasePresenter {
 	 * @return Nette\Application\UI\Form
 	 */
 	protected function createComponentEditPageForm() {
-		$countMenuItems = $this->pages->countMenuItems();
+		$countMenuItems = $this->pages->countMenuItems()-1;
 		for ($i=1; $i<=$countMenuItems; $i++) {
 			$select[$i] = $i;
 		}
@@ -136,20 +138,54 @@ class PagesPresenter extends BasePresenter {
 		$values = $form->getValues();
 		$values['slug'] = Strings::webalize($values->title);
 		$pageid = $this->getParam('id');
+		$actualPageSlug = $this->pages->findById($pageid);
 		if (isset($values->id)) { unset($values->id); }
 		if ($values['slug'] == 'admin') {
 			$this->flashMessage('Don\'t allow title, please select another.', 'warning');
 			$this->redirect('this');
 		}
-		if ($this->pages->countAllWithSlug($values['slug']) > 0) {
+		if ($this->pages->countAllWithSlug($values['slug']) > 0 && $values['slug'] !== $actualPageSlug->slug) {
 			$this->flashMessage('This title already exists, please select another.', 'warning');
 			$this->redirect('this');
 		}
-		$edited_page = $this->pages->editPage($pageid, $values);
-		if ($edited_page) {
+
+		$updatePosition = $this->pages->updatePositions($actualPageSlug->position, $values['position']);
+		if ($updatePosition) {
+			unset($values['position']);
+			$edited_page = $this->pages->editPage($pageid, $values);
 			$this->flashMessage('You have successfully edited page.', 'success');
 			$this->redirect('Pages:default');
+				
 		}
+		
+	}
+
+	/**
+	 * Komponenta Confirmation Dialog pre delete Page
+	 * @return Nette\Application\UI\Form
+	 */
+	public function createComponentConfirmForm() {
+		$form = new \ConfirmationDialog($this->getSession('pages'));
+		$form->getFormElementPrototype()->addClass('ajax');
+
+		$form->addConfirmer(
+			'delete', // názov signálu bude confirmDelete!
+			array($this, 'deletePage'), // callback na funkciu pri kliknutí na YES
+			array($this, 'questionDelete') // otázka
+		);
+
+		return $form;
+	}
+
+	/**
+	 * Zostavenie otázky pre ConfDialog s parametrom
+	 * @param Nette\Utils\Html $dialog
+	 * @param array $params
+	 * @return string $question
+	 */
+	public function questionDelete($dialog, $params) {
+		$dialog->getQuestionPrototype();
+		return "Do You Really Want Delete Page With Title:  $params[title] ?";
 	}
 
 	/**
@@ -157,10 +193,16 @@ class PagesPresenter extends BasePresenter {
 	 * @param int $id
 	 * @return Nette\Database\Table\Selection
 	 */
-	public function handleDeletePage($id) {
+	public function deletePage($id) {
+		$page = $this->pages->findById($id);
+		$this->pages->deletedItemPositions($page->position);
 		$this->pages->deletePage($id);
-		$this->flashMessage('Page was successfully deleted!', 'delete');
-		$this->redirect('Pages:default');
+		if (!$this->presenter->isAjax()) {
+			$this->flashMessage('Page was successfully deleted!', 'delete');
+			$this->redirect('Pages:default');
+		} else {
+			$this->invalidateControl('tablePages');
+		}
 	}
 	
 }

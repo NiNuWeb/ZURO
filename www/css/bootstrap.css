@@ -4670,7 +4670,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .pagination > li > span:hover,
 .pagination > li > a:focus,
 .pagination > li > span:focus {
-  background-color: #eeeeee;
+  background-color: #D1D1D1; /* default #eeeeee */
 }
 
 .pagination > .active > a,
@@ -4682,8 +4682,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
   z-index: 2;
   color: #ffffff;
   cursor: default;
-  background-color: #428bca;
-  border-color: #428bca;
+  background-color: #363535;      /* default #428bca*/
+  border-color: #242323;   /* default #428bca*/
 }
 
 .pagination > .disabled > span,
@@ -5606,7 +5606,6 @@ body.modal-open,
   bottom: 0;
   left: 0;
   z-index: 1040;
-  display: none;
   overflow: auto;
   overflow-y: scroll;
 }

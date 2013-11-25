@@ -1,16 +1,16 @@
-<?php //netteCache[01]000389a:2:{s:4:"time";s:21:"0.45552200 1383080406";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:67:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\Pages\editPage.latte";i:2;i:1383080404;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000389a:2:{s:4:"time";s:21:"0.18190800 1384864597";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:67:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\Pages\editPage.latte";i:2;i:1383080404;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\AdminModule\templates\Pages\editPage.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'huuiiunhit')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'mgy57xk1ob')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb85e44dc4d8_content')) { function _lb85e44dc4d8_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbbf7e25b42d_content')) { function _lbbf7e25b42d_content($_l, $_args) { extract($_args)
 ?><h2>Edit Page: <?php echo Nette\Templating\Helpers::escapeHtml($findedPage->title, ENT_NOQUOTES) ?></h2>
 <?php $_ctrl = $_control->getComponent("editPageForm"); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render() ;
 }}

@@ -1,16 +1,16 @@
-<?php //netteCache[01]000372a:2:{s:4:"time";s:21:"0.20966700 1383911786";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:50:"C:\xampp\htdocs\ZURO\app\components\TaskList.latte";i:2;i:1383911673;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000372a:2:{s:4:"time";s:21:"0.70162500 1384861622";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:50:"C:\xampp\htdocs\ZURO\app\components\TaskList.latte";i:2;i:1383911673;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\components\TaskList.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'st7oqbisib')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'jh071dt03j')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block _
 //
-if (!function_exists($_l->blocks['_'][] = '_lb7d3179d756__')) { function _lb7d3179d756__($_l, $_args) { extract($_args); $_control->validateControl(false)
+if (!function_exists($_l->blocks['_'][] = '_lbd5af0e8275__')) { function _lbd5af0e8275__($_l, $_args) { extract($_args); $_control->validateControl(false)
 ?>	<table class="tasks table table-striped">
 		<thead class="todo">
 			<tr>

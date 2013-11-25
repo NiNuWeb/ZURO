@@ -1,16 +1,16 @@
-<?php //netteCache[01]000387a:2:{s:4:"time";s:21:"0.70907600 1384352378";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:65:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\News\addNews.latte";i:2;i:1384352373;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000387a:2:{s:4:"time";s:21:"0.70335600 1384934173";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:65:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\News\addNews.latte";i:2;i:1384352373;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\AdminModule\templates\News\addNews.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'd5wa143hbi')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'n5tdrk02iy')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lba98238fb77_content')) { function _lba98238fb77_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbdbe10bb0de_content')) { function _lbdbe10bb0de_content($_l, $_args) { extract($_args)
 ?><h2>Add News</h2>
 <?php $_ctrl = $_control->getComponent("addNewsForm"); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render() ;
 }}

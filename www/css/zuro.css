@@ -19,6 +19,16 @@ html.js .jshidden {
 	border-left: 1px solid #BCBCBC;
 }
 
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.margin-left {
+	margin-left: 10px;
+}
+
 /* ===== HEADER ===== */
 .header-a a, .header-a a:hover {
 	text-decoration: none;
@@ -350,3 +360,40 @@ legend {
 .last-news {
 	color:#0606BF;
 } 
+
+/* ===== PAGINATOR ===== */
+.paginator {
+		display: block;
+        font-size: 90%;
+        padding: 15px;
+        text-align: center;
+
+}
+
+.paginator a, .paginator span {
+        margin-right: 0.1em;
+        padding: 0.2em 0.5em;
+        color: #999999;
+}
+
+.paginator a {
+        border: 1px solid #9AAFE5;
+        text-decoration: none;
+        color: #105CB6;
+}
+
+.paginator span.button {
+        border: 1px solid #DDDDDD;
+}
+
+.paginator .current {
+        background: #2E6AB1;
+        border: 1px solid #2E6AB1;
+        color: white;
+        font-weight: bold;
+}
+
+/* ===== CONFIRMATION DIALOG ===== */
+.confirmation-dialog {
+	margin-bottom: 20px;
+}

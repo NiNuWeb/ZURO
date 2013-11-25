@@ -40,6 +40,10 @@ class Repository extends \Nette\Object {
 		return $this->getTable();
 	}
 
+	public function countAll() {
+		return $this->getTable()->count('*');
+	}
+
 	/**
 	 * Vráti riadky podľa filtra, napr. array('name' => 'John').
 	 * @param array $by
