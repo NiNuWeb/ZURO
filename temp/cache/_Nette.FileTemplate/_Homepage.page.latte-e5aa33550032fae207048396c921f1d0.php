@@ -1,16 +1,16 @@
-<?php //netteCache[01]000388a:2:{s:4:"time";s:21:"0.83708700 1384873365";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:66:"C:\xampp\htdocs\ZURO\app\FrontModule\templates\Homepage\page.latte";i:2;i:1384873363;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000388a:2:{s:4:"time";s:21:"0.14037300 1385398399";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:66:"C:\xampp\htdocs\ZURO\app\FrontModule\templates\Homepage\page.latte";i:2;i:1385397820;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\FrontModule\templates\Homepage\page.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'kafgzt2mg0')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'yckqhqn360')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block MiniLogin
 //
-if (!function_exists($_l->blocks['MiniLogin'][] = '_lbd92496b05a_MiniLogin')) { function _lbd92496b05a_MiniLogin($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['MiniLogin'][] = '_lb7f9aea3ae4_MiniLogin')) { function _lb7f9aea3ae4_MiniLogin($_l, $_args) { extract($_args)
 ;if ($user->isLoggedIn()): ?>
 		<div class="pull-right col-lg-7">
 			<p><b>Logged As:</b> <?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->username, ENT_NOQUOTES) ?></p>
@@ -28,9 +28,9 @@ if (!function_exists($_l->blocks['MiniLogin'][] = '_lbd92496b05a_MiniLogin')) { 
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lba9f81c587f_content')) { function _lba9f81c587f_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbbb5edbff60_content')) { function _lbbb5edbff60_content($_l, $_args) { extract($_args)
 ;call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())  ?>
-<p><?php echo $page->text ?></p>
+<p><?php echo $template->texy($page->text) ?></p>
 
 <?php
 }}
@@ -38,7 +38,7 @@ if (!function_exists($_l->blocks['content'][] = '_lba9f81c587f_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbaf998c8055_title')) { function _lbaf998c8055_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb92b59ce633_title')) { function _lb92b59ce633_title($_l, $_args) { extract($_args)
 ?><h2><?php echo Nette\Templating\Helpers::escapeHtml($page->title, ENT_NOQUOTES) ?></h2>
 <?php
 }}
@@ -46,7 +46,7 @@ if (!function_exists($_l->blocks['title'][] = '_lbaf998c8055_title')) { function
 //
 // block news
 //
-if (!function_exists($_l->blocks['news'][] = '_lb5d3a4a1479_news')) { function _lb5d3a4a1479_news($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['news'][] = '_lbbed8da35e8_news')) { function _lbbed8da35e8_news($_l, $_args) { extract($_args)
 ;if (count($news)): ?>
 		<div id="news">
 			<div class="container well">
@@ -61,7 +61,7 @@ if (!function_exists($_l->blocks['news'][] = '_lb5d3a4a1479_news')) { function _
  - <?php echo Nette\Templating\Helpers::escapeHtml($template->date($new->date, 'j.n.Y H:i:s'), ENT_NOQUOTES) ?></small>
 								</div>
 								<p></p>
-								<p><?php echo Nette\Templating\Helpers::escapeHtml($template->truncate($new->body, 310), ENT_NOQUOTES) ?></p>
+								<p><?php echo $template->striptags($template->texy($template->truncate($new->body, 310))) ?></p>
 								<a class="btn btn-primary" href="<?php echo htmlSpecialChars($_control->link("News:single", array($new->id))) ?>
 ">Read More</a>
 							</div>

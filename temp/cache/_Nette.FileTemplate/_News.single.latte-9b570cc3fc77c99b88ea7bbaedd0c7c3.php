@@ -1,21 +1,21 @@
-<?php //netteCache[01]000386a:2:{s:4:"time";s:21:"0.21568400 1384949205";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:64:"C:\xampp\htdocs\ZURO\app\FrontModule\templates\News\single.latte";i:2;i:1384535774;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000386a:2:{s:4:"time";s:21:"0.65564100 1385369951";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:64:"C:\xampp\htdocs\ZURO\app\FrontModule\templates\News\single.latte";i:2;i:1385369949;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\FrontModule\templates\News\single.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'xvbdy9yv7u')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'tnkkml6zkk')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb9c74105acf_content')) { function _lb9c74105acf_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb9beed29629_content')) { function _lb9beed29629_content($_l, $_args) { extract($_args)
 ;call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())  ?>
 <small>Added by: <?php echo Nette\Templating\Helpers::escapeHtml($singleNews->users->username, ENT_NOQUOTES) ?>
  - <?php echo Nette\Templating\Helpers::escapeHtml($template->date($singleNews->date, 'j.n.Y H:i:s'), ENT_NOQUOTES) ?></small>
 <p></p>
-<p><?php echo Nette\Templating\Helpers::escapeHtml($singleNews->body, ENT_NOQUOTES) ?></p>
+<p><?php echo $template->texy($singleNews->body) ?></p>
 <a class="btn btn-primary" href="<?php echo htmlSpecialChars($_control->link(":Front:Homepage:page")) ?>
 "> << Back</a>
 <?php
@@ -24,7 +24,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb9c74105acf_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb2b97fd4dc9_title')) { function _lb2b97fd4dc9_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbf1342c6242_title')) { function _lbf1342c6242_title($_l, $_args) { extract($_args)
 ?><h3><?php echo Nette\Templating\Helpers::escapeHtml($singleNews->title, ENT_NOQUOTES) ?></h3>
 <?php
 }}

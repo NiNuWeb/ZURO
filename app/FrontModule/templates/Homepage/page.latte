@@ -16,7 +16,7 @@
 {block #content}
 
 <h2 n:block="title">{$page->title}</h2>
-<p>{!$page->text}</p>
+<p>{!$page->text|texy}</p>
 
 {/block}
 
@@ -34,7 +34,7 @@
 									<small>Added by: {$new->users->username} - {$new->date|date:'j.n.Y H:i:s'}</small>
 								</div>
 								<p></p>
-								<p>{$new->body|truncate:310}</p>
+								<p>{!$new->body|truncate:310|texy|striptags}</p>
 								<a n:href="News:single $new->id" class="btn btn-primary">Read More</a>
 							</div>
 						</div>

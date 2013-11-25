@@ -3,6 +3,9 @@
 
 abstract class BasePresenter extends Nette\Application\UI\Presenter {
 
+	/** @var Texy */
+	public $texy;
+
 	/*protected function beforeRender()
 	{
 		$this->template->viewName = $this->view;
@@ -17,5 +20,17 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter {
 			$this->template->presenterName = substr($this->name, $a + 1);
 		}
 	}*/
+
+	public function injectTexy(\Texy $texy) {
+		$this->texy = $texy;
+	}
+
+	protected function createTemplate($class = NULL) {
+	    $template = parent::createTemplate($class);
+
+	    $template->registerHelper('texy', callback($this->texy, 'process'));
+
+	    return $template;
+	}
 	
 }

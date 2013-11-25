@@ -32,6 +32,7 @@ common:
 		newsRepository: Main\NewsRepository
 		taskRepository: ToDo\TaskRepository
 		listRepository: ToDo\ListRepository
+		texy: Texy
 
 		database:
 			class: Nette\Database\Connection
