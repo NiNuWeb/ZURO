@@ -1,37 +1,37 @@
-<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.06941700 1384868719";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"C:\xampp\htdocs\ZURO\app\FrontModule\templates\@layout.latte";i:2;i:1384456626;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.89288000 1386324580";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"C:\xampp\htdocs\ZURO\app\FrontModule\templates\@layout.latte";i:2;i:1386324579;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\FrontModule\templates\@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '6pnol3pyds')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '12pqhwypcg')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbc252bb049d_title')) { function _lbc252bb049d_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbebfcc80f82_title')) { function _lbebfcc80f82_title($_l, $_args) { extract($_args)
 ?>ZURO App<?php
 }}
 
 //
 // block MiniLogin
 //
-if (!function_exists($_l->blocks['MiniLogin'][] = '_lb7e56e16858_MiniLogin')) { function _lb7e56e16858_MiniLogin($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['MiniLogin'][] = '_lb6cd91e1e13_MiniLogin')) { function _lb6cd91e1e13_MiniLogin($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block news
 //
-if (!function_exists($_l->blocks['news'][] = '_lb854a921414_news')) { function _lb854a921414_news($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['news'][] = '_lbb666a27cf9_news')) { function _lbb666a27cf9_news($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb38a6a58c6a_scripts')) { function _lb38a6a58c6a_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lbca89af048e_scripts')) { function _lbca89af048e_scripts($_l, $_args) { extract($_args)
 ?>	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/jquery.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/bootstrap.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/netteForms.js"></script>
@@ -83,6 +83,12 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
 	<div id="header">
 		<div class="container header-bg well">
 			<div class="row">
+				<div class="lang">
+					<a href="<?php echo htmlSpecialChars($_control->link("changeLocale!", array('en'))) ?>
+"><img src="<?php echo htmlSpecialChars($basePath) ?>/images/gb.png" alt="English" title="English" /></a>
+					<a href="<?php echo htmlSpecialChars($_control->link("changeLocale!", array('sk'))) ?>
+"><img src="<?php echo htmlSpecialChars($basePath) ?>/images/sk.png" alt="Slovak" title="Slovak" /></a>
+				</div>
 				<div class="col-md-8">
 					<h1 class="header-a"><a href="<?php echo htmlSpecialChars($_control->link("Homepage:page")) ?>
 "><b>ZURO</b> Development</a><img src="<?php echo htmlSpecialChars($basePath) ?>/images/header-img.jpg" /></h1>
@@ -138,7 +144,7 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
 
 	<div id="footer">
 		<div class="container well">
-			<p>Copyright &copy; 2013 | NiNuWeb | <img src="images/nette-powered.gif" alt="Powered by Nette Framework" /></p>
+			<p>Copyright &copy; 2013 | NiNuWeb | <img src="<?php echo htmlSpecialChars($basePath) ?>/images/nette-powered.gif" alt="Powered by Nette Framework" /></p>
 		</div>
 	</div>
 

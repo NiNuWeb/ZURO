@@ -397,3 +397,9 @@ legend {
 .confirmation-dialog {
 	margin-bottom: 20px;
 }
+
+/* ===== LANGUAGE SELECTION ===== */
+.lang {
+	display: block;
+	margin-left: 15px;
+}

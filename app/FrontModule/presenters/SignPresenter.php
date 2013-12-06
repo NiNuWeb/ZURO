@@ -29,17 +29,17 @@ class SignPresenter extends BasePresenter
 		$renderer->wrappers['pair']['container'] = 'div class="form-group"';
 		$renderer->wrappers['control']['.submit'] = 'btn';
 
-		$form->addText('username', 'Username:')
+		$form->addText('username', $this->translator->translate("messages.signInForm.username").':')
 			->setAttribute('class', 'form-control')
-			->setRequired('Please enter your username.');
+			->setRequired($this->translator->translate("messages.signInForm.enterusername"));
 
-		$form->addPassword('password', 'Password:')
+		$form->addPassword('password', $this->translator->translate("messages.signInForm.password").':')
 			->setAttribute('class', 'form-control')
-			->setRequired('Please enter your password.');
+			->setRequired($this->translator->translate("messages.signInForm.enterpassword"));
 
-		$form->addCheckbox('remember', 'Keep me signed in');
+		$form->addCheckbox('remember', $this->translator->translate("messages.signInForm.keepSigned"));
 
-		$form->addSubmit('send', 'Sign in')
+		$form->addSubmit('send', $this->translator->translate("messages.signInForm.signIn"))
 			->setAttribute('class', 'btn-info pull-left');
 
 		// call method signInFormSucceeded() on success
@@ -71,7 +71,7 @@ class SignPresenter extends BasePresenter
 	public function actionOut()
 	{
 		$this->getUser()->logout();
-		$this->flashMessage('You have been Logout.');
+		$this->flashMessage($this->translator->translate("messages.signInForm.logOut"));
 		$this->redirect('in');
 	}
 

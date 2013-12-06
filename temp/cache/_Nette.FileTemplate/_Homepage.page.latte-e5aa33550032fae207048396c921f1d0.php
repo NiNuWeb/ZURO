@@ -1,25 +1,27 @@
-<?php //netteCache[01]000388a:2:{s:4:"time";s:21:"0.14037300 1385398399";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:66:"C:\xampp\htdocs\ZURO\app\FrontModule\templates\Homepage\page.latte";i:2;i:1385397820;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000388a:2:{s:4:"time";s:21:"0.14556200 1386276695";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:66:"C:\xampp\htdocs\ZURO\app\FrontModule\templates\Homepage\page.latte";i:2;i:1386276692;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\FrontModule\templates\Homepage\page.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'yckqhqn360')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'ayuor2ctvl')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block MiniLogin
 //
-if (!function_exists($_l->blocks['MiniLogin'][] = '_lb7f9aea3ae4_MiniLogin')) { function _lb7f9aea3ae4_MiniLogin($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['MiniLogin'][] = '_lb8935c6ffa0_MiniLogin')) { function _lb8935c6ffa0_MiniLogin($_l, $_args) { extract($_args)
 ;if ($user->isLoggedIn()): ?>
 		<div class="pull-right col-lg-7">
-			<p><b>Logged As:</b> <?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->username, ENT_NOQUOTES) ?></p>
-			<p><b>Permission:</b> <?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->role, ENT_NOQUOTES) ?></p>
+			<p><b><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.miniLoginForm.logged_as"), ENT_NOQUOTES) ?>
+:</b> <?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->username, ENT_NOQUOTES) ?></p>
+			<p><b><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.miniLoginForm.permission"), ENT_NOQUOTES) ?>
+:</b> <?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->role, ENT_NOQUOTES) ?></p>
 			<p><a class="btn btn-info btn-sm pull-left" href="<?php echo htmlSpecialChars($_control->link("logout!")) ?>
-">Log out</a></p>
+"><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.miniLoginForm.logout"), ENT_NOQUOTES) ?></a></p>
 <?php if ($user->isAllowed('Admin:Default')): ?>
 				<a class="btn btn-danger btn-sm pull-right" href="<?php echo htmlSpecialChars($_control->link(":Admin:Default:")) ?>
-">Administration</a>
+"><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.miniLoginForm.administration"), ENT_NOQUOTES) ?></a>
 <?php endif ?>
 		</div>
 <?php else: $_ctrl = $_control->getComponent("miniLoginForm"); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render() ;endif ;
@@ -28,7 +30,7 @@ if (!function_exists($_l->blocks['MiniLogin'][] = '_lb7f9aea3ae4_MiniLogin')) { 
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lbbb5edbff60_content')) { function _lbbb5edbff60_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb0dceebde35_content')) { function _lb0dceebde35_content($_l, $_args) { extract($_args)
 ;call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())  ?>
 <p><?php echo $template->texy($page->text) ?></p>
 
@@ -38,7 +40,7 @@ if (!function_exists($_l->blocks['content'][] = '_lbbb5edbff60_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb92b59ce633_title')) { function _lb92b59ce633_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbb76d055d02_title')) { function _lbb76d055d02_title($_l, $_args) { extract($_args)
 ?><h2><?php echo Nette\Templating\Helpers::escapeHtml($page->title, ENT_NOQUOTES) ?></h2>
 <?php
 }}
@@ -46,11 +48,11 @@ if (!function_exists($_l->blocks['title'][] = '_lb92b59ce633_title')) { function
 //
 // block news
 //
-if (!function_exists($_l->blocks['news'][] = '_lbbed8da35e8_news')) { function _lbbed8da35e8_news($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['news'][] = '_lb2ccfaf10d4_news')) { function _lb2ccfaf10d4_news($_l, $_args) { extract($_args)
 ;if (count($news)): ?>
 		<div id="news">
 			<div class="container well">
-				<h2>News</h2>
+				<h2><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.page.news"), ENT_NOQUOTES) ?></h2>
 				<div class="row">
 <?php $iterations = 0; foreach ($news as $new): ?>
 						<div class="col-md-4">

@@ -49,7 +49,7 @@ class HomepagePresenter extends BasePresenter
 		$this->menu = $this->pages->getMenu();
 
 		if (!$this->page) {
-			throw new BadRequestException('Stránka sa nenašla!', 404);
+			throw new BadRequestException($this->translator->translate("messages.requests.404"), 404);
 		}
 	}
 
@@ -65,17 +65,17 @@ class HomepagePresenter extends BasePresenter
 		
 		$renderer->wrappers['control']['.submit'] = 'btn';
 
-		$form->addText('username', '')
+		$form->addText('username', NULL)
 			->setAttribute('class', 'form-control input-sm')
-			->setAttribute('placeholder', 'Username')
-			->addRule(Form::FILLED, 'Please enter username.');
-		$form->addPassword('password', '')
+			->setAttribute('placeholder', $this->translator->translate("messages.miniLoginForm.username"))
+			->addRule(Form::FILLED, $this->translator->translate("messages.miniLoginForm.enterusername"));
+		$form->addPassword('password', NULL)
 			->setAttribute('class', 'form-control input-sm')
-			->setAttribute('placeholder', 'Password')
-			->addRule(Form::FILLED, 'Please enter password');
-		$form->addSubmit('login', 'Login')
+			->setAttribute('placeholder', $this->translator->translate("messages.miniLoginForm.password"))
+			->addRule(Form::FILLED, $this->translator->translate("messages.miniLoginForm.enterpassword"));
+		$form->addSubmit('login', $this->translator->translate("messages.miniLoginForm.login"))
 			->setAttribute('class', 'btn-sm btn-primary pull-left');	
-		$form->addSubmit('register', 'Registration')
+		$form->addSubmit('register', $this->translator->translate("messages.miniLoginForm.registration"))
 			->setValidationScope(FALSE)
 			->setAttribute('class', 'btn-sm btn-link pull-right')
 			->onClick[] = $this->redirectToRegistration;	
@@ -134,7 +134,7 @@ class HomepagePresenter extends BasePresenter
 	 */
 	public function handleLogout() {
 		$this->user->logOut();
-		$this->flashMessage('You Were Logged Off.');
+		$this->flashMessage($this->translator->translate("messages.actions.logoff"));
 		$this->redirect('this');
 	}
 

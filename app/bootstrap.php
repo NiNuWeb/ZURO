@@ -25,6 +25,9 @@ $configurator->createRobotLoader()
 // Create Dependency Injection container from config.neon file
 $configurator->addConfig(__DIR__ . '/config/config.neon');
 $configurator->addConfig(__DIR__ . '/config/config.local.neon', $configurator::NONE); // none section
+
+Kdyby\Translation\DI\TranslationExtension::register($configurator);
+
 $container = $configurator->createContainer();
 
 Container::extensionMethod('addOptionList', function (Container $container, $name, $label = NULL, array $items = NULL) {
@@ -39,5 +42,6 @@ Container::extensionMethod('addDatePicker', function (Container $container, $nam
 Container::extensionMethod('addDateTimePicker', function (Container $container, $name, $label = NULL) {
     return $container[$name] = new Controls\DateTimePicker($label);
 });
+
 
 return $container;

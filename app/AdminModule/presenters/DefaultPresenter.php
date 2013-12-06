@@ -3,6 +3,7 @@
 namespace AdminModule;
 
 use Nette\Application\UI\Form as Form;
+use Kdyby\BootstrapFormRenderer\BootstrapRenderer;
 
 class DefaultPresenter extends BasePresenter {
 

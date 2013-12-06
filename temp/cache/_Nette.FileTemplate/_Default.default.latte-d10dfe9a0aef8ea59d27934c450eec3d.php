@@ -1,16 +1,16 @@
-<?php //netteCache[01]000390a:2:{s:4:"time";s:21:"0.66204700 1384861622";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:68:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\Default\default.latte";i:2;i:1384537460;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000390a:2:{s:4:"time";s:21:"0.71790000 1386253715";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:68:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\Default\default.latte";i:2;i:1386253695;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\AdminModule\templates\Default\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'fn4e5ueze8')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '8jv4vnx3bw')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb508520190d_content')) { function _lb508520190d_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbad0d667201_content')) { function _lbad0d667201_content($_l, $_args) { extract($_args)
 ?><h1>Admin Page</h1>
 
 <div class="row">

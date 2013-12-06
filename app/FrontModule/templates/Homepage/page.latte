@@ -1,11 +1,11 @@
 {block MiniLogin}
 	{if$user->isLoggedIn()}
 		<div class="pull-right col-lg-7">
-			<p><b>Logged As:</b> {$user->getIdentity()->username}</p>
-			<p><b>Permission:</b> {$user->getIdentity()->role}</p>
-			<p><a n:href="logout!" class="btn btn-info btn-sm pull-left">Log out</a></p>
+			<p><b>{_messages.miniLoginForm.logged_as}:</b> {$user->getIdentity()->username}</p>
+			<p><b>{_messages.miniLoginForm.permission}:</b> {$user->getIdentity()->role}</p>
+			<p><a n:href="logout!" class="btn btn-info btn-sm pull-left">{_messages.miniLoginForm.logout}</a></p>
 			{if$user->isAllowed('Admin:Default')}
-				<a n:href=":Admin:Default:" class="btn btn-danger btn-sm pull-right">Administration</a>
+				<a n:href=":Admin:Default:" class="btn btn-danger btn-sm pull-right">{_messages.miniLoginForm.administration}</a>
 			{/if}
 		</div>
 	{else}
@@ -24,7 +24,7 @@
 	{if count($news)}
 		<div id="news">
 			<div class="container well">
-				<h2>News</h2>
+				<h2>{_messages.page.news}</h2>
 				<div class="row">
 					{foreach $news as $new}
 						<div class="col-md-4">

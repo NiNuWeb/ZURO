@@ -11,6 +11,11 @@ common:
 		date.timezone: Europe/Prague
 		# zlib.output_compression: yes
 
+	translation:
+		default: en
+		fallback: [en_EN, en]
+		whitelist: ['en', 'sk']
+
 	nette:
 		application:
 			errorPresenter: Error

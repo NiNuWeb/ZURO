@@ -1,23 +1,23 @@
-<?php //netteCache[01]000388a:2:{s:4:"time";s:21:"0.24060700 1384949205";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:66:"C:\xampp\htdocs\ZURO\app\FrontModule\templates\@registration.latte";i:2;i:1384522692;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000388a:2:{s:4:"time";s:21:"0.38248700 1386324663";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:66:"C:\xampp\htdocs\ZURO\app\FrontModule\templates\@registration.latte";i:2;i:1386324657;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\FrontModule\templates\@registration.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '842ukhx8i4')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'q97pzb9mth')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbcabd28b623_title')) { function _lbcabd28b623_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbe234ebbc8d_title')) { function _lbe234ebbc8d_title($_l, $_args) { extract($_args)
 ?>ZURO App<?php
 }}
 
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb079a8efd2f_scripts')) { function _lb079a8efd2f_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb208e1d8a5a_scripts')) { function _lb208e1d8a5a_scripts($_l, $_args) { extract($_args)
 ?>	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/jquery.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/bootstrap.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/netteForms.js"></script>
@@ -69,6 +69,12 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
 	<div id="header">
 		<div class="container header-bg well">
 			<div class="row">
+				<div class="lang">
+					<a href="<?php echo htmlSpecialChars($_control->link("changeLocale!", array('en'))) ?>
+"><img src="<?php echo htmlSpecialChars($basePath) ?>/images/gb.png" alt="English" title="English" /></a>
+					<a href="<?php echo htmlSpecialChars($_control->link("changeLocale!", array('sk'))) ?>
+"><img src="<?php echo htmlSpecialChars($basePath) ?>/images/sk.png" alt="Slovak" title="Slovak" /></a>
+				</div>
 				<div class="col-md-8">
 					<h1 class="header-a"><a href="<?php echo htmlSpecialChars($_control->link("Homepage:page")) ?>
 "><b>ZURO</b> Development</a><img src="<?php echo htmlSpecialChars($basePath) ?>/images/header-img.jpg" /></h1>

@@ -1,0 +1,48 @@
+page:
+	news: News
+	home: Home
+
+miniLoginForm:
+	username: Username
+	password: Password
+	login: Login
+	registration: Registration
+	logged_as: Logged As
+	permission: Permission
+	logout: Log Out
+	administration: Administration
+	enterusername: Please enter username.
+	enterpassword: Please enter password.
+
+requests:
+	404: The Page was Not Found.
+
+actions:
+	logoff: You Were Logged Off.
+	backtohome: Back To Homepage
+
+registerForm:
+	title: Registration Form
+	username: Username
+	password: Password
+	enterusername: Please enter username.
+	enterpassword: Please enter password.
+	minChar: Minimal 6 characters
+	passChar: The Password must be min %d characters long.
+	passAgain: Password again
+	passAgainPlease: Password again please.
+	passMatch: Passwords must match.
+	enterEmail: Please enter your e-mail
+	invalidEmail: Invalid E-mail address!
+	register: Register
+	registerSucc: You were successfully registered.
+
+signInForm:
+	title: Sign In
+	username: Username
+	password: Password
+	enterusername: Please enter username.
+	enterpassword: Please enter password.
+	keepSigned: Keep me signed in
+	signIn: Sign In
+	logOut: You have been Logout.

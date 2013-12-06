@@ -1,0 +1,48 @@
+page:
+	news: Novinky
+	home: Domov
+
+miniLoginForm:
+	username: Používateľské meno
+	password: Heslo
+	login: Prihlásiť
+	registration: Registrácia
+	logged_as: Prihlásený ako
+	permission: Oprávnenie
+	logout: Odhlásiť
+	administration: Administrácia
+	enterusername: Prosím zadajte používateľské meno.
+	enterpassword: Prosím zadajte Vaše heslo.
+
+requests:
+	404: Stránka sa nenašla.
+
+actions:
+	logoff: Boli ste úspešne odhlásený.
+	backtohome: Späť na hlavnú stránku
+
+registerForm:
+	title: Registračný Formulár
+	username: Používateľské meno
+	password: Heslo
+	enterusername: Prosím zadajte používateľské meno.
+	enterpassword: Prosím zadajte Vaše heslo.
+	minChar: Minimálne 6 znakov
+	passChar: Heslo musí mať minimálne %d znakov.
+	passAgain: Heslo znova
+	passAgainPlease: Prosím zadajte znova heslo.
+	passMatch: Heslá sa musia zhodovať.
+	enterEmail: Prosím zadajte Váš e-mail
+	invalidEmail: Neplatná e-mailová adresa!
+	register: Zaregistruj
+	registerSucc: Boli ste úspešne zaregistrovaný.
+
+signInForm:
+	title: Prihlásiť sa
+	username: Používateľské meno
+	password: Heslo
+	enterusername: Prosím zadajte používateľské meno.
+	enterpassword: Prosím zadajte Vaše heslo.
+	keepSigned: Ostať prihlásený
+	signIn: Prihlásiť
+	logOut: Boli ste odhlásený.
