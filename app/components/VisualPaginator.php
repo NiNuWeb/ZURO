@@ -38,7 +38,12 @@ class VisualPaginator extends Control
 	/** @persistent */
 	public $page = 1;
 
-
+	public function createTemplate($class = NULL)
+	{
+	    $template = parent::createTemplate($class);
+	    $template->setTranslator($this->parent->translator);
+	    return $template;
+	}
 
 	/**
 	 * @return Nette\Paginator

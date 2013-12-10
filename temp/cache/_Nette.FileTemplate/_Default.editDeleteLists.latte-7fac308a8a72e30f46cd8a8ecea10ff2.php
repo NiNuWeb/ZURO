@@ -1,23 +1,23 @@
-<?php //netteCache[01]000398a:2:{s:4:"time";s:21:"0.12929700 1386235086";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:76:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\Default\editDeleteLists.latte";i:2;i:1386235070;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000398a:2:{s:4:"time";s:21:"0.22075700 1386602791";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:76:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\Default\editDeleteLists.latte";i:2;i:1386602783;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\AdminModule\templates\Default\editDeleteLists.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '93cid4flbn')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'prcsfdqxw4')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb6b960aecd9_content')) { function _lb6b960aecd9_content($_l, $_args) { extract($_args)
-?><h1>Edit/Delete Lists</h1>
+if (!function_exists($_l->blocks['content'][] = '_lb9b775924d8_content')) { function _lb9b775924d8_content($_l, $_args) { extract($_args)
+?><h1><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.default.edLists"), ENT_NOQUOTES) ?></h1>
 
 <div class="row">
 
 	<div class="col-md-2 right-border">
 		<div id="sidebar">
-			<h3>Lists Category</h3>
+			<h3><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.default.listsCat"), ENT_NOQUOTES) ?></h3>
 
 			<div class="task-list">
 				<ul>
@@ -28,20 +28,20 @@ if (!function_exists($_l->blocks['content'][] = '_lb6b960aecd9_content')) { func
 			</div>
 
 			<div id="new-list">
-				<h4>Add New List</h4>
+				<h4><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.default.addList"), ENT_NOQUOTES) ?></h4>
 <?php $_ctrl = $_control->getComponent("newListForm"); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render() ?>
 			</div>
 
 		<p>&nbsp;</p>	
-		<a href="<?php echo htmlSpecialChars($_control->link("default:")) ?>">Back to Admin Homepage</a>
+		<a href="<?php echo htmlSpecialChars($_control->link("default:")) ?>"><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.default.backToAdminFront"), ENT_NOQUOTES) ?></a>
 
 		</div>
 	</div>
 
 	<div class="col-md-6">
 
-		<h3>Edit/Delete Lists</h3>
-		<small>WARNING! If you delete list, all tasks belongs to this list will be deleted too!</small>
+		<h3><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.default.edLists"), ENT_NOQUOTES) ?></h3>
+		<small><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.default.warningLists"), ENT_NOQUOTES) ?></small>
 <div id="<?php echo $_control->getSnippetId('tableLists') ?>"><?php call_user_func(reset($_l->blocks['_tableLists']), $_l, $template->getParameters()) ?>
 </div>	</div>
 
@@ -51,12 +51,12 @@ if (!function_exists($_l->blocks['content'][] = '_lb6b960aecd9_content')) { func
 //
 // block _tableLists
 //
-if (!function_exists($_l->blocks['_tableLists'][] = '_lb95568245e1__tableLists')) { function _lb95568245e1__tableLists($_l, $_args) { extract($_args); $_control->validateControl('tableLists')
+if (!function_exists($_l->blocks['_tableLists'][] = '_lb466fa2bc5d__tableLists')) { function _lb466fa2bc5d__tableLists($_l, $_args) { extract($_args); $_control->validateControl('tableLists')
 ?>		<table class="lists table table-striped">
 			<thead class="todo">
 				<tr>
-					<th>Title</th>
-					<th class="action">Action</th>
+					<th><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.default.title"), ENT_NOQUOTES) ?></th>
+					<th class="action"><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.default.action"), ENT_NOQUOTES) ?></th>
 				</tr>	
 			</thead>
 			<tbody>
@@ -64,8 +64,9 @@ if (!function_exists($_l->blocks['_tableLists'][] = '_lb95568245e1__tableLists')
 				<tr>
 					<td class="title"><?php echo Nette\Templating\Helpers::escapeHtml($list->title, ENT_NOQUOTES) ?></td>	
 					<td class="action"><a href="<?php echo htmlSpecialChars($_control->link("Default:editList", array($list->id))) ?>
-"><i class="glyphicon glyphicon-pencil">&nbsp;</i>Edit</a> | <a class="ajax" href="<?php echo htmlSpecialChars($_control->link("deleteList!", array($list->id))) ?>
-"><i class="glyphicon glyphicon-trash">&nbsp;</i>Delete</a></td>
+"><i class="glyphicon glyphicon-pencil">&nbsp;</i><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.default.edit"), ENT_NOQUOTES) ?>
+</a> | <a class="ajax" href="<?php echo htmlSpecialChars($_control->link("deleteList!", array($list->id))) ?>
+"><i class="glyphicon glyphicon-trash">&nbsp;</i><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.default.delete"), ENT_NOQUOTES) ?></a></td>
 				</tr>
 <?php $iterations++; endforeach ?>
 			</tbody>

@@ -1,6 +1,6 @@
 {block #content}
 
-<h2>Manage Main Menu</h2>
+<h2>{_messages.admin.menu.manageMenu}</h2>
 <br />
 <div class="table-responsive col-md-9">
 	{snippet tablePages}
@@ -8,11 +8,11 @@
 	<table class="table table-hover">
 		<thead>
 			<tr class="th-pages">
-				<th>Page Title</th>
-				<th>Slug</th>
-				<th>Text</th>
-				<th>Position</th>
-				<th>Action</th>
+				<th>{_messages.admin.menu.pageTitle}</th>
+				<th>{_messages.admin.menu.slug}</th>
+				<th>{_messages.admin.menu.text}</th>
+				<th>{_messages.admin.menu.position}</th>
+				<th>{_messages.admin.menu.action}</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -22,11 +22,11 @@
 				<td>{$item->slug}</td>
 				<td>{$item->text|truncate:50}</td>
 				<td>{$item->position}</td>
-				<td><a n:href="Pages:editPage $item->id"><i class="glyphicon glyphicon-pencil">&nbsp;</i>Edit</a> | <a n:href="confirmForm:confirmDelete! id => $item->id, title => $item->title"><i class="glyphicon glyphicon-trash">&nbsp;</i>Delete</a></td>
+				<td><a n:href="Pages:editPage $item->id"><i class="glyphicon glyphicon-pencil">&nbsp;</i>{_messages.admin.menu.edit}</a> | <a n:href="confirmForm:confirmDelete! id => $item->id, title => $item->title"><i class="glyphicon glyphicon-trash">&nbsp;</i>{_messages.admin.menu.delete}</a></td>
 			</tr>
 		{/foreach}
 		</tbody>
 	</table>
 	{/snippet}
-	<a n:href="Pages:AddPage" class="btn btn-warning"><i class="glyphicon glyphicon-plus-sign">&nbsp;</i><b>Add Page</b></a>
+	<a n:href="Pages:AddPage" class="btn btn-warning"><i class="glyphicon glyphicon-plus-sign">&nbsp;</i><b>{_messages.admin.menu.addPage}</b></a>
 </div>

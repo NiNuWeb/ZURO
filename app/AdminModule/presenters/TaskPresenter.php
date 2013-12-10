@@ -66,14 +66,14 @@ class TaskPresenter extends BasePresenter {
 		$userPairs = $this->usersRepository->findAll()->fetchPairs('id', 'username');
 
 		$form = new Form;
-		$form->addText('text', 'Task:', 40, 100)
-			->addRule(Form::FILLED, 'You must fill task field.');
+		$form->addText('text', $this->translator->translate('messages.admin.task.task').':', 40, 100)
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.task.fillTask'));
 		$prompt = Html::el('option')->setText("- Select -")->class('prompt');	
-		$form->addSelect('userId', 'For:', $userPairs)
+		$form->addSelect('userId', $this->translator->translate('messages.admin.task.for').':', $userPairs)
 			->setPrompt($prompt)
-			->addRule(Form::FILLED, 'Please select username, for who\'s the task is.')
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.task.fillFor'))
 			->setDefaultValue($this->getUser()->getId());
-		$form->addSubmit('create', 'Add')
+		$form->addSubmit('create', $this->translator->translate('messages.admin.task.add'))
 			->setAttribute('class', 'btn btn-success');
 		$form->onSuccess[] = $this->taskFormSubmitted;	
 		return $form;		
@@ -84,7 +84,7 @@ class TaskPresenter extends BasePresenter {
 	 */
 	public function taskFormSubmitted(Form $form) {
 		$this->taskRepository->createTask($this->list->id, $form->values->text, $form->values->userId);
-		$this->flashMessage('Task successfully added.', 'success');
+		$this->flashMessage($this->translator->translate('messages.admin.task.addTaskSucc'), 'success');
 		if (!$this->isAjax()) {
 			$this->redirect('this');	
 		} else {

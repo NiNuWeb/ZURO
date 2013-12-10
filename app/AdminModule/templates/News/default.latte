@@ -1,6 +1,6 @@
 {block #content}
 
-<h2>Manage News</h2>
+<h2>{_messages.admin.news.manageNews}</h2>
 <br />
 <div class="table-responsive col-md-9">
 	{snippet tableNews}
@@ -8,11 +8,11 @@
 	<table class="table table-hover news">
 		<thead>
 			<tr>
-				<th>News Title</th>
-				<th>Body</th>
-				<th>Creation Time</th>
-				<th>Created By</th>
-				<th>Action</th>
+				<th>{_messages.admin.news.title}</th>
+				<th>{_messages.admin.news.body}</th>
+				<th>{_messages.admin.news.creationTime}</th>
+				<th>{_messages.admin.news.createdBy}</th>
+				<th>{_messages.admin.news.action}</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -22,11 +22,11 @@
 				<td>{$news->body|truncate:30}</td>
 				<td>{$news->date|date:'j.n.Y H:i:s'}</td>
 				<td>{$news->users->username}</td>
-				<td><a n:href="News:editNews $news->id"><i class="glyphicon glyphicon-pencil">&nbsp;</i>Edit</a> | <a n:href="confirmForm:confirmDelete! id => $news->id, title => $news->title"><i class="glyphicon glyphicon-trash">&nbsp;</i>Delete</a></td>
+				<td><a n:href="News:editNews $news->id"><i class="glyphicon glyphicon-pencil">&nbsp;</i>{_messages.admin.news.edit}</a> | <a n:href="confirmForm:confirmDelete! id => $news->id, title => $news->title"><i class="glyphicon glyphicon-trash">&nbsp;</i>{_messages.admin.news.delete}</a></td>
 			</tr>
 		{/foreach}
 		</tbody>
 	</table>
 	{/snippet}
-	<a n:href="News:AddNews" class="btn btn-danger"><i class="glyphicon glyphicon-plus-sign">&nbsp;</i><b>Add News</b></a>
+	<a n:href="News:AddNews" class="btn btn-danger"><i class="glyphicon glyphicon-plus-sign">&nbsp;</i><b>{_messages.admin.news.addNews}</b></a>
 </div>

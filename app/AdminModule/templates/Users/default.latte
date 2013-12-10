@@ -1,6 +1,6 @@
 {block #content}
 
-<h2>Manage Users</h2>
+<h2>{_messages.admin.home.manageUsers}</h2>
 <br />
 <div class="table-responsive col-md-8">
 	{snippet tableUsers}
@@ -8,10 +8,10 @@
 	<table class="table table-hover">
 		<thead>
 			<tr class="th-user">
-				<th>Username</th>
-				<th>Email</th>
-				<th>Role</th>
-				<th>Action</th>
+				<th>{_messages.admin.user.username}</th>
+				<th>{_messages.admin.user.email}</th>
+				<th>{_messages.admin.user.role}</th>
+				<th>{_messages.admin.user.action}</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -20,11 +20,11 @@
 				<td>{$user->username}</td>
 				<td>{$user->email}</td>
 				<td>{$user->role}</td>
-				<td><a n:href="Users:editUser $user->id"><i class="glyphicon glyphicon-pencil">&nbsp;</i>Edit</a> | <a n:href="confirmForm:confirmDelete! id => $user->id, username => $user->username"><i class="glyphicon glyphicon-trash">&nbsp;</i>Delete</a></td>
+				<td><a n:href="Users:editUser $user->id"><i class="glyphicon glyphicon-pencil">&nbsp;</i>{_messages.admin.user.edit}</a> | <a n:href="confirmForm:confirmDelete! id => $user->id, username => $user->username"><i class="glyphicon glyphicon-trash">&nbsp;</i>{_messages.admin.user.delete}</a></td>
 			</tr>
 		{/foreach}
 		</tbody>
 	</table>
 	{/snippet}
-	<a n:href="Users:addUser" class="btn btn-success"><i class="glyphicon glyphicon-plus-sign">&nbsp;</i><b>Add User</b></a>
+	<a n:href="Users:addUser" class="btn btn-success"><i class="glyphicon glyphicon-plus-sign">&nbsp;</i><b>{_messages.admin.user.addUser}</b></a>
 </div>

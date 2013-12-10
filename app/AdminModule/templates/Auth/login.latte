@@ -1,4 +1,11 @@
 {block #content}
-<h2>Login to Administration Page</h2>
-<p class="lead">Authorized Stuff Only</p>
+<h2>{_messages.admin.auth.loginFormTitle}</h2>
+<p class="lead">{_messages.admin.auth.authorizedStuff}</p>
 {control loginForm}
+{/block}
+{block scripts}
+	<script src="{$basePath}/js/jquery.js"></script>
+	<script src="{$basePath}/js/bootstrap.js"></script>
+	<script src="{$basePath}/js/live-form-validation.js"></script>
+	<script src="{$basePath}/js/jquery.ajaxform.js"></script>
+{/block}

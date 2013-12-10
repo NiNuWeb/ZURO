@@ -23,7 +23,7 @@ abstract class BasePresenter extends \BasePresenter {
 
 			} else {
 				if (!$this->user->isAllowed($this->name, $this->action)) {
-					$this->flashMessage('Access Denied!', 'warning');
+					$this->flashMessage($this->translator->translate('messages.actions.accessDenied'), 'warning');
 					$this->redirect('Default:');
 				}
 			}
@@ -36,7 +36,7 @@ abstract class BasePresenter extends \BasePresenter {
 	 */
 	public function handleLogout() {
 		$this->user->logOut();
-		$this->flashMessage('You Were Logged Off.');
+		$this->flashMessage($this->translator->translate('messages.actions.logoff'));
 		$this->redirect(':Front:Homepage:page', array(
 			'backlink' => NULL
 		));

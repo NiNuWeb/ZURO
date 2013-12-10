@@ -10,7 +10,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter {
 	public $locale;
 
 	/** @var \Kdyby\Translation\Translator */
-	protected $translator;
+	public $translator;
 
 	/*protected function beforeRender()
 	{

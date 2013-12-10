@@ -52,34 +52,34 @@ class UsersPresenter extends BasePresenter {
 		$renderer->wrappers['control']['.submit'] = 'btn';
 
 
-		$form->addText('username', 'Username: *')
+		$form->addText('username', $this->translator->translate('messages.admin.user.username').': *')
 			->setAttribute('class', 'form-control')
-			->addRule(Form::FILLED, 'Please enter username.');
-		$form->addPassword('password', 'Password: *', 20)
-			->setOption('description', '(Mininal 6 characters)')
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.user.fillUsername'));
+		$form->addPassword('password', $this->translator->translate('messages.admin.user.password').': *', 20)
+			->setOption('description', $this->translator->translate('messages.admin.user.minChar'))
 			->setAttribute('class', 'form-control')
-			->addRule(Form::FILLED, 'Please enter password.')
-			->addRule(Form::MIN_LENGTH, 'The Password must be min %d characters long.', 6);
-		$form->addText('first_name', 'First Name')
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.user.fillPass'))
+			->addRule(Form::MIN_LENGTH, $this->translator->translate('messages.admin.user.minPassChar'), 6);
+		$form->addText('first_name', $this->translator->translate('messages.admin.user.firstName'))
 			->setAttribute('class', 'form-control');
-		$form->addText('last_name', 'Last Name')
+		$form->addText('last_name', $this->translator->translate('messages.admin.user.lastName'))
 			->setAttribute('class', 'form-control');		
-		$form->addText('email', 'E-mail: *', 35)
+		$form->addText('email', $this->translator->translate('messages.admin.user.email').': *', 35)
 			->setEmptyValue('@')
 			->setAttribute('class', 'form-control')
-			->addRule(Form::FILLED, 'Please enter your e-mail.')
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.user.fillEmail'))
 			->addCondition(Form::FILLED)
-				->addRule(Form::EMAIL, 'Invalid E-mail address!');
-		$form->addSelect('active', 'Active: ', array(0 => 'no',1 => 'yes'))
+				->addRule(Form::EMAIL, $this->translator->translate('messages.admin.user.invalidEmail'));
+		$form->addSelect('active', $this->translator->translate('messages.admin.user.active').': ', array(0 => 'no',1 => 'yes'))
 			->setValue(1)
 			->setAttribute('class', 'form-control');
-		$form->addSelect('role', 'Role: ')
+		$form->addSelect('role', $this->translator->translate('messages.admin.user.role').': ')
 			->setItems($user_roles, FALSE)
 			->setValue('guest')
 			->setAttribute('class', 'form-control');
-		$form->addTextArea('profile', 'Profile: ')
-			->addRule(Form::MAX_LENGTH, 'Text is too long, you can write only 100 characters.', 100);				
-		$form->addSubmit('adduser', 'Add User')
+		$form->addTextArea('profile', $this->translator->translate('messages.admin.user.profile').': ')
+			->addRule(Form::MAX_LENGTH, $this->translator->translate('messages.admin.user.maxProfText'), 100);				
+		$form->addSubmit('adduser', $this->translator->translate('messages.admin.user.addUser'))
 			->setAttribute('class', 'btn-success pull-left');
 		$form->onSuccess[] = callback($this, 'addUserFormSubmitted');
 		return $form;
@@ -92,7 +92,7 @@ class UsersPresenter extends BasePresenter {
 		$values = $form->getValues();
 		$new_user = $this->users->addUser($values);
 		if ($new_user) {
-			$this->flashMessage('You have successfully added a new user.', 'success');
+			$this->flashMessage($this->translator->translate('messages.admin.user.addUserSucc'), 'success');
 			$this->redirect('Users:default');
 		}
 	}
@@ -115,37 +115,37 @@ class UsersPresenter extends BasePresenter {
 		$renderer->wrappers['control']['.submit'] = 'btn';
 
 
-		$form->addText('username', 'Username: *')
+		$form->addText('username', $this->translator->translate('messages.admin.user.username').': *')
 			->setAttribute('class', 'form-control')
 			->setDefaultValue($getUser->username)
-			->addRule(Form::FILLED, 'Please enter username.');
-		$form->addPassword('password', 'Password: *', 20)
-			->setOption('description', '(Mininal 6 characters)')
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.user.fillUsername'));
+		$form->addPassword('password', $this->translator->translate('messages.admin.user.password').': *', 20)
+			->setOption('description', $this->translator->translate('messages.admin.user.minChar'))
 			->setAttribute('class', 'form-control');
-		$form->addText('first_name', 'First Name')
+		$form->addText('first_name', $this->translator->translate('messages.admin.user.firstName'))
 			->setAttribute('class', 'form-control')
 			->setDefaultValue($getUser->first_name);
-		$form->addText('last_name', 'Last Name')
+		$form->addText('last_name', $this->translator->translate('messages.admin.user.lastName'))
 			->setAttribute('class', 'form-control')
 			->setDefaultValue($getUser->last_name);		
-		$form->addText('email', 'E-mail: *', 35)
+		$form->addText('email', $this->translator->translate('messages.admin.user.email').': *', 35)
 			->setEmptyValue('@')
 			->setAttribute('class', 'form-control')
 			->setDefaultValue($getUser->email)
-			->addRule(Form::FILLED, 'Please enter your e-mail.')
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.user.fillEmail'))
 			->addCondition(Form::FILLED)
-				->addRule(Form::EMAIL, 'Invalid E-mail address!');
-		$form->addSelect('active', 'Active: ', array(0 => 'no',1 => 'yes'))
+				->addRule(Form::EMAIL, $this->translator->translate('messages.admin.user.invalidEmail'));
+		$form->addSelect('active', $this->translator->translate('messages.admin.user.active').': ', array(0 => 'no',1 => 'yes'))
 			->setValue($getUser->active)
 			->setAttribute('class', 'form-control');
-		$form->addSelect('role', 'Role: ')
+		$form->addSelect('role', $this->translator->translate('messages.admin.user.role').': ')
 			->setItems($user_roles, FALSE)
 			->setValue($getUser->role)
 			->setAttribute('class', 'form-control');
-		$form->addTextArea('profile', 'Profile: ')
+		$form->addTextArea('profile', $this->translator->translate('messages.admin.user.profile').': ')
 			->setValue($getUser->profile)
-			->addRule(Form::MAX_LENGTH, 'Text is too long, you can write only 100 characters.', 100);				
-		$form->addSubmit('edituser', 'Edit User')
+			->addRule(Form::MAX_LENGTH, $this->translator->translate('messages.admin.user.maxProfText'), 100);				
+		$form->addSubmit('edituser', $this->translator->translate('messages.admin.user.editUser'))
 			->setAttribute('class', 'btn-success pull-left');
 		$form->onSuccess[] = callback($this, 'editUserFormSubmitted');
 		return $form;
@@ -162,7 +162,7 @@ class UsersPresenter extends BasePresenter {
 			unset($values->password);
 		}
 		if ($this->users->editUser($userid, $values)) {
-			$this->flashMessage('User was successfully edited.', 'success');
+			$this->flashMessage($this->translator->translate('messages.admin.user.editUserSucc'), 'success');
 			$this->redirect('Users:default');
 		}
 	}
@@ -192,7 +192,7 @@ class UsersPresenter extends BasePresenter {
 	 */
 	public function questionDelete($dialog, $params) {
 		$dialog->getQuestionPrototype();
-		return "Do You Really Want Delete User:  $params[username] ?";
+		return $this->translator->translate('messages.admin.user.deleteUserConfirm').":  $params[username] ?";
 	}
 
 	/**
@@ -202,7 +202,7 @@ class UsersPresenter extends BasePresenter {
 	public function deleteUser($id) {
 		$this->users->deleteUser($id);
 		if (!$this->presenter->isAjax()) {
-			$this->flashMessage('User was successfully deleted!', 'delete');
+			$this->flashMessage($this->translator->translate('messages.admin.user.deleteUser'), 'delete');
 			$this->redirect('Users:default');
 		} else {
 			$this->invalidateControl('tableUsers');

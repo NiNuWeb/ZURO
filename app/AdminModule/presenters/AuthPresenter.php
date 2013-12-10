@@ -26,13 +26,13 @@ class AuthPresenter extends BasePresenter {
 		$renderer->wrappers['pair']['container'] = 'div class="form-group"';
 		$renderer->wrappers['control']['.submit'] = 'btn';
 
-		$form->addText('username', 'Username:')
+		$form->addText('username', $this->translator->translate('messages.admin.auth.username').':')
 			->setAttribute('class', 'form-control')
-			->addRule(Form::FILLED, 'Enter Username');
-		$form->addPassword('password', 'Password:')
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.auth.enterUsername'));
+		$form->addPassword('password', $this->translator->translate('messages.admin.auth.password').':')
 			->setAttribute('class', 'form-control')
-			->addRule(Form::FILLED, 'Enter Password');
-		$form->addSubmit('send', 'Log In')
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.auth.enterPass'));
+		$form->addSubmit('send', $this->translator->translate('messages.admin.auth.login'))
 			->setAttribute('class', 'btn-danger pull-left');;
 		
 		$form->onSuccess[] = $this->processLoginForm;

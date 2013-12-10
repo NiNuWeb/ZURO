@@ -34,16 +34,18 @@
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 					<span class="glyphicon glyphicon-list"></span>
 				</button>
-				<a n:href="default:" class="navbar-brand">ZURO Development | Administration</a>
+				<a n:href="default:" class="navbar-brand">ZURO Development | {_messages.admin.home.administration}</a>
 			</div>
 			
 			<div class="navbar-collapse collapse">
 				<ul class="admin-nav nav navbar-nav">
-					<li><a n:href="Users:default"><i class="glyphicon glyphicon-user">&nbsp;</i>Manage Users</a></li>
-					<li><a n:href="Pages:default"><i class="glyphicon glyphicon-file">&nbsp;</i>Manage Pages</a></li>
-					<li><a n:href="News:default"><i class="glyphicon glyphicon-globe">&nbsp;</i>Manage News</a></li>
-					<li><a n:href="logout!"><i class="glyphicon glyphicon-off">&nbsp;</i>{$user->getIdentity()->username} - Logout</a></li>
+					<li><a n:href="Users:default"><i class="glyphicon glyphicon-user">&nbsp;</i>{_messages.admin.home.manageUsers}</a></li>
+					<li><a n:href="Pages:default"><i class="glyphicon glyphicon-file">&nbsp;</i>{_messages.admin.home.managePages}</a></li>
+					<li><a n:href="News:default"><i class="glyphicon glyphicon-globe">&nbsp;</i>{_messages.admin.home.manageNews}</a></li>
+					<li><a n:href="logout!"><i class="glyphicon glyphicon-off">&nbsp;</i>{$user->getIdentity()->username} - {_messages.admin.home.logout}</a></li>
 				</ul>
+				<a n:href="changeLocale!, en" class="admin-lang"><img src="{$basePath}/images/gb.png" alt="English" title="English"></a>
+				<a n:href="changeLocale!, sk" class="admin-lang"><img src="{$basePath}/images/sk.png" alt="Slovak" title="Slovak"></a>
 			</div>	
 		</div>
 	</div>
@@ -51,7 +53,7 @@
 {/if}
 <div id="admincontent">
 	<div class="container well2">
-		<a n:href=":Front:Homepage:page">Back To Front Homepage</a>
+		<a n:href=":Front:Homepage:page">{_messages.admin.home.backToFront}</a>
 
 		{snippet flashMessages}
 		<div n:foreach="$flashes as $flash" class="flash {$flash->type} ajax">

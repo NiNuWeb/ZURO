@@ -1,6 +1,5 @@
 page:
 	news: News
-	home: Home
 
 miniLoginForm:
 	username: Username
@@ -20,6 +19,10 @@ requests:
 actions:
 	logoff: You Were Logged Off.
 	backtohome: Back To Homepage
+	back: Back
+	accessDenied: "Access Denied!"
+	questionDelete: Do You Really Delete Item
+	backToAdmin: Back to Admin Homepage
 
 registerForm:
 	title: Registration Form
@@ -46,3 +49,152 @@ signInForm:
 	keepSigned: Keep me signed in
 	signIn: Sign In
 	logOut: You have been Logout.
+
+news:
+	addedBy: Added by
+	readMore: Read More
+
+paginator:
+	previous: Previous
+	next: Next
+
+tasklist:
+	list: List
+	task: Task
+	for: For
+	done: Done
+
+admin:
+	home:
+		administration: Administration
+		manageUsers: Manage Users
+		managePages: Manage Pages
+		manageNews: Manage News
+		logout: Logout
+		backToFront: Back To Front Homepage
+	default:
+		adminTitle: Admin Page
+		listsCat: Lists Category
+		addList: Add New List
+		ltoptions: List/Task Options
+		edLists: Edit/Delete Lists
+		edTasks: Edit/Delete Tasks
+		myIncomTasks: My Incomplete Tasks
+		allIncomTasks: All Incomplete Tasks
+		lastAddedNews: Last Added News
+		listName: List Name
+		enterListName: Please enter list name
+		addListForm: Add List
+		backToAdminFront: Back to Admin Homepage
+		warningLists: "WARNING! If you delete list, all tasks belongs to this list will be deleted too!"
+		title: Title
+		action: Action
+		edit: Edit
+		delete: Delete
+		text: Text
+		done: Done
+		forUser: For User
+		inList: In List
+		editList: Edit List
+		listNameFilled: "List name must be filled!"
+		updateList: Update List
+		editListSucc: "List was successfully edited."
+		editTask: "Edit Task:"
+		updateTask: Update Task
+		taskTextFilled: "Task text must be filled!"
+		editTaskSucc: "Task was successfully edited."
+		listDeleteSucc: "List was successfully deleted!"
+		taskDeleteSucc: "Task was successfully deleted!"
+		listCreatedSucc: "New List Successfully Created."
+	auth:
+		loginFormTitle: Login to Administration Page
+		authorizedStuff: Authorized Stuff Only
+		username: Username
+		password: Password
+		enterUsername: Enter Username
+		enterPass: Enter Password
+		login: Log In
+	news:
+		title: News Title
+		body: Body
+		creationTime: Creation Time
+		createdBy: Created By
+		action: Action
+		edit: Edit
+		delete: Delete
+		addNews: Add News
+		manageNews: Manage News
+		editNews: Edit News
+		titleForm: Title
+		bodyForm: Body
+		enterTitle: "Please enter title."
+		enterBody: "Body field must be filled."
+		addNewsSucc: "You have successfully added a news."
+		created: Created
+		addedBy: Added By
+		updateNews: Update News
+		fillTitle: "News title must be filled!"
+		fillBody: "Body field must be filled."
+		dateTimeReq: "Date and time is required!"
+		editNewsSucc: "News was successfully edited."
+		newsDelete: "News was successfully deleted!"
+	menu:
+		manageMenu: Manage Main Menu
+		pageTitle: Page Title
+		slug: Slug
+		text: Text
+		position: Position
+		action: Action
+		edit: Edit
+		delete: Delete
+		addPage: Add Page
+		addPageTitle: Add New Page To Main Menu
+		editPage: Edit Page
+		formTitle: Title
+		formText: Text
+		formPosition: Position
+		enterTitle: "Please enter title."
+		fillText: "Text field must be filled."
+		dontAllowTitle: "Don't allow title, please select another."
+		existsTitle: "This title already exists, please select another."
+		addPageSucc: "You have successfully added a new page to Main Menu."
+		editPageSucc: "You have successfully edited page."
+		deletePageConfirm: Do You Really Want Delete Page With Title
+		deletedPage: "Page was successfully deleted!"
+	task:
+		listsCat: Lists Category
+		addTask: Add New Task
+		listNotFound: List Not Found
+		notFoundExplan: "Sorry, but the list was not found."
+		task: Task
+		fillTask: "You must fill task field."
+		for: For
+		fillFor: "Please select username, for who's the task is."
+		add: Add
+		addTaskSucc: "Task successfully added."
+	user:
+		username: Username
+		email: E-mail
+		role: Role
+		action: Action
+		edit: Edit
+		delete: Delete
+		addUser: Add User
+		addUserTitle: Add New User
+		editUser: Edit User
+		fillUsername: "Please enter username."
+		password: Password
+		minChar: "(Mininal 6 characters)"
+		fillPass: "Please enter password."
+		minPassChar: "The Password must be min %d characters long."
+		firstName: First Name
+		lastName: Last Name
+		fillEmail: "Please enter your e-mail."
+		invalidEmail: "Invalid E-mail address!"
+		active: Active
+		profile: Profile
+		maxProfText: "Text is too long, you can write only 100 characters."
+		addUserSucc: "You have successfully added a new user."
+		editUserSucc: "User was successfully edited."
+		deleteUserConfirm: Do You Really Want Delete User
+		deleteUser: "User was successfully deleted!"

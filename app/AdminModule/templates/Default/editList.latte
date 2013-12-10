@@ -1,3 +1,11 @@
 {block #content}
-<h3>Edit List {$actualList->title}</h3>
+<h3>{_messages.admin.default.editList} {$actualList->title}</h3>
 {control editListForm}
+{/block}
+{block scripts}
+	<script src="{$basePath}/js/jquery.js"></script>
+	<script src="{$basePath}/js/bootstrap.js"></script>
+	<script src="{$basePath}/js/live-form-validation.js"></script>
+	<script src="{$basePath}/js/jquery.nette.js"></script>
+	<script src="{$basePath}/js/jquery.ajaxform.js"></script>
+{/block}

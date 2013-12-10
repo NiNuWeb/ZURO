@@ -1,24 +1,24 @@
-<?php //netteCache[01]000372a:2:{s:4:"time";s:21:"0.70162500 1384861622";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:50:"C:\xampp\htdocs\ZURO\app\components\TaskList.latte";i:2;i:1383911673;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000372a:2:{s:4:"time";s:21:"0.09165100 1386683978";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:50:"C:\xampp\htdocs\ZURO\app\components\TaskList.latte";i:2;i:1386683976;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\components\TaskList.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'jh071dt03j')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '7thbvmfbj0')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block _
 //
-if (!function_exists($_l->blocks['_'][] = '_lbd5af0e8275__')) { function _lbd5af0e8275__($_l, $_args) { extract($_args); $_control->validateControl(false)
+if (!function_exists($_l->blocks['_'][] = '_lb880f9bef7f__')) { function _lb880f9bef7f__($_l, $_args) { extract($_args); $_control->validateControl(false)
 ?>	<table class="tasks table table-striped">
 		<thead class="todo">
 			<tr>
 				<th class="created">&nbsp;</th>
-<?php if ($displayList): ?>				<th class="list">List</th>
+<?php if ($displayList): ?>				<th class="list"><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.tasklist.list"), ENT_NOQUOTES) ?></th>
 <?php endif ?>
-				<th class="text">Task</th>
-<?php if ($displayUser): ?>				<th class="user">For</th>
+				<th class="text"><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.tasklist.task"), ENT_NOQUOTES) ?></th>
+<?php if ($displayUser): ?>				<th class="user"><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.tasklist.for"), ENT_NOQUOTES) ?></th>
 <?php endif ?>
 				<th class="action">&nbsp;</th>
 			</tr>	
@@ -33,7 +33,8 @@ if (!function_exists($_l->blocks['_'][] = '_lbd5af0e8275__')) { function _lbd5af
 <?php if ($displayUser): ?>				<td class="user"><?php echo Nette\Templating\Helpers::escapeHtml($task->users->username, ENT_NOQUOTES) ?></td>
 <?php endif ?>
 				<td class="action"><?php if (!$task->done): ?><a class="icon tick ajax" href="<?php echo htmlSpecialChars($_control->link("markDone!", array($task->id))) ?>
-">Done</a><?php endif ?>
+"><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.tasklist.done"), ENT_NOQUOTES) ?>
+</a><?php endif ?>
 </td>
 			</tr>
 <?php $iterations++; endforeach ?>

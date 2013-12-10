@@ -58,15 +58,15 @@ class PagesPresenter extends BasePresenter {
 		$renderer->wrappers['control']['.submit'] = 'btn';
 
 
-		$form->addText('title', 'Title: *')
+		$form->addText('title', $this->translator->translate('messages.admin.menu.formTitle').': *')
 			->setAttribute('class', 'form-control')
-			->addRule(Form::FILLED, 'Please enter title.');
-		$form->addTextArea('text', 'Text: *', 100, 15)
-			->addRule(Form::FILLED, 'Text field must be filled.');	
-		$form->addSelect('position', 'Position: ', $select)
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.menu.enterTitle'));
+		$form->addTextArea('text', $this->translator->translate('messages.admin.menu.formText').': *', 100, 15)
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.menu.fillText'));	
+		$form->addSelect('position', $this->translator->translate('messages.admin.menu.formPosition').': ', $select)
 			->setValue($countMenuItems)
 			->setAttribute('class', 'form-control');				
-		$form->addSubmit('addpage', 'Add Page')
+		$form->addSubmit('addpage', $this->translator->translate('messages.admin.menu.addPage'))
 			->setAttribute('class', 'btn-success pull-left');
 		$form->onSuccess[] = callback($this, 'addPageFormSubmitted');
 		return $form;
@@ -79,18 +79,18 @@ class PagesPresenter extends BasePresenter {
 		$values = $form->getValues();
 		$values['slug'] = Strings::webalize($values->title);
 		if ($values['slug'] == 'admin') {
-			$this->flashMessage('Don\'t allow title, please select another.', 'warning');
+			$this->flashMessage($this->translator->translate('messages.admin.menu.dontAllowTitle'), 'warning');
 			$this->redirect('this');
 		}
 		if ($this->pages->countAllWithSlug($values['slug']) > 0) {
-			$this->flashMessage('This title already exists, please select another.', 'warning');
+			$this->flashMessage($this->translator->translate('messages.admin.menu.existsTitle'), 'warning');
 			$this->redirect('this');
 		}
 		
 		$this->pages->editPositions($values['position']);
 		$new_page = $this->pages->addPage($values);
 		if ($new_page) {
-			$this->flashMessage('You have successfully added a new page to Main Menu.', 'success');
+			$this->flashMessage($this->translator->translate('messages.admin.menu.addPageSucc'), 'success');
 			$this->redirect('Pages:default');
 		}
 	}
@@ -115,17 +115,17 @@ class PagesPresenter extends BasePresenter {
 		$renderer->wrappers['control']['.submit'] = 'btn';
 
 
-		$form->addText('title', 'Title: *')
+		$form->addText('title', $this->translator->translate('messages.admin.menu.formTitle').': *')
 			->setAttribute('class', 'form-control')
 			->setDefaultValue($findedPage->title)
-			->addRule(Form::FILLED, 'Please enter title.');
-		$form->addTextArea('text', 'Text: *', 100, 15)
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.menu.enterTitle'));
+		$form->addTextArea('text', $this->translator->translate('messages.admin.menu.formText').': *', 100, 15)
 			->setDefaultValue($findedPage->text)
-			->addRule(Form::FILLED, 'Text field must be filled.');	
-		$form->addSelect('position', 'Position: ', $select)
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.menu.fillText'));	
+		$form->addSelect('position', $this->translator->translate('messages.admin.menu.position').': ', $select)
 			->setValue($findedPage->position)
 			->setAttribute('class', 'form-control');				
-		$form->addSubmit('editpage', 'Edit Page')
+		$form->addSubmit('editpage', $this->translator->translate('messages.admin.menu.editPage'))
 			->setAttribute('class', 'btn-success pull-left');
 		$form->onSuccess[] = callback($this, 'editPageFormSubmitted');
 		return $form;
@@ -141,11 +141,11 @@ class PagesPresenter extends BasePresenter {
 		$actualPageSlug = $this->pages->findById($pageid);
 		if (isset($values->id)) { unset($values->id); }
 		if ($values['slug'] == 'admin') {
-			$this->flashMessage('Don\'t allow title, please select another.', 'warning');
+			$this->flashMessage($this->translator->translate('messages.admin.menu.dontAllowTitle'), 'warning');
 			$this->redirect('this');
 		}
 		if ($this->pages->countAllWithSlug($values['slug']) > 0 && $values['slug'] !== $actualPageSlug->slug) {
-			$this->flashMessage('This title already exists, please select another.', 'warning');
+			$this->flashMessage($this->translator->translate('messages.admin.menu.existsTitle'), 'warning');
 			$this->redirect('this');
 		}
 
@@ -153,7 +153,7 @@ class PagesPresenter extends BasePresenter {
 		if ($updatePosition) {
 			unset($values['position']);
 			$edited_page = $this->pages->editPage($pageid, $values);
-			$this->flashMessage('You have successfully edited page.', 'success');
+			$this->flashMessage($this->translator->translate('messages.admin.menu.editPageSucc'), 'success');
 			$this->redirect('Pages:default');
 				
 		}
@@ -185,7 +185,7 @@ class PagesPresenter extends BasePresenter {
 	 */
 	public function questionDelete($dialog, $params) {
 		$dialog->getQuestionPrototype();
-		return "Do You Really Want Delete Page With Title:  $params[title] ?";
+		return $this->translator->translate('messages.admin.menu.deletePageConfirm').":  $params[title] ?";
 	}
 
 	/**
@@ -198,7 +198,7 @@ class PagesPresenter extends BasePresenter {
 		$this->pages->deletedItemPositions($page->position);
 		$this->pages->deletePage($id);
 		if (!$this->presenter->isAjax()) {
-			$this->flashMessage('Page was successfully deleted!', 'delete');
+			$this->flashMessage($this->translator->translate('messages.admin.menu.deletedPage'), 'delete');
 			$this->redirect('Pages:default');
 		} else {
 			$this->invalidateControl('tablePages');

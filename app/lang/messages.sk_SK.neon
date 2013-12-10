@@ -1,6 +1,5 @@
 page:
 	news: Novinky
-	home: Domov
 
 miniLoginForm:
 	username: Používateľské meno
@@ -20,6 +19,10 @@ requests:
 actions:
 	logoff: Boli ste úspešne odhlásený.
 	backtohome: Späť na hlavnú stránku
+	back: Späť
+	accessDenied: "Prístup odmietnutý!"
+	questionDelete: Skutočne chcete vymazať
+	backToAdmin: Späť na admin stránku
 
 registerForm:
 	title: Registračný Formulár
@@ -46,3 +49,152 @@ signInForm:
 	keepSigned: Ostať prihlásený
 	signIn: Prihlásiť
 	logOut: Boli ste odhlásený.
+
+news:
+	addedBy: Pridal
+	readMore: Čítať viac
+
+paginator:
+	previous: Späť
+	next: Ďalej
+
+tasklist:
+	list: Zoznam
+	task: Úloha
+	for: Pre
+	done: Hotovo
+
+admin:
+	home:
+		administration: Administrácia
+		manageUsers: Správa Používateľov
+		managePages: Správa Menu
+		manageNews: Správa Noviniek
+		logout: Odhlásiť
+		backToFront: Späť na úvodnú stránku
+	default:
+		adminTitle: Administrácia stránky
+		listsCat: Zoznamy
+		addList: Pridať zoznam
+		ltoptions: Ďalšie možnosti
+		edLists: Uprav/Zmaž Zoznamy
+		edTasks: Uprav/Zmaž Úlohy
+		myIncomTasks: Moje neukončené úlohy
+		allIncomTasks: Všetky neukončené úlohy
+		lastAddedNews: Naposledy pridané novinky
+		listName: Meno zoznamu
+		enterListName: Prosím zadajte meno zoznamu
+		addListForm: Pridať zoznam
+		backToAdminFront: Späť na admin stránku
+		warningLists: "VAROVANIE! Ak vymažete zoznam, všetky úlohy patriace to zoznamu budú tiež zmazané!"
+		title: Názov
+		action: Akcia
+		edit: Uprav
+		delete: Vymaž
+		text: Text
+		done: Hotovo
+		forUser: Pre
+		inList: Zoznam
+		editList: Uprav Zoznam
+		listNameFilled: "Názov zoznamu musí byť vyplnený!"
+		updateList: Uprav zoznam
+		editListSucc: "Zoznam bol úspešne upravený."
+		editTask: "Uprav Úlohu:"
+		updateTask: Aktualizuj úlohu
+		taskTextFilled: "Text úlohy musí byť vyplnený!"
+		editTaskSucc: "Úloha bola úspešne aktualizovaná."
+		listDeleteSucc: "Zoznam bol úspešne vymazaný!"
+		taskDeleteSucc: "Úloha bola úspešne vymazaná!"
+		listCreatedSucc: "Nový zoznam bol úspešne vytvorený."
+	auth:
+		loginFormTitle: Prihlásenie do Administrátorskej časti
+		authorizedStuff: Len pre oprávnených
+		username: Používateľské meno
+		password: Heslo
+		enterUsername: Zadajte používateľské meno
+		enterPass: Zadajte heslo
+		login: Prihlásiť
+	news:
+		title: Nadpis
+		body: Text
+		creationTime: Čas pridania
+		createdBy: Pridal
+		action: Akcia
+		edit: Upraviť
+		delete: Vymazať
+		addNews: Pridať novinku
+		manageNews: Správa Noviniek
+		editNews: Upraviť novinku
+		titleForm: Nadpis
+		bodyForm: Text
+		enterTitle: "Prosím zadajte nadpis."
+		enterBody: "Pole s textom musí byť vyplnené."
+		addNewsSucc: "Novinka bola úspešne pridaná."
+		created: Pridané
+		addedBy: Pridal
+		updateNews: Aktualizovať novinku
+		fillTitle: "Musíte zadať nadpis novinky."
+		fillBody: "Musíte zadať telo správy."
+		dateTimeReq: "Dátum a čas musí byť vyplnený!"
+		editNewsSucc: "Novinka bola úspešne aktualitovaná."
+		newsDelete: "Novinka bola úspešne vymazaná!"
+	menu:
+		manageMenu: Správa Hlavného Menu
+		pageTitle: Nadpis
+		slug: Slug
+		text: Text
+		position: Pozícia
+		action: Akcia
+		edit: Upraviť
+		delete: Vymazať
+		addPage: Pridať stránku
+		addPageTitle: Pridať stránku do hlavného menu
+		editPage: Upraviť stránku
+		formTitle: Nadpis
+		formText: Text
+		formPosition: Pozícia
+		enterTitle: "Prosím zadajte nadpis."
+		fillText: "Text musí byť vyplnený."
+		dontAllowTitle: "Nepovolený nadpis, prosím zvoľte iný."
+		existsTitle: "Zadaná nadpis už existuje, prosím zvoľte iný."
+		addPageSucc: "Úspešne ste pridali novú stránku do hlavného menu."
+		editPageSucc: "Stránka bola úspešne aktualizovaná."
+		deletePageConfirm: Skutočne chcete vymazať stránku s nadpisom
+		deletedPage: "Stránka bola úspešne vymazaná!"
+	task:
+		listsCat: Zoznamy
+		addTask: Pridať novú úlohu
+		listNotFound: Zoznam úloh nebol nájdený
+		notFoundExplan: "Ľutujeme, ale stránka so zoznamom nebola nájdená."
+		task: Úloha
+		fillTask: "Vyplňte zadanie úlohy."
+		for: Pre
+		fillFor: "Prosím vyberte používateľa, ktorému má byť úloha pridelená."
+		add: Pridať
+		addTaskSucc: "Úloha bola úspešne pridaná."
+	user:
+		username: Používateľské meno
+		email: E-mail
+		role: Rola
+		action: Akcia
+		edit: Upraviť
+		delete: Vymazať
+		addUser: Pridať používateľa
+		addUserTitle: Pridať nového používateľa
+		editUser: Upraviť používateľa
+		fillUsername: "Prosím zadajte používateľské meno."
+		password: Heslo
+		minChar: "(Minimálne 6 znakov)"
+		fillPass: "Prosím zadajte heslo."
+		minPassChar: "Heslo musí byť minimálne %d znakové."
+		firstName: Meno
+		lastName: Priezvisko
+		fillEmail: "Prosím zadajte Váš e-mail."
+		invalidEmail: "Neplatná E-mailová adresa!"
+		active: Účet aktivovaný
+		profile: Profil
+		maxProfText: "Text je príliž dlhý, môžete napísať len 100 znakov."
+		addUserSucc: "Úspešne ste pridali nového používateľa."
+		editUserSucc: "Používateľ bol úspešne aktualizovaný."
+		deleteUserConfirm: Skutočne chcete vymazať používateľa
+		deleteUser: "Používateľ bol vymazaný!"

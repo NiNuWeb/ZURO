@@ -25,6 +25,13 @@ class TaskList extends \Nette\Application\UI\Control {
 		$this->taskRepository = $taskRepository;
 	}
 
+	public function createTemplate($class = NULL)
+	{
+	    $template = parent::createTemplate($class);
+	    $template->setTranslator($this->parent->translator);
+	    return $template;
+	}
+
 	public function render() {
 		$this->template->setFile(__DIR__ . '/TaskList.latte');
 		$this->template->tasks = $this->selected;

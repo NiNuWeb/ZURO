@@ -56,13 +56,13 @@ class NewsPresenter extends BasePresenter {
 		$renderer->wrappers['control']['.submit'] = 'btn';
 
 
-		$form->addText('title', 'Title: *')
+		$form->addText('title', $this->translator->translate('messages.admin.news.titleForm').': *')
 			->setAttribute('class', 'form-control')
-			->addRule(Form::FILLED, 'Please enter title.');
-		$form->addTextArea('body', 'Body: *', 100, 15)
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.news.enterTitle'));
+		$form->addTextArea('body', $this->translator->translate('messages.admin.news.bodyForm').': *', 100, 15)
 			->setAttribute('class', 'form-control')
-			->addRule(Form::FILLED, 'Body field must be filled.');					
-		$form->addSubmit('addnews', 'Add News')
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.news.enterBody'));					
+		$form->addSubmit('addnews', $this->translator->translate('messages.admin.news.addNews'))
 			->setAttribute('class', 'btn-success pull-left');
 		$form->onSuccess[] = $this->addNewsFormSubmitted;
 		return $form;
@@ -76,7 +76,7 @@ class NewsPresenter extends BasePresenter {
 		$values = $form->getValues();
 		$news = $this->newsRepository->addNews($values, $this->getUser()->getId());
 		if ($news) {
-			$this->flashMessage('You have successfully added a news.', 'success');
+			$this->flashMessage($this->translator->translate('messages.admin.news.addNewsSucc'), 'success');
 			$this->redirect('News:default');
 		}
 	}
@@ -97,25 +97,25 @@ class NewsPresenter extends BasePresenter {
 		$renderer->wrappers['pair']['container'] = 'div class="form-group"';
 		$renderer->wrappers['control']['.submit'] = 'btn';
 
-		$form->addText('title', 'Title: *')
+		$form->addText('title', $this->translator->translate('messages.admin.news.titleForm').': *')
 			->setAttribute('class', 'form-control')
 			->setDefaultValue($getNews->title)
-			->addRule(Form::FILLED, 'News name must be filled!');
-		$form->addTextArea('body', 'Body: *', 100, 15)
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.news.fillTitle'));
+		$form->addTextArea('body', $this->translator->translate('messages.admin.news.bodyForm').': *', 100, 15)
 			->setAttribute('class', 'form-control')
 			->setDefaultValue($getNews->body)
-			->addRule(Form::FILLED, 'Body field must be filled.');
-		$form->addDateTimePicker('date', 'Created: *')
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.news.fillBody'));
+		$form->addDateTimePicker('date', $this->translator->translate('messages.admin.news.created').': *')
 			->setDefaultValue($getNews->date)
-			->addRule(Form::FILLED, 'Date and time is required!');
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.news.dateTimeReq'));
 		/*$form->addText('date', 'Created: *')
 			->setAttribute('class', 'form-control')
 			->setDefaultValue($getNews->date)
 			->addRule(Form::FILLED, 'Date must be filled!');*/
-		$form->addSelect('users_id', 'Added By: *', $createdBy)
+		$form->addSelect('users_id', $this->translator->translate('messages.admin.news.addedBy').': *', $createdBy)
 			->setAttribute('class', 'form-control')
 			->setDefaultValue($getNews->users_id);			
-		$form->addSubmit('update', 'Update News')
+		$form->addSubmit('update', $this->translator->translate('messages.admin.news.updateNews'))
 			->setAttribute('class', 'btn-success pull-left');
 		$form->onSuccess[] = $this->editNewsFormSubmitted;
 		return $form;
@@ -128,7 +128,7 @@ class NewsPresenter extends BasePresenter {
 	public function editNewsFormSubmitted(Form $form) {
 		$values = $form->getValues();
 		if ($this->newsRepository->editNews($this->getParam('id'), $values)) {
-			$this->flashMessage('News was successfully edited.', 'success');
+			$this->flashMessage($this->translator->translate('messages.admin.news.editNewsSucc'), 'success');
 			$this->redirect('News:');
 		}
 	}
@@ -159,7 +159,7 @@ class NewsPresenter extends BasePresenter {
 	 */
 	public function questionDelete($dialog, $params) {
 		$dialog->getQuestionPrototype();
-		return "Do You Really Delete Item:  $params[title] ?";
+		return $this->translator->translate('messages.actions.questionDelete').":  $params[title] ?";
 	}
 
 	/**
@@ -170,7 +170,7 @@ class NewsPresenter extends BasePresenter {
 	public function deleteNews($id) {
 		$this->newsRepository->deleteNews($id);
 		if (!$this->presenter->isAjax()) {
-			$this->flashMessage('News was successfully deleted!', 'delete');
+			$this->flashMessage($this->translator->translate('messages.admin.news.newsDelete'), 'delete');
 			$this->redirect('this');
 		} else {
 			$this->invalidateControl('tableNews');

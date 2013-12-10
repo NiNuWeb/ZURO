@@ -1,5 +1,13 @@
 {block #content}
 
-<h2>Edit User: {$findedUser->username}</h2>
+<h2>{_messages.admin.user.editUser}: {$findedUser->username}</h2>
 
 {control editUserForm}
+{/block}
+{block scripts}
+	<script src="{$basePath}/js/jquery.js"></script>
+	<script src="{$basePath}/js/bootstrap.js"></script>
+	<script src="{$basePath}/js/live-form-validation.js"></script>
+	<script src="{$basePath}/js/jquery.nette.js"></script>
+	<script src="{$basePath}/js/jquery.ajaxform.js"></script>
+{/block}

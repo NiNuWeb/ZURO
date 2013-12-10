@@ -1,11 +1,11 @@
 {block #content}
-<h1>Admin Page</h1>
+<h1>{_messages.admin.default.adminTitle}</h1>
 
 <div class="row">
 
 	<div class="col-md-2 right-border">
 		<div id="sidebar">
-			<h3>Lists Category</h3>
+			<h3>{_messages.admin.default.listsCat}</h3>
 
 			<div class="task-list">
 				<ul>
@@ -14,14 +14,14 @@
 			</div>
 
 			<div id="new-list">
-				<h4>Add New List</h4>
+				<h4>{_messages.admin.default.addList}</h4>
 				{control newListForm}
 			</div>
 
 			<div id="list-task-option">
-				<h4>List/Task Options</h4>
-				<p><a n:href="Default:editDeleteLists" class="btn btn-danger col-md-12">Edit/Delete Lists</a></p>
-				<p><a n:href="Default:editDeleteTasks" class="btn btn-danger col-md-12">Edit/Delete Tasks</a></p>
+				<h4>{_messages.admin.default.ltoptions}</h4>
+				<p><a n:href="Default:editDeleteLists" class="btn btn-danger col-md-12">{_messages.admin.default.edLists}</a></p>
+				<p><a n:href="Default:editDeleteTasks" class="btn btn-danger col-md-12">{_messages.admin.default.edTasks}</a></p>
 			</div>
 
 		</div>
@@ -29,16 +29,16 @@
 
 	<div class="col-md-6">
 
-		<h3>My Incomplete Tasks</h3>
+		<h3>{_messages.admin.default.myIncomTasks}</h3>
 		{control userTasks}
 		<p>&nbsp;</p>
-		<h3>All Incomplete Tasks</h3>
+		<h3>{_messages.admin.default.allIncomTasks}</h3>
 		{control incompleteTasks}
 
 	</div>
 
 	<div class="col-md-4 left-border">
-		<h3>Last Added News</h3>
+		<h3>{_messages.admin.default.lastAddedNews}</h3>
 		<br />
 		{foreach $news as $new}
 			<p><small class="last-news">{$new->date|date:'j.n.Y'} - {$new->users->username}</small> | <b>{$new->title}</b></p>

@@ -3,9 +3,9 @@
 		<thead class="todo">
 			<tr>
 				<th class="created">&nbsp;</th>
-				<th class="list" n:if="$displayList">List</th>
-				<th class="text">Task</th>
-				<th class="user" n:if="$displayUser">For</th>
+				<th class="list" n:if="$displayList">{_messages.tasklist.list}</th>
+				<th class="text">{_messages.tasklist.task}</th>
+				<th class="user" n:if="$displayUser">{_messages.tasklist.for}</th>
 				<th class="action">&nbsp;</th>
 			</tr>	
 		</thead>
@@ -16,7 +16,7 @@
 				<td class="list" n:if="$displayList">{$task->list->title}</td>	
 				<td class="text">{$task->text}</td>	
 				<td class="user" n:if="$displayUser">{$task->users->username}</td>
-				<td class="action"><a n:if="!$task->done" n:href="markDone! $task->id" class="icon tick ajax">Done</a></td>
+				<td class="action"><a n:if="!$task->done" n:href="markDone! $task->id" class="icon tick ajax">{_messages.tasklist.done}</a></td>
 			</tr>
 		{/foreach}		
 		</tbody>

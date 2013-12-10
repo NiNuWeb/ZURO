@@ -10,9 +10,9 @@
 <div style="clear:both;" class="paginator">
     <ul class="pagination pagination-lg">
         {if $paginator->isFirst()}
-        <li class="disabled"><a>« Previous</a></li>
+        <li class="disabled"><a>« {_messages.paginator.previous}</a></li>
         {else}
-        <li><a href="{link this, 'page' => $paginator->page - 1}" rel="prev">« Previous</a><li>
+        <li><a href="{link this, 'page' => $paginator->page - 1}" rel="prev">« {_messages.paginator.previous}</a><li>
         {/if}
 
         {foreach $steps as $step}
@@ -25,9 +25,9 @@
         {/foreach}
 
         {if $paginator->isLast()}
-            <li class="disabled"><a >Next »</a></li>
+            <li class="disabled"><a >{_messages.paginator.next} »</a></li>
         {else}
-            <li><a href="{link this, 'page' => $paginator->page + 1}" rel="next">Next »</a></li>
+            <li><a href="{link this, 'page' => $paginator->page + 1}" rel="next">{_messages.paginator.next} »</a></li>
         {/if}
     </ul>        
 </div>

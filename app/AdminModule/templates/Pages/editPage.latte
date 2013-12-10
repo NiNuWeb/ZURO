@@ -1,4 +1,12 @@
 {block #content}
 
-<h2>Edit Page: {$findedPage->title}</h2>
+<h2>{_messages.admin.menu.editPage}: {$findedPage->title}</h2>
 {control editPageForm}
+{/block}
+{block scripts}
+	<script src="{$basePath}/js/jquery.js"></script>
+	<script src="{$basePath}/js/bootstrap.js"></script>
+	<script src="{$basePath}/js/live-form-validation.js"></script>
+	<script src="{$basePath}/js/jquery.nette.js"></script>
+	<script src="{$basePath}/js/jquery.ajaxform.js"></script>
+{/block}

@@ -403,3 +403,16 @@ legend {
 	display: block;
 	margin-left: 15px;
 }
+
+.admin-lang {
+	display: inline-block;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+
+/* ===== LIVE FORM VALIDATION ===== */
+.form-error-message {
+	color: darkred;
+	font-weight: bold;
+	float: left;
+}

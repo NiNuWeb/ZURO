@@ -1,23 +1,23 @@
-<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.76520700 1384947645";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\@layout.latte";i:2;i:1384947641;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.83413400 1386600475";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\@layout.latte";i:2;i:1386600471;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\AdminModule\templates\@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'bjrpxfldwp')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '7ltsm8d2f0')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbda86afa072_title')) { function _lbda86afa072_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbf4943a910f_title')) { function _lbf4943a910f_title($_l, $_args) { extract($_args)
 ?>Admin | ZURO App<?php
 }}
 
 //
 // block _flashMessages
 //
-if (!function_exists($_l->blocks['_flashMessages'][] = '_lbd6361b3237__flashMessages')) { function _lbd6361b3237__flashMessages($_l, $_args) { extract($_args); $_control->validateControl('flashMessages')
+if (!function_exists($_l->blocks['_flashMessages'][] = '_lb448a0fd852__flashMessages')) { function _lb448a0fd852__flashMessages($_l, $_args) { extract($_args); $_control->validateControl('flashMessages')
 ;$iterations = 0; foreach ($flashes as $flash): ?>		<div class="flash <?php echo htmlSpecialChars($flash->type) ?> ajax">
 			<p><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></p>
 		</div>
@@ -27,7 +27,7 @@ if (!function_exists($_l->blocks['_flashMessages'][] = '_lbd6361b3237__flashMess
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb5d86f8de92_content')) { function _lb5d86f8de92_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb152295f18b_content')) { function _lb152295f18b_content($_l, $_args) { extract($_args)
 ?>		
 <?php
 }}
@@ -35,7 +35,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb5d86f8de92_content')) { func
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb420b3d9ab3_scripts')) { function _lb420b3d9ab3_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb20d75bca31_scripts')) { function _lb20d75bca31_scripts($_l, $_args) { extract($_args)
 ?>	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/jquery.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/bootstrap.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/netteForms.js"></script>
@@ -96,19 +96,24 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
 					<span class="glyphicon glyphicon-list"></span>
 				</button>
 				<a class="navbar-brand" href="<?php echo htmlSpecialChars($_control->link("default:")) ?>
-">ZURO Development | Administration</a>
+">ZURO Development | <?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.home.administration"), ENT_NOQUOTES) ?></a>
 			</div>
 			
 			<div class="navbar-collapse collapse">
 				<ul class="admin-nav nav navbar-nav">
 					<li><a href="<?php echo htmlSpecialChars($_control->link("Users:default")) ?>
-"><i class="glyphicon glyphicon-user">&nbsp;</i>Manage Users</a></li>
+"><i class="glyphicon glyphicon-user">&nbsp;</i><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.home.manageUsers"), ENT_NOQUOTES) ?></a></li>
 					<li><a href="<?php echo htmlSpecialChars($_control->link("Pages:default")) ?>
-"><i class="glyphicon glyphicon-file">&nbsp;</i>Manage Pages</a></li>
+"><i class="glyphicon glyphicon-file">&nbsp;</i><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.home.managePages"), ENT_NOQUOTES) ?></a></li>
 					<li><a href="<?php echo htmlSpecialChars($_control->link("News:default")) ?>
-"><i class="glyphicon glyphicon-globe">&nbsp;</i>Manage News</a></li>
-					<li><a href="<?php echo htmlSpecialChars($_control->link("logout!")) ?>"><i class="glyphicon glyphicon-off">&nbsp;</i><?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->username, ENT_NOQUOTES) ?> - Logout</a></li>
+"><i class="glyphicon glyphicon-globe">&nbsp;</i><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.home.manageNews"), ENT_NOQUOTES) ?></a></li>
+					<li><a href="<?php echo htmlSpecialChars($_control->link("logout!")) ?>"><i class="glyphicon glyphicon-off">&nbsp;</i><?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->username, ENT_NOQUOTES) ?>
+ - <?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.home.logout"), ENT_NOQUOTES) ?></a></li>
 				</ul>
+				<a class="admin-lang" href="<?php echo htmlSpecialChars($_control->link("changeLocale!", array('en'))) ?>
+"><img src="<?php echo htmlSpecialChars($basePath) ?>/images/gb.png" alt="English" title="English" /></a>
+				<a class="admin-lang" href="<?php echo htmlSpecialChars($_control->link("changeLocale!", array('sk'))) ?>
+"><img src="<?php echo htmlSpecialChars($basePath) ?>/images/sk.png" alt="Slovak" title="Slovak" /></a>
 			</div>	
 		</div>
 	</div>
@@ -117,7 +122,7 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
 <div id="admincontent">
 	<div class="container well2">
 		<a href="<?php echo htmlSpecialChars($_control->link(":Front:Homepage:page")) ?>
-">Back To Front Homepage</a>
+"><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.home.backToFront"), ENT_NOQUOTES) ?></a>
 
 <div id="<?php echo $_control->getSnippetId('flashMessages') ?>"><?php call_user_func(reset($_l->blocks['_flashMessages']), $_l, $template->getParameters()) ?>
 </div>

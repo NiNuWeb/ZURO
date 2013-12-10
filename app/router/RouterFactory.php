@@ -23,7 +23,7 @@ class RouterFactory
 		
 		$router[] = $adminRouter = new RouteList('Admin');
 		//Admin
-		$adminRouter[] = new Route('admin/[<locale=en en|sk>/]<presenter>/<action>/<id>', array(
+		$adminRouter[] = new Route('[<locale=en en|sk>/]admin/<presenter>/<action>/<id>', array(
 			'presenter' => 'Default',
 			'action' => 'default',
 			'id' => NULL,

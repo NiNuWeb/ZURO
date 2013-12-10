@@ -1,4 +1,12 @@
 {block #content}
 
-<h2>Add New User</h2>
+<h2>{_messages.admin.user.addUserTitle}</h2>
 {control addUserForm}
+{/block}
+{block scripts}
+	<script src="{$basePath}/js/jquery.js"></script>
+	<script src="{$basePath}/js/bootstrap.js"></script>
+	<script src="{$basePath}/js/live-form-validation.js"></script>
+	<script src="{$basePath}/js/jquery.nette.js"></script>
+	<script src="{$basePath}/js/jquery.ajaxform.js"></script>
+{/block}

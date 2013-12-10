@@ -30,7 +30,7 @@ class RegisterPresenter extends BasePresenter {
 	 */
 	protected function createComponentRegisterForm() {
 		$form = new Form;
-		$form->elementPrototype->addAttributes(array('class' => 'form-horizontal col-lg-3'));
+		$form->elementPrototype->addAttributes(array('class' => 'form-horizontal col-lg-4'));
 		$renderer = $form->getRenderer();
 
 		$renderer->wrappers['controls']['container'] = 'div';

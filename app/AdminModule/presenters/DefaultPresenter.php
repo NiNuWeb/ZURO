@@ -93,17 +93,17 @@ class DefaultPresenter extends BasePresenter {
 		$renderer->wrappers['controls']['container'] = 'div';
 		$renderer->wrappers['pair']['container'] = 'div class="form-group"';
 		$renderer->wrappers['control']['.submit'] = 'btn';
-		$form->addText('text', 'Text: ')
+		$form->addText('text', $this->translator->translate("messages.admin.default.text").':')
 			->setAttribute('class', 'form-control')
 			->setDefaultValue($getTask->text)
-			->addRule(Form::FILLED, 'Task text must be filled!');	
-		$form->addSelect('done', 'Done: ', array('0' => 'No', '1' => 'Yes'))
+			->addRule(Form::FILLED, $this->translator->translate("messages.admin.default.taskTextFilled"));	
+		$form->addSelect('done', $this->translator->translate("messages.admin.default.done").':', array('0' => 'No', '1' => 'Yes'))
 			->setDefaultValue($getTask->done);
-		$form->addSelect('users_id', 'For User: ', $forUser)
+		$form->addSelect('users_id', $this->translator->translate("messages.admin.default.forUser").':', $forUser)
 			->setDefaultValue($getTask->users_id);
-		$form->addSelect('list_id', 'In List: ', $inList)
+		$form->addSelect('list_id', $this->translator->translate("messages.admin.default.inList").':', $inList)
 			->setDefaultValue($getTask->list_id);
-		$form->addSubmit('update', 'Update Task')
+		$form->addSubmit('update', $this->translator->translate("messages.admin.default.updateTask"))
 			->setAttribute('class', 'btn-success pull-left');
 		$form->onSuccess[] = $this->editTaskFormSubmitted;
 		return $form;
@@ -116,7 +116,7 @@ class DefaultPresenter extends BasePresenter {
 	public function editTaskFormSubmitted(Form $form) {
 		$values = $form->getValues();
 		if ($this->taskRepository->editTask($this->getParam('id'), $values)) {
-			$this->flashMessage('Task was successfully edited.', 'success');
+			$this->flashMessage($this->translator->translate("messages.admin.default.editTaskSucc"), 'success');
 			$this->redirect('Default:editDeleteTasks');
 		}
 	}
@@ -135,11 +135,11 @@ class DefaultPresenter extends BasePresenter {
 		$renderer->wrappers['pair']['container'] = 'div class="form-group"';
 		$renderer->wrappers['control']['.submit'] = 'btn';
 
-		$form->addText('title', 'Title')
+		$form->addText('title', $this->translator->translate("messages.admin.default.title"))
 			->setAttribute('class', 'form-control')
 			->setDefaultValue($getList->title)
-			->addRule(Form::FILLED, 'List name must be filled!');
-		$form->addSubmit('update', 'Update List')
+			->addRule(Form::FILLED, $this->translator->translate("messages.admin.default.listNameFilled"));
+		$form->addSubmit('update', $this->translator->translate("messages.admin.default.updateList"))
 			->setAttribute('class', 'btn-success pull-left');
 		$form->onSuccess[] = $this->editListFormSubmitted;
 		return $form;
@@ -151,7 +151,7 @@ class DefaultPresenter extends BasePresenter {
 	public function editListFormSubmitted(Form $form) {
 		$values = $form->getValues();
 		if ($this->listRepository->editList($this->getParam('id'), $values)) {
-			$this->flashMessage('List was successfully edited.', 'success');
+			$this->flashMessage($this->translator->translate("messages.admin.default.editListSucc"), 'success');
 			$this->redirect('Default:editDeleteLists');
 		}
 	}
@@ -164,7 +164,7 @@ class DefaultPresenter extends BasePresenter {
 	public function handleDeleteList($id) {
 		$this->listRepository->deleteList($id);
 		if (!$this->presenter->isAjax()) {
-			$this->flashMessage('List was successfully deleted!', 'delete');
+			$this->flashMessage($this->translator->translate("messages.admin.default.listDeleteSucc"), 'delete');
 			$this->redirect('Default:editDeleteLists');
 		} else {
 			$this->invalidateControl('tableLists');
@@ -180,7 +180,7 @@ class DefaultPresenter extends BasePresenter {
 	public function handleDeleteTask($id) {
 		$this->taskRepository->deleteTask($id);
 		if (!$this->presenter->isAjax()) {
-			$this->flashMessage('Task was successfully deleted!', 'delete');
+			$this->flashMessage($this->translator->translate("messages.admin.default.taskDeleteSucc"), 'delete');
 			$this->redirect('Default:editDeleteTasks');
 		} else {
 			$this->invalidateControl('tableTasks');
@@ -203,9 +203,9 @@ class DefaultPresenter extends BasePresenter {
 
 		$form->addText('title', NULL)
 			->setAttribute('class', 'form-control input-sm')
-			->setAttribute('placeholder', 'List Name')
-			->addRule(Form::FILLED, 'Please enter list name.');
-		$form->addSubmit('create', 'Add List')
+			->setAttribute('placeholder', $this->translator->translate("messages.admin.default.listName"))
+			->addRule(Form::FILLED, $this->translator->translate("messages.admin.default.enterListName").'.');
+		$form->addSubmit('create', $this->translator->translate("messages.admin.default.addListForm"))
 			->setAttribute('class', 'btn-success pull-left');
 		$form->onSuccess[] = $this->newListFormSubmitted;
 		return $form;	
@@ -217,7 +217,7 @@ class DefaultPresenter extends BasePresenter {
 	 */
 	public function newListFormSubmitted(Form $form) {
 		$list = $this->listRepository->createList($form->values->title);
-		$this->flashMessage('New List Successfully Created.', 'success');
+		$this->flashMessage($this->translator->translate("messages.admin.default.listCreatedSucc"), 'success');
 		$this->redirect('Task:default', $list->id);
 	}
 

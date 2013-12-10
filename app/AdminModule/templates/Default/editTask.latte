@@ -1,3 +1,11 @@
 {block #content}
-<h3>Edit Task: <b>{$actualTask->text|truncate:20}</b></h3>
+<h3>{_messages.admin.default.editTask} <b>{$actualTask->text|truncate:20}</b></h3>
 {control editTaskForm}
+{/block}
+{block scripts}
+	<script src="{$basePath}/js/jquery.js"></script>
+	<script src="{$basePath}/js/bootstrap.js"></script>
+	<script src="{$basePath}/js/live-form-validation.js"></script>
+	<script src="{$basePath}/js/jquery.nette.js"></script>
+	<script src="{$basePath}/js/jquery.ajaxform.js"></script>
+{/block}

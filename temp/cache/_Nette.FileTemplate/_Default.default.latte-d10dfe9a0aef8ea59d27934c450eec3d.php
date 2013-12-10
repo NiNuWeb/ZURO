@@ -1,23 +1,23 @@
-<?php //netteCache[01]000390a:2:{s:4:"time";s:21:"0.71790000 1386253715";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:68:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\Default\default.latte";i:2;i:1386253695;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000390a:2:{s:4:"time";s:21:"0.48802300 1386601272";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:68:"C:\xampp\htdocs\ZURO\app\AdminModule\templates\Default\default.latte";i:2;i:1386601231;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\AdminModule\templates\Default\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '8jv4vnx3bw')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 's9j2mcao06')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lbad0d667201_content')) { function _lbad0d667201_content($_l, $_args) { extract($_args)
-?><h1>Admin Page</h1>
+if (!function_exists($_l->blocks['content'][] = '_lb986b945920_content')) { function _lb986b945920_content($_l, $_args) { extract($_args)
+?><h1><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.default.adminTitle"), ENT_NOQUOTES) ?></h1>
 
 <div class="row">
 
 	<div class="col-md-2 right-border">
 		<div id="sidebar">
-			<h3>Lists Category</h3>
+			<h3><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.default.listsCat"), ENT_NOQUOTES) ?></h3>
 
 			<div class="task-list">
 				<ul>
@@ -28,16 +28,16 @@ if (!function_exists($_l->blocks['content'][] = '_lbad0d667201_content')) { func
 			</div>
 
 			<div id="new-list">
-				<h4>Add New List</h4>
+				<h4><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.default.addList"), ENT_NOQUOTES) ?></h4>
 <?php $_ctrl = $_control->getComponent("newListForm"); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render() ?>
 			</div>
 
 			<div id="list-task-option">
-				<h4>List/Task Options</h4>
+				<h4><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.default.ltoptions"), ENT_NOQUOTES) ?></h4>
 				<p><a class="btn btn-danger col-md-12" href="<?php echo htmlSpecialChars($_control->link("Default:editDeleteLists")) ?>
-">Edit/Delete Lists</a></p>
+"><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.default.edLists"), ENT_NOQUOTES) ?></a></p>
 				<p><a class="btn btn-danger col-md-12" href="<?php echo htmlSpecialChars($_control->link("Default:editDeleteTasks")) ?>
-">Edit/Delete Tasks</a></p>
+"><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.default.edTasks"), ENT_NOQUOTES) ?></a></p>
 			</div>
 
 		</div>
@@ -45,16 +45,16 @@ if (!function_exists($_l->blocks['content'][] = '_lbad0d667201_content')) { func
 
 	<div class="col-md-6">
 
-		<h3>My Incomplete Tasks</h3>
+		<h3><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.default.myIncomTasks"), ENT_NOQUOTES) ?></h3>
 <?php $_ctrl = $_control->getComponent("userTasks"); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render() ?>
 		<p>&nbsp;</p>
-		<h3>All Incomplete Tasks</h3>
+		<h3><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.default.allIncomTasks"), ENT_NOQUOTES) ?></h3>
 <?php $_ctrl = $_control->getComponent("incompleteTasks"); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render() ?>
 
 	</div>
 
 	<div class="col-md-4 left-border">
-		<h3>Last Added News</h3>
+		<h3><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.admin.default.lastAddedNews"), ENT_NOQUOTES) ?></h3>
 		<br />
 <?php $iterations = 0; foreach ($news as $new): ?>
 			<p><small class="last-news"><?php echo Nette\Templating\Helpers::escapeHtml($template->date($new->date, 'j.n.Y'), ENT_NOQUOTES) ?>
