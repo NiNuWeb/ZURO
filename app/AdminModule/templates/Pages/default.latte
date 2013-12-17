@@ -2,7 +2,7 @@
 
 <h2>{_messages.admin.menu.manageMenu}</h2>
 <br />
-<div class="table-responsive col-md-9">
+<div class="table-responsive col-md-12">
 	{snippet tablePages}
 	{control confirmForm}
 	<table class="table table-hover">
@@ -13,6 +13,7 @@
 				<th>{_messages.admin.menu.text}</th>
 				<th>{_messages.admin.menu.position}</th>
 				<th>{_messages.admin.menu.action}</th>
+				<th>{_messages.admin.menu.translation}</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -21,8 +22,13 @@
 				<td>{$item->title}</td>
 				<td>{$item->slug}</td>
 				<td>{$item->text|truncate:50}</td>
-				<td>{$item->position}</td>
-				<td><a n:href="Pages:editPage $item->id"><i class="glyphicon glyphicon-pencil">&nbsp;</i>{_messages.admin.menu.edit}</a> | <a n:href="confirmForm:confirmDelete! id => $item->id, title => $item->title"><i class="glyphicon glyphicon-trash">&nbsp;</i>{_messages.admin.menu.delete}</a></td>
+				<td>{$item->pages->position}</td>
+				<td><a n:href="Pages:editPage $item->pages_id"><i class="glyphicon glyphicon-pencil">&nbsp;</i>{_messages.admin.menu.edit}</a> | <a n:href="confirmForm:confirmDelete! id => $item->pages_id, title => $item->title"><i class="glyphicon glyphicon-trash">&nbsp;</i>{_messages.admin.menu.delete}</a></td>
+				<td class="translated">
+					{if $item->pages->translated == 1} {_messages.admin.menu.translated}
+					{else} <a n:href="Pages:addTranslation $item->pages_id"><i class="glyphicon glyphicon-plus-sign">&nbsp;</i>{_messages.admin.menu.addTranslation}</a>
+					{/if}
+				</td>
 			</tr>
 		{/foreach}
 		</tbody>

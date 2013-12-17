@@ -41,7 +41,7 @@
 		<h3>{_messages.admin.default.lastAddedNews}</h3>
 		<br />
 		{foreach $news as $new}
-			<p><small class="last-news">{$new->date|date:'j.n.Y'} - {$new->users->username}</small> | <b>{$new->title}</b></p>
+			<p><small class="last-news">{$new->news->date|date:'j.n.Y'} - {$new->news->users->username}</small> | <b>{$new->title}</b></p>
 		{/foreach}
 	</div>
 

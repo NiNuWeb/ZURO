@@ -52,9 +52,9 @@
 
 				<div class="navbar-collapse collapse">
 					<ul class="nav nav-pills">
-						<li n:foreach="$menu as $slug => $title">
-							{first}<a n:href="this, 'slug' => $slug" n:class="$presenter->linkCurrent ? active">Home</a>{/first}
-							{if !$iterator->first}<a n:href="this, 'slug' => $slug" n:class="$presenter->linkCurrent ? active">{$title}</a>{/if}
+						<li n:foreach="$menu as $item">
+							{first}<a n:href="this, 'slug' => $item->slug" n:class="$presenter->linkCurrent ? active">{_messages.page.home}</a>{/first}
+							{if !$iterator->first}<a n:href="this, 'slug' => $item->slug" n:class="$presenter->linkCurrent ? active">{$item->title}</a>{/if}
 						</li>
 					</ul>	
 				</div>

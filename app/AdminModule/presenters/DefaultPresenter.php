@@ -4,6 +4,7 @@ namespace AdminModule;
 
 use Nette\Application\UI\Form as Form;
 use Kdyby\BootstrapFormRenderer\BootstrapRenderer;
+use Nette\Diagnostics\Debugger;
 
 class DefaultPresenter extends BasePresenter {
 
@@ -37,7 +38,7 @@ class DefaultPresenter extends BasePresenter {
 	public function beforeRender() {
 		$this->template->lists = $this->listRepository->findAll()->order('title ASC');
 		$this->template->tasks = $this->taskRepository->findAll()->order('id ASC');
-		$this->template->news = $this->newsRepository->getXnews(5);
+		$this->template->news = $this->newsRepository->getXnews(5, $this->translator->getLocale());
 		if ($this->isAjax()) {
 			$this->invalidateControl('flashMessages');
 		}

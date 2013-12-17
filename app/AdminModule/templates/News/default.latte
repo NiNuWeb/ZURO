@@ -2,7 +2,7 @@
 
 <h2>{_messages.admin.news.manageNews}</h2>
 <br />
-<div class="table-responsive col-md-9">
+<div class="table-responsive col-md-12">
 	{snippet tableNews}
 	{control confirmForm}
 	<table class="table table-hover news">
@@ -13,6 +13,7 @@
 				<th>{_messages.admin.news.creationTime}</th>
 				<th>{_messages.admin.news.createdBy}</th>
 				<th>{_messages.admin.news.action}</th>
+				<th>{_messages.admin.news.translation}</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -20,9 +21,14 @@
 			<tr>
 				<td>{$news->title}</td>
 				<td>{$news->body|truncate:30}</td>
-				<td>{$news->date|date:'j.n.Y H:i:s'}</td>
-				<td>{$news->users->username}</td>
-				<td><a n:href="News:editNews $news->id"><i class="glyphicon glyphicon-pencil">&nbsp;</i>{_messages.admin.news.edit}</a> | <a n:href="confirmForm:confirmDelete! id => $news->id, title => $news->title"><i class="glyphicon glyphicon-trash">&nbsp;</i>{_messages.admin.news.delete}</a></td>
+				<td>{$news->news->date|date:'j.n.Y H:i:s'}</td>
+				<td>{$news->news->users->username}</td>
+				<td><a n:href="News:editNews $news->news_id"><i class="glyphicon glyphicon-pencil">&nbsp;</i>{_messages.admin.news.edit}</a> | <a n:href="confirmForm:confirmDelete! id => $news->news_id, title => $news->title"><i class="glyphicon glyphicon-trash">&nbsp;</i>{_messages.admin.news.delete}</a></td>
+				<td class="translated">
+					{if $news->news->translated == 1} {_messages.admin.news.translated}
+					{else} <a n:href="News:addTranslation $news->news_id"><i class="glyphicon glyphicon-plus-sign">&nbsp;</i>{_messages.admin.news.addTranslation}</a>
+					{/if}
+				</td>
 			</tr>
 		{/foreach}
 		</tbody>

@@ -1,0 +1,32 @@
+{block #content}
+
+<div class="col-md-6">
+	<h2 n:block="title">{_messages.admin.news.translateNews}: {$translateNews->title}</h2>
+	<small>{_messages.admin.news.addedBy}: {$translateNews->news->users->username} - {$translateNews->news->date|date:'j.n.Y H:i:s'}</small>
+	<p></p>
+	<p>{!$translateNews->body|texy}</p>	
+</div>
+
+<div class="col-md-6">
+	<h2>{_messages.admin.news.translateTo}:
+		{if $translateNews->language_code == "en"}
+		Slovak
+		{else}
+		English
+		{/if}
+	</h2>
+	{control addTranslationForm}
+</div>
+
+<a n:href="default">{_messages.admin.news.backToManageNews}</a>
+{/block}
+
+{block scripts}
+	<script src="{$basePath}/js/jquery.js"></script>
+	<script src="{$basePath}/js/bootstrap.js"></script>
+	<script src="{$basePath}/js/jquery.nette.js"></script>
+	<script src="{$basePath}/js/live-form-validation.js"></script>
+	<script src="{$basePath}/js/jquery.ajaxform.js"></script>
+	<script src="{$basePath}/js/nextras.datetimepicker.init.js"></script>
+	<script src="{$basePath}/js/nextras.netteForms.js"></script>
+{/block}

@@ -13,6 +13,9 @@ class PagesPresenter extends BasePresenter {
 	/** @var \Main\PagesRepository */
 	private $pages;
 
+	/** @var \Nette\Database\Table\ActiveRow */
+	private $pageTranslate;
+
 	/**
 	 * Inject repozitárov
 	 * 
@@ -25,11 +28,7 @@ class PagesPresenter extends BasePresenter {
 	 * Vykreslenie Pages
 	 */
 	public function renderDefault() {
-		$this->template->menu = $this->pages->getPages();
-	}
-
-	public function editPage($id) {
-
+		$this->template->menu = $this->pages->getMenu($this->translator->getLocale());
 	}
 
 	/**
@@ -37,7 +36,21 @@ class PagesPresenter extends BasePresenter {
 	 * @param int $id
 	 */
 	public function renderEditPage($id) {
-		$this->template->findedPage = $this->pages->findById($id);
+		$this->template->findedPage = $this->pages->findSinglePage($id, $this->translator->getLocale());
+		if ($this->template->findedPage === FALSE) {
+			$this->setView('notFound');
+		}
+	}
+
+	public function renderAddTranslation($id) {
+		$this->template->translatePage = $this->pages->findSinglePage($id, $this->translator->getLocale());
+	}
+
+	public function actionAddTranslation($id) {
+		$this->pageTranslate = $this->pages->findSinglePage($id, $this->translator->getLocale());
+		if ($this->pageTranslate === FALSE) {
+			$this->setView('notFound');
+		}
 	}
 
 	/**
@@ -82,13 +95,13 @@ class PagesPresenter extends BasePresenter {
 			$this->flashMessage($this->translator->translate('messages.admin.menu.dontAllowTitle'), 'warning');
 			$this->redirect('this');
 		}
-		if ($this->pages->countAllWithSlug($values['slug']) > 0) {
+		if ($this->pages->countAllWithSlug($values['slug'],  $this->translator->getLocale()) > 0) {
 			$this->flashMessage($this->translator->translate('messages.admin.menu.existsTitle'), 'warning');
 			$this->redirect('this');
 		}
 		
 		$this->pages->editPositions($values['position']);
-		$new_page = $this->pages->addPage($values);
+		$new_page = $this->pages->addPage($values, $this->translator->getLocale());
 		if ($new_page) {
 			$this->flashMessage($this->translator->translate('messages.admin.menu.addPageSucc'), 'success');
 			$this->redirect('Pages:default');
@@ -104,7 +117,7 @@ class PagesPresenter extends BasePresenter {
 		for ($i=1; $i<=$countMenuItems; $i++) {
 			$select[$i] = $i;
 		}
-		$findedPage = $this->pages->findById($this->getParam('id'));
+		$findedPage = $this->pages->findSinglePage($this->getParam('id'), $this->translator->getLocale());
 		
 		$form = new Form;
 		$form->elementPrototype->addAttributes(array('class' => 'form-horizontal col-lg-3'));
@@ -123,7 +136,7 @@ class PagesPresenter extends BasePresenter {
 			->setDefaultValue($findedPage->text)
 			->addRule(Form::FILLED, $this->translator->translate('messages.admin.menu.fillText'));	
 		$form->addSelect('position', $this->translator->translate('messages.admin.menu.position').': ', $select)
-			->setValue($findedPage->position)
+			->setValue($findedPage->pages->position)
 			->setAttribute('class', 'form-control');				
 		$form->addSubmit('editpage', $this->translator->translate('messages.admin.menu.editPage'))
 			->setAttribute('class', 'btn-success pull-left');
@@ -138,21 +151,21 @@ class PagesPresenter extends BasePresenter {
 		$values = $form->getValues();
 		$values['slug'] = Strings::webalize($values->title);
 		$pageid = $this->getParam('id');
-		$actualPageSlug = $this->pages->findById($pageid);
+		$actualPageSlug = $this->pages->findSinglePage($pageid, $this->translator->getLocale());
 		if (isset($values->id)) { unset($values->id); }
 		if ($values['slug'] == 'admin') {
 			$this->flashMessage($this->translator->translate('messages.admin.menu.dontAllowTitle'), 'warning');
 			$this->redirect('this');
 		}
-		if ($this->pages->countAllWithSlug($values['slug']) > 0 && $values['slug'] !== $actualPageSlug->slug) {
+		if ($this->pages->countAllWithSlug($values['slug'], $this->translator->getLocale()) > 0 && $values['slug'] !== $actualPageSlug->slug) {
 			$this->flashMessage($this->translator->translate('messages.admin.menu.existsTitle'), 'warning');
 			$this->redirect('this');
 		}
 
-		$updatePosition = $this->pages->updatePositions($actualPageSlug->position, $values['position']);
+		$updatePosition = $this->pages->updatePositions($actualPageSlug->pages->position, $values['position']);
 		if ($updatePosition) {
 			unset($values['position']);
-			$edited_page = $this->pages->editPage($pageid, $values);
+			$edited_page = $this->pages->editPage($pageid, $values, $this->translator->getLocale());
 			$this->flashMessage($this->translator->translate('messages.admin.menu.editPageSucc'), 'success');
 			$this->redirect('Pages:default');
 				
@@ -202,6 +215,58 @@ class PagesPresenter extends BasePresenter {
 			$this->redirect('Pages:default');
 		} else {
 			$this->invalidateControl('tablePages');
+		}
+	}
+
+	/**
+	 * Formulár pre pridávanie prekladov
+	 * @return Nette\Application\UI\Form
+	 */
+	protected function createComponentAddTranslationForm() {
+		$translation_language = ($this->translator->getLocale() == "en") ? "sk" : "en";
+		$form = new Form;
+		$form->elementPrototype->addAttributes(array('class' => 'form-horizontal col-lg-10'));
+		$renderer = $form->getRenderer();
+
+		$renderer->wrappers['controls']['container'] = 'div';
+		$renderer->wrappers['pair']['container'] = 'div class="form-group"';
+		$renderer->wrappers['control']['.submit'] = 'btn';
+
+		$form->addHidden('pages_id')->setDefaultValue($this->getParameter('id'));
+		$form->addHidden('translate_to')->setDefaultValue($translation_language);
+		$form->addText('title', $this->translator->translate('messages.admin.menu.formTitle').': *')
+			->setAttribute('class', 'form-control')
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.menu.enterTitle'));
+		$form->addTextArea('text', $this->translator->translate('messages.admin.menu.formText').': *', 100, 15)
+			->setAttribute('class', 'form-control')
+			->addRule(Form::FILLED, $this->translator->translate('messages.admin.menu.fillText'));
+		$form->addSubmit('addtranslation', $this->translator->translate('messages.admin.menu.addTranslation'))
+			->setAttribute('class', 'btn-success pull-left');
+		$form->onSuccess[] = $this->translationFormSubmitted;
+		return $form;
+	}
+
+
+	/**
+	 * Po úspešnom odoslaní formulára translationForm
+	 */
+	public function translationFormSubmitted(Form $form) {
+		$values = $form->getValues();
+		$values['slug'] = Strings::webalize($values->title);
+
+		if ($values['slug'] == 'admin') {
+			$this->flashMessage($this->translator->translate('messages.admin.menu.dontAllowTitle'), 'warning');
+			$this->redirect('this');
+		}
+		if ($this->pages->countAllWithSlug($values['slug'], $values['translate_to']) > 0) {
+			$this->flashMessage($this->translator->translate('messages.admin.menu.existsTitle'), 'warning');
+			$this->redirect('this');
+		}
+
+		$translation = $this->pages->addTranslation($values);
+		if ($translation) {
+			$this->flashMessage($this->translator->translate('messages.admin.menu.translationAddSucc'), 'success');
+			$this->redirect('Pages:default');
 		}
 	}
 	

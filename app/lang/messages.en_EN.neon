@@ -1,5 +1,6 @@
 page:
 	news: News
+	home: Home
 
 miniLoginForm:
 	username: Username
@@ -138,6 +139,15 @@ admin:
 		dateTimeReq: "Date and time is required!"
 		editNewsSucc: "News was successfully edited."
 		newsDelete: "News was successfully deleted!"
+		translation: Translation
+		translated: Translated
+		addTranslation: Add Translation
+		translateNews: Translate News
+		translateTo: Translate to language
+		backToManageNews: Back to Manage News
+		translationAddSucc: "Translation successfully added."
+		translateNotFound: Translation was not founded
+		notFoundExplan: "Sorry, but translation for this news was not founded."
 	menu:
 		manageMenu: Manage Main Menu
 		pageTitle: Page Title
@@ -161,6 +171,15 @@ admin:
 		editPageSucc: "You have successfully edited page."
 		deletePageConfirm: Do You Really Want Delete Page With Title
 		deletedPage: "Page was successfully deleted!"
+		pageNotFound: Page Not Found
+		notFoundExplan: "Sorry, but the page was not found."
+		translation: Translation
+		translated: Translated
+		addTranslation: Add Translation
+		translatePage: Translate Page
+		translateTo: Translate to
+		backToManagePages: Back to Manage Pages
+		translationAddSucc: "Translation successfully added."
 	task:
 		listsCat: Lists Category
 		addTask: Add New Task

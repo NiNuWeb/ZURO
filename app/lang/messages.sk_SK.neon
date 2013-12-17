@@ -1,5 +1,6 @@
 page:
 	news: Novinky
+	home: Domov
 
 miniLoginForm:
 	username: Používateľské meno
@@ -136,8 +137,17 @@ admin:
 		fillTitle: "Musíte zadať nadpis novinky."
 		fillBody: "Musíte zadať telo správy."
 		dateTimeReq: "Dátum a čas musí byť vyplnený!"
-		editNewsSucc: "Novinka bola úspešne aktualitovaná."
+		editNewsSucc: "Novinka bola úspešne aktualizovaná."
 		newsDelete: "Novinka bola úspešne vymazaná!"
+		translation: Preklad
+		translated: Preložené
+		addTranslation: Pridať preklad
+		translateNews: Preložiť novinku
+		translateTo: Preložiť do jazyka
+		backToManageNews: Späť na správu noviniek
+		translationAddSucc: "Preklad novinky pridaný."
+		translateNotFound: Preklad nenájdený
+		notFoundExplan: "Ľudujeme, ale preklad pre túto novinku nebol nájdený, alebo neexistuje."
 	menu:
 		manageMenu: Správa Hlavného Menu
 		pageTitle: Nadpis
@@ -161,6 +171,15 @@ admin:
 		editPageSucc: "Stránka bola úspešne aktualizovaná."
 		deletePageConfirm: Skutočne chcete vymazať stránku s nadpisom
 		deletedPage: "Stránka bola úspešne vymazaná!"
+		pageNotFound: Stránka sa nenašla
+		notFoundExplan: "Prepáčte, ale požadovaná stránka sa nenašla."
+		translation: Preklad
+		translated: Preložené
+		addTranslation: Pridať preklad
+		translatePage: Preložiť stránku
+		translateTo: Preklad do
+		backToManagePages: Späť do správy menu
+		translationAddSucc: "Preklad stránky pridaný."
 	task:
 		listsCat: Zoznamy
 		addTask: Pridať novú úlohu

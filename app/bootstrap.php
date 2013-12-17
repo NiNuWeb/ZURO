@@ -27,6 +27,7 @@ $configurator->addConfig(__DIR__ . '/config/config.neon');
 $configurator->addConfig(__DIR__ . '/config/config.local.neon', $configurator::NONE); // none section
 
 Kdyby\Translation\DI\TranslationExtension::register($configurator);
+Kdyby\Replicator\Container::register();
 
 $container = $configurator->createContainer();
 

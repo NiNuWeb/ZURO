@@ -1,4 +1,4 @@
-<?php //netteCache[01]013464a:2:{s:4:"time";s:21:"0.56766600 1386701339";s:9:"callbacks";a:79:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:43:"C:\xampp\htdocs\ZURO\app\config\config.neon";i:2;i:1386270623;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\app\config\config.local.neon";i:2;i:1375917388;}i:2;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:108:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\DI\config\extractors.neon";i:2;i:1386264669;}i:3;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:105:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\DI\config\dumpers.neon";i:2;i:1386264669;}i:4;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:105:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\DI\config\loaders.neon";i:2;i:1386264669;}i:5;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:66:"C:\xampp\htdocs\ZURO\libs\Nette\Config\Extensions\PhpExtension.php";i:2;i:1375917486;}i:6;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:72:"C:\xampp\htdocs\ZURO\libs\Nette\Config\Extensions\ConstantsExtension.php";i:2;i:1375917486;}i:7;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:68:"C:\xampp\htdocs\ZURO\libs\Nette\Config\Extensions\NetteExtension.php";i:2;i:1375917486;}i:8;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:29:"C:\xampp\htdocs\ZURO\app/lang";i:2;i:1386269945;}i:9;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\app/lang\messages.en_EN.neon";i:2;i:1386701312;}i:10;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\app/lang\messages.sk_SK.neon";i:2;i:1386701310;}i:11;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:110:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\DI\TranslationExtension.php";i:2;i:1386264669;}i:12;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\libs\Nette\common\Object.php";i:2;i:1375917486;}i:13;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:61:"C:\xampp\htdocs\ZURO\libs\Nette\Caching\Storages\IJournal.php";i:2;i:1375917486;}i:14;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:64:"C:\xampp\htdocs\ZURO\libs\Nette\Caching\Storages\FileJournal.php";i:2;i:1375917486;}i:15;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:52:"C:\xampp\htdocs\ZURO\libs\Nette\Caching\IStorage.php";i:2;i:1375917486;}i:16;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:64:"C:\xampp\htdocs\ZURO\libs\Nette\Caching\Storages\FileStorage.php";i:2;i:1375917486;}i:17;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:55:"C:\xampp\htdocs\ZURO\libs\Nette\Http\RequestFactory.php";i:2;i:1375917486;}i:18;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\libs\Nette\Http\IRequest.php";i:2;i:1375917486;}i:19;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:48:"C:\xampp\htdocs\ZURO\libs\Nette\Http\Request.php";i:2;i:1375917486;}i:20;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:50:"C:\xampp\htdocs\ZURO\libs\Nette\Http\IResponse.php";i:2;i:1375917486;}i:21;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\libs\Nette\Http\Response.php";i:2;i:1375917486;}i:22;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:48:"C:\xampp\htdocs\ZURO\libs\Nette\Http\Context.php";i:2;i:1375917486;}i:23;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:48:"C:\xampp\htdocs\ZURO\libs\Nette\Http\Session.php";i:2;i:1375917486;}i:24;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:57:"C:\xampp\htdocs\ZURO\libs\Nette\Security\IUserStorage.php";i:2;i:1375917486;}i:25;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:52:"C:\xampp\htdocs\ZURO\libs\Nette\Http\UserStorage.php";i:2;i:1375917486;}i:26;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\libs\Nette\Security\User.php";i:2;i:1375917486;}i:27;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:59:"C:\xampp\htdocs\ZURO\libs\Nette\Application\Application.php";i:2;i:1375917486;}i:28;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:65:"C:\xampp\htdocs\ZURO\libs\Nette\Application\IPresenterFactory.php";i:2;i:1375917486;}i:29;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:64:"C:\xampp\htdocs\ZURO\libs\Nette\Application\PresenterFactory.php";i:2;i:1375917486;}i:30;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:55:"C:\xampp\htdocs\ZURO\libs\Nette\Application\IRouter.php";i:2;i:1375917486;}i:31;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:48:"C:\xampp\htdocs\ZURO\libs\Nette\Mail\IMailer.php";i:2;i:1375917486;}i:32;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:55:"C:\xampp\htdocs\ZURO\libs\Nette\Mail\SendmailMailer.php";i:2;i:1375917486;}i:33;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:53:"C:\xampp\htdocs\ZURO\libs\Nette\DI\NestedAccessor.php";i:2;i:1375917486;}i:34;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:107:"C:\xampp\htdocs\ZURO\app\components\vendor\symfony\translation\Symfony\Component\Translation\Translator.php";i:2;i:1386264669;}i:35;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:116:"C:\xampp\htdocs\ZURO\app\components\vendor\symfony\translation\Symfony\Component\Translation\TranslatorInterface.php";i:2;i:1386264669;}i:36;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"C:\xampp\htdocs\ZURO\libs\Nette\Localization\ITranslator.php";i:2;i:1375917486;}i:37;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:97:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\Translator.php";i:2;i:1386264669;}i:38;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:106:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\IUserLocaleResolver.php";i:2;i:1386264669;}i:39;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:102:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\TemplateHelpers.php";i:2;i:1386264669;}i:40;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:104:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\CatalogueCompiler.php";i:2;i:1386264669;}i:41;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:103:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\FallbackResolver.php";i:2;i:1386264669;}i:42;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:103:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\CatalogueFactory.php";i:2;i:1386264669;}i:43;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:112:"C:\xampp\htdocs\ZURO\app\components\vendor\symfony\translation\Symfony\Component\Translation\MessageSelector.php";i:2;i:1386264669;}i:44;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:105:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\LoadersInitializer.php";i:2;i:1386264669;}i:45;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:125:"C:\xampp\htdocs\ZURO\app\components\vendor\symfony\translation\Symfony\Component\Translation\Extractor\ExtractorInterface.php";i:2;i:1386264669;}i:46;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:121:"C:\xampp\htdocs\ZURO\app\components\vendor\symfony\translation\Symfony\Component\Translation\Extractor\ChainExtractor.php";i:2;i:1386264669;}i:47;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:121:"C:\xampp\htdocs\ZURO\app\components\vendor\symfony\translation\Symfony\Component\Translation\Writer\TranslationWriter.php";i:2;i:1386264669;}i:48;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:104:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\TranslationLoader.php";i:2;i:1386264669;}i:49;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:55:"C:\xampp\htdocs\ZURO\app\components\Texy\TexyObject.php";i:2;i:1374275260;}i:50;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\app\components\Texy\Texy.php";i:2;i:1374275260;}i:51;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:55:"C:\xampp\htdocs\ZURO\libs\Nette\Database\Connection.php";i:2;i:1375917486;}i:52;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:59:"C:\xampp\htdocs\ZURO\libs\Nette\Security\IAuthenticator.php";i:2;i:1375917486;}i:53;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:56:"C:\xampp\htdocs\ZURO\libs\Acl\Security\Authenticator.php";i:2;i:1382076379;}i:54;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:58:"C:\xampp\htdocs\ZURO\libs\Nette\Security\IAuthorizator.php";i:2;i:1375917486;}i:55;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:55:"C:\xampp\htdocs\ZURO\libs\Nette\Security\Permission.php";i:2;i:1375917486;}i:56;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:45:"C:\xampp\htdocs\ZURO\app\model\Repository.php";i:2;i:1384870472;}i:57;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\app\model\ListRepository.php";i:2;i:1384613084;}i:58;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\app\model\TaskRepository.php";i:2;i:1384613649;}i:59;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:50:"C:\xampp\htdocs\ZURO\app\model\UsersRepository.php";i:2;i:1384613802;}i:60;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:50:"C:\xampp\htdocs\ZURO\app\model\PagesRepository.php";i:2;i:1384865888;}i:61;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\app\model\NewsRepository.php";i:2;i:1384613154;}i:62;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\app\router\RouterFactory.php";i:2;i:1386684600;}i:63;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:58:"C:\xampp\htdocs\ZURO\libs\Nette\common\FreezableObject.php";i:2;i:1375917486;}i:64;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:53:"C:\xampp\htdocs\ZURO\libs\Nette\common\IFreezable.php";i:2;i:1375917486;}i:65;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\libs\Nette\DI\IContainer.php";i:2;i:1375917486;}i:66;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:48:"C:\xampp\htdocs\ZURO\libs\Nette\DI\Container.php";i:2;i:1375917486;}i:67;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:72:"C:\xampp\htdocs\ZURO\libs\Nette\Application\Diagnostics\RoutingPanel.php";i:2;i:1375917486;}i:68;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:46:"C:\xampp\htdocs\ZURO\libs\Nette\Forms\Form.php";i:2;i:1375917486;}i:69;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:51:"C:\xampp\htdocs\ZURO\libs\Nette\common\Callback.php";i:2;i:1375917486;}i:70;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\libs\Nette\Caching\Cache.php";i:2;i:1375917486;}i:71;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:48:"C:\xampp\htdocs\ZURO\libs\Nette\Latte\Engine.php";i:2;i:1375917486;}i:72;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:48:"C:\xampp\htdocs\ZURO\libs\Nette\Mail\Message.php";i:2;i:1375917486;}i:73;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:59:"C:\xampp\htdocs\ZURO\libs\Nette\Templating\FileTemplate.php";i:2;i:1375917486;}i:74;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:55:"C:\xampp\htdocs\ZURO\libs\Nette\Templating\Template.php";i:2;i:1375917486;}i:75;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:104:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\Diagnostics\Panel.php";i:2;i:1386264669;}i:76;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:115:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\LocaleResolver\DefaultLocale.php";i:2;i:1386264669;}i:77;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:122:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\LocaleResolver\AcceptHeaderResolver.php";i:2;i:1386264669;}i:78;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:66:"C:\xampp\htdocs\ZURO\libs\Nette\Security\Diagnostics\UserPanel.php";i:2;i:1375917486;}}}?><?php
+<?php //netteCache[01]013641a:2:{s:4:"time";s:21:"0.50820500 1387303267";s:9:"callbacks";a:80:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:43:"C:\xampp\htdocs\ZURO\app\config\config.neon";i:2;i:1386957215;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\app\config\config.local.neon";i:2;i:1375917388;}i:2;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:108:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\DI\config\extractors.neon";i:2;i:1386264669;}i:3;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:105:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\DI\config\dumpers.neon";i:2;i:1386264669;}i:4;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:105:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\DI\config\loaders.neon";i:2;i:1386264669;}i:5;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:66:"C:\xampp\htdocs\ZURO\libs\Nette\Config\Extensions\PhpExtension.php";i:2;i:1375917486;}i:6;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:72:"C:\xampp\htdocs\ZURO\libs\Nette\Config\Extensions\ConstantsExtension.php";i:2;i:1375917486;}i:7;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:68:"C:\xampp\htdocs\ZURO\libs\Nette\Config\Extensions\NetteExtension.php";i:2;i:1375917486;}i:8;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:29:"C:\xampp\htdocs\ZURO\app/lang";i:2;i:1386269945;}i:9;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\app/lang\messages.en_EN.neon";i:2;i:1387300065;}i:10;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\app/lang\messages.sk_SK.neon";i:2;i:1387300084;}i:11;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:110:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\DI\TranslationExtension.php";i:2;i:1386264669;}i:12;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\libs\Nette\common\Object.php";i:2;i:1375917486;}i:13;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:61:"C:\xampp\htdocs\ZURO\libs\Nette\Caching\Storages\IJournal.php";i:2;i:1375917486;}i:14;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:64:"C:\xampp\htdocs\ZURO\libs\Nette\Caching\Storages\FileJournal.php";i:2;i:1375917486;}i:15;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:52:"C:\xampp\htdocs\ZURO\libs\Nette\Caching\IStorage.php";i:2;i:1375917486;}i:16;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:64:"C:\xampp\htdocs\ZURO\libs\Nette\Caching\Storages\FileStorage.php";i:2;i:1375917486;}i:17;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:55:"C:\xampp\htdocs\ZURO\libs\Nette\Http\RequestFactory.php";i:2;i:1375917486;}i:18;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\libs\Nette\Http\IRequest.php";i:2;i:1375917486;}i:19;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:48:"C:\xampp\htdocs\ZURO\libs\Nette\Http\Request.php";i:2;i:1375917486;}i:20;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:50:"C:\xampp\htdocs\ZURO\libs\Nette\Http\IResponse.php";i:2;i:1375917486;}i:21;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\libs\Nette\Http\Response.php";i:2;i:1375917486;}i:22;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:48:"C:\xampp\htdocs\ZURO\libs\Nette\Http\Context.php";i:2;i:1375917486;}i:23;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:48:"C:\xampp\htdocs\ZURO\libs\Nette\Http\Session.php";i:2;i:1375917486;}i:24;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:57:"C:\xampp\htdocs\ZURO\libs\Nette\Security\IUserStorage.php";i:2;i:1375917486;}i:25;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:52:"C:\xampp\htdocs\ZURO\libs\Nette\Http\UserStorage.php";i:2;i:1375917486;}i:26;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\libs\Nette\Security\User.php";i:2;i:1375917486;}i:27;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:59:"C:\xampp\htdocs\ZURO\libs\Nette\Application\Application.php";i:2;i:1375917486;}i:28;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:65:"C:\xampp\htdocs\ZURO\libs\Nette\Application\IPresenterFactory.php";i:2;i:1375917486;}i:29;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:64:"C:\xampp\htdocs\ZURO\libs\Nette\Application\PresenterFactory.php";i:2;i:1375917486;}i:30;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:55:"C:\xampp\htdocs\ZURO\libs\Nette\Application\IRouter.php";i:2;i:1375917486;}i:31;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:48:"C:\xampp\htdocs\ZURO\libs\Nette\Mail\IMailer.php";i:2;i:1375917486;}i:32;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:55:"C:\xampp\htdocs\ZURO\libs\Nette\Mail\SendmailMailer.php";i:2;i:1375917486;}i:33;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:53:"C:\xampp\htdocs\ZURO\libs\Nette\DI\NestedAccessor.php";i:2;i:1375917486;}i:34;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:55:"C:\xampp\htdocs\ZURO\libs\Nette\Database\Connection.php";i:2;i:1375917486;}i:35;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:107:"C:\xampp\htdocs\ZURO\app\components\vendor\symfony\translation\Symfony\Component\Translation\Translator.php";i:2;i:1386264669;}i:36;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:116:"C:\xampp\htdocs\ZURO\app\components\vendor\symfony\translation\Symfony\Component\Translation\TranslatorInterface.php";i:2;i:1386264669;}i:37;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"C:\xampp\htdocs\ZURO\libs\Nette\Localization\ITranslator.php";i:2;i:1375917486;}i:38;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:97:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\Translator.php";i:2;i:1386264669;}i:39;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:106:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\IUserLocaleResolver.php";i:2;i:1386264669;}i:40;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:102:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\TemplateHelpers.php";i:2;i:1386264669;}i:41;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:104:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\CatalogueCompiler.php";i:2;i:1386264669;}i:42;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:103:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\FallbackResolver.php";i:2;i:1386264669;}i:43;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:103:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\CatalogueFactory.php";i:2;i:1386264669;}i:44;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:112:"C:\xampp\htdocs\ZURO\app\components\vendor\symfony\translation\Symfony\Component\Translation\MessageSelector.php";i:2;i:1386264669;}i:45;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:105:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\LoadersInitializer.php";i:2;i:1386264669;}i:46;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:125:"C:\xampp\htdocs\ZURO\app\components\vendor\symfony\translation\Symfony\Component\Translation\Extractor\ExtractorInterface.php";i:2;i:1386264669;}i:47;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:121:"C:\xampp\htdocs\ZURO\app\components\vendor\symfony\translation\Symfony\Component\Translation\Extractor\ChainExtractor.php";i:2;i:1386264669;}i:48;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:121:"C:\xampp\htdocs\ZURO\app\components\vendor\symfony\translation\Symfony\Component\Translation\Writer\TranslationWriter.php";i:2;i:1386264669;}i:49;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:104:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\TranslationLoader.php";i:2;i:1386264669;}i:50;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:45:"C:\xampp\htdocs\ZURO\app\model\Repository.php";i:2;i:1386952483;}i:51;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\app\model\ListRepository.php";i:2;i:1384613084;}i:52;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:55:"C:\xampp\htdocs\ZURO\app\components\Texy\TexyObject.php";i:2;i:1374275260;}i:53;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\app\components\Texy\Texy.php";i:2;i:1374275260;}i:54;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:59:"C:\xampp\htdocs\ZURO\libs\Nette\Security\IAuthenticator.php";i:2;i:1375917486;}i:55;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:56:"C:\xampp\htdocs\ZURO\libs\Acl\Security\Authenticator.php";i:2;i:1382076379;}i:56;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:58:"C:\xampp\htdocs\ZURO\libs\Nette\Security\IAuthorizator.php";i:2;i:1375917486;}i:57;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:55:"C:\xampp\htdocs\ZURO\libs\Nette\Security\Permission.php";i:2;i:1375917486;}i:58;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\app\model\TaskRepository.php";i:2;i:1384613649;}i:59;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\app\model\NewsRepository.php";i:2;i:1387231336;}i:60;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:50:"C:\xampp\htdocs\ZURO\app\model\UsersRepository.php";i:2;i:1384613802;}i:61;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:50:"C:\xampp\htdocs\ZURO\app\model\PagesRepository.php";i:2;i:1387303259;}i:62;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\app\router\RouterFactory.php";i:2;i:1386684600;}i:63;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:58:"C:\xampp\htdocs\ZURO\libs\Nette\common\FreezableObject.php";i:2;i:1375917486;}i:64;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:53:"C:\xampp\htdocs\ZURO\libs\Nette\common\IFreezable.php";i:2;i:1375917486;}i:65;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\libs\Nette\DI\IContainer.php";i:2;i:1375917486;}i:66;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:48:"C:\xampp\htdocs\ZURO\libs\Nette\DI\Container.php";i:2;i:1375917486;}i:67;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:72:"C:\xampp\htdocs\ZURO\libs\Nette\Application\Diagnostics\RoutingPanel.php";i:2;i:1375917486;}i:68;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:46:"C:\xampp\htdocs\ZURO\libs\Nette\Forms\Form.php";i:2;i:1375917486;}i:69;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:51:"C:\xampp\htdocs\ZURO\libs\Nette\common\Callback.php";i:2;i:1375917486;}i:70;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:49:"C:\xampp\htdocs\ZURO\libs\Nette\Caching\Cache.php";i:2;i:1375917486;}i:71;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:76:"C:\xampp\htdocs\ZURO\libs\Nette\Database\Reflection\DiscoveredReflection.php";i:2;i:1375917486;}i:72;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:48:"C:\xampp\htdocs\ZURO\libs\Nette\Latte\Engine.php";i:2;i:1375917486;}i:73;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:48:"C:\xampp\htdocs\ZURO\libs\Nette\Mail\Message.php";i:2;i:1375917486;}i:74;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:59:"C:\xampp\htdocs\ZURO\libs\Nette\Templating\FileTemplate.php";i:2;i:1375917486;}i:75;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:55:"C:\xampp\htdocs\ZURO\libs\Nette\Templating\Template.php";i:2;i:1375917486;}i:76;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:104:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\Diagnostics\Panel.php";i:2;i:1386264669;}i:77;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:115:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\LocaleResolver\DefaultLocale.php";i:2;i:1386264669;}i:78;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:122:"C:\xampp\htdocs\ZURO\app\components\vendor\kdyby\translation\src\Kdyby\Translation\LocaleResolver\AcceptHeaderResolver.php";i:2;i:1386264669;}i:79;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:66:"C:\xampp\htdocs\ZURO\libs\Nette\Security\Diagnostics\UserPanel.php";i:2;i:1375917486;}}}?><?php
 // source: C:\xampp\htdocs\ZURO\app/config/config.neon development
 // source: C:\xampp\htdocs\ZURO\app/config/config.local.neon 
 
@@ -9,7 +9,6 @@
  * @property Nette\Caching\Storages\FileStorage $cacheStorage
  * @property Nette\DI\NestedAccessor $constants
  * @property Nette\DI\Container $container
- * @property Nette\Database\Connection $database
  * @property Nette\Http\Request $httpRequest
  * @property Nette\Http\Response $httpResponse
  * @property ToDo\ListRepository $listRepository
@@ -30,7 +29,7 @@ class SystemContainer extends Nette\DI\Container
 {
 
 	public $classes = array(
-		'nette\\object' => FALSE, //: nette.cacheJournal, cacheStorage, nette.httpRequestFactory, httpRequest, httpResponse, nette.httpContext, session, nette.userStorage, user, application, nette.presenterFactory, nette.mailer, nette.database, translation.helpers, translation.catalogueCompiler, translation.fallbackResolver, translation.catalogueFactory, translation.loadersInitializer, translation.loader, authenticator, authorizator, listRepository, taskRepository, usersRepository, pagesRepository, newsRepository, container,
+		'nette\\object' => FALSE, //: nette.cacheJournal, cacheStorage, nette.httpRequestFactory, httpRequest, httpResponse, nette.httpContext, session, nette.userStorage, user, application, nette.presenterFactory, nette.mailer, nette.database, translation.helpers, translation.catalogueCompiler, translation.fallbackResolver, translation.catalogueFactory, translation.loadersInitializer, translation.loader, listRepository, authenticator, authorizator, taskRepository, newsRepository, usersRepository, pagesRepository, container,
 		'nette\\caching\\storages\\ijournal' => 'nette.cacheJournal',
 		'nette\\caching\\storages\\filejournal' => 'nette.cacheJournal',
 		'nette\\caching\\istorage' => 'cacheStorage',
@@ -52,6 +51,8 @@ class SystemContainer extends Nette\DI\Container
 		'nette\\mail\\imailer' => 'nette.mailer',
 		'nette\\mail\\sendmailmailer' => 'nette.mailer',
 		'nette\\di\\nestedaccessor' => 'nette.database',
+		'pdo' => 'nette.database.default',
+		'nette\\database\\connection' => 'nette.database.default',
 		'symfony\\component\\translation\\translator' => 'translation.default',
 		'symfony\\component\\translation\\translatorinterface' => 'translation.default',
 		'nette\\localization\\itranslator' => 'translation.default',
@@ -67,20 +68,18 @@ class SystemContainer extends Nette\DI\Container
 		'symfony\\component\\translation\\extractor\\chainextractor' => 'translation.extractor',
 		'symfony\\component\\translation\\writer\\translationwriter' => 'translation.writer',
 		'kdyby\\translation\\translationloader' => 'translation.loader',
+		'main\\repository' => FALSE, //: listRepository, taskRepository, newsRepository, usersRepository, pagesRepository,
+		'todo\\listrepository' => 'listRepository',
 		'texyobject' => 'texy',
 		'texy' => 'texy',
-		'pdo' => 'database',
-		'nette\\database\\connection' => 'database',
 		'nette\\security\\iauthenticator' => 'authenticator',
 		'acl\\security\\authenticator' => 'authenticator',
 		'nette\\security\\iauthorizator' => 'authorizator',
 		'nette\\security\\permission' => 'authorizator',
-		'main\\repository' => FALSE, //: listRepository, taskRepository, usersRepository, pagesRepository, newsRepository,
-		'todo\\listrepository' => 'listRepository',
 		'todo\\taskrepository' => 'taskRepository',
+		'main\\newsrepository' => 'newsRepository',
 		'main\\usersrepository' => 'usersRepository',
 		'main\\pagesrepository' => 'pagesRepository',
-		'main\\newsrepository' => 'newsRepository',
 		'routerfactory' => 'routerFactory',
 		'nette\\freezableobject' => 'container',
 		'nette\\ifreezable' => 'container',
@@ -216,6 +215,13 @@ class SystemContainer extends Nette\DI\Container
 				'parent' => 'Nette\\DI\\Container',
 			),
 			'tempDir' => 'C:\\xampp\\htdocs\\ZURO\\app/../temp',
+			'database' => array(
+				'driver' => 'mysql',
+				'host' => 'localhost',
+				'dbname' => 'zuro_db',
+				'user' => 'zuro',
+				'password' => 'zuro',
+			),
 		));
 	}
 
@@ -240,7 +246,7 @@ class SystemContainer extends Nette\DI\Container
 	 */
 	protected function createServiceAuthenticator()
 	{
-		$service = new Acl\Security\Authenticator($this->getService('database'));
+		$service = new Acl\Security\Authenticator($this->getService('nette.database.default'));
 		return $service;
 	}
 
@@ -298,16 +304,6 @@ class SystemContainer extends Nette\DI\Container
 
 
 	/**
-	 * @return Nette\Database\Connection
-	 */
-	protected function createServiceDatabase()
-	{
-		$service = new Nette\Database\Connection('mysql:host=localhost;dbname=zuro_db', 'zuro', 'zuro');
-		return $service;
-	}
-
-
-	/**
 	 * @return Nette\Http\Request
 	 */
 	protected function createServiceHttpRequest()
@@ -335,7 +331,7 @@ class SystemContainer extends Nette\DI\Container
 	 */
 	protected function createServiceListRepository()
 	{
-		$service = new ToDo\ListRepository($this->getService('database'));
+		$service = new ToDo\ListRepository($this->getService('nette.database.default'));
 		return $service;
 	}
 
@@ -406,6 +402,36 @@ class SystemContainer extends Nette\DI\Container
 	protected function createServiceNette__database()
 	{
 		$service = new Nette\DI\NestedAccessor($this, 'nette.database');
+		return $service;
+	}
+
+
+	/**
+	 * @return Nette\Database\Connection
+	 */
+	protected function createServiceNette__database__default()
+	{
+		$service = new Nette\Database\Connection('mysql:host=localhost;dbname=zuro_db', 'zuro', 'zuro', NULL);
+		$service->setCacheStorage($this->getService('cacheStorage'));
+		Nette\Diagnostics\Debugger::$blueScreen->addPanel('Nette\\Database\\Diagnostics\\ConnectionPanel::renderException');
+		$service->setDatabaseReflection(new Nette\Database\Reflection\DiscoveredReflection($this->getService('cacheStorage')));
+		$service->onQuery[] = array(
+			$this->getService('nette.database.defaultConnectionPanel'),
+			'logQuery',
+		);
+		return $service;
+	}
+
+
+	/**
+	 * @return Nette\Database\Diagnostics\ConnectionPanel
+	 */
+	protected function createServiceNette__database__defaultConnectionPanel()
+	{
+		$service = new Nette\Database\Diagnostics\ConnectionPanel;
+		$service->explain = TRUE;
+		$service->name = 'default';
+		Nette\Diagnostics\Debugger::$bar->addPanel($service);
 		return $service;
 	}
 
@@ -540,7 +566,7 @@ class SystemContainer extends Nette\DI\Container
 	 */
 	protected function createServiceNewsRepository()
 	{
-		$service = new Main\NewsRepository($this->getService('database'));
+		$service = new Main\NewsRepository($this->getService('nette.database.default'));
 		return $service;
 	}
 
@@ -550,7 +576,7 @@ class SystemContainer extends Nette\DI\Container
 	 */
 	protected function createServicePagesRepository()
 	{
-		$service = new Main\PagesRepository($this->getService('database'));
+		$service = new Main\PagesRepository($this->getService('nette.database.default'));
 		return $service;
 	}
 
@@ -604,7 +630,7 @@ class SystemContainer extends Nette\DI\Container
 	 */
 	protected function createServiceTaskRepository()
 	{
-		$service = new ToDo\TaskRepository($this->getService('database'));
+		$service = new ToDo\TaskRepository($this->getService('nette.database.default'));
 		return $service;
 	}
 
@@ -1059,7 +1085,7 @@ class SystemContainer extends Nette\DI\Container
 	 */
 	protected function createServiceUsersRepository()
 	{
-		$service = new Main\UsersRepository($this->getService('database'));
+		$service = new Main\UsersRepository($this->getService('nette.database.default'));
 		return $service;
 	}
 
@@ -1123,12 +1149,25 @@ class SystemContainer_translation
 
 
 /**
+ * @property Nette\Database\Connection $default
+ * @property Nette\Database\Diagnostics\ConnectionPanel $defaultConnectionPanel
+ */
+class SystemContainer_nette_database
+{
+
+
+
+}
+
+
+
+/**
  * @method Nette\Forms\Form createBasicForm()
  * @property Nette\Callback $basicFormFactory
  * @method Nette\Caching\Cache createCache()
  * @property Nette\Callback $cacheFactory
  * @property Nette\Caching\Storages\FileJournal $cacheJournal
- * @property Nette\DI\NestedAccessor $database
+ * @property SystemContainer_nette_database $database
  * @property Nette\Http\Context $httpContext
  * @method Nette\Latte\Engine createLatte()
  * @property Nette\Callback $latteFactory

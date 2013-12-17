@@ -1,6 +1,6 @@
 {block #content}
 <h3 n:block="title">{$singleNews->title}</h3>
-<small>{_messages.news.addedBy}: {$singleNews->users->username} - {$singleNews->date|date:'j.n.Y H:i:s'}</small>
+<small>{_messages.news.addedBy}: {$singleNews->news->users->username} - {$singleNews->news->date|date:'j.n.Y H:i:s'}</small>
 <p></p>
 <p>{!$singleNews->body|texy}</p>
 <a n:href=":Front:Homepage:page" class="btn btn-primary"> << {_messages.actions.back}</a>

@@ -32,7 +32,7 @@ class NewsPresenter extends BasePresenter {
 	 * @param int $id
 	 */
 	public function renderSingle($id) {
-		$this->template->singleNews = $this->newsRepository->findById($id);
+		$this->template->singleNews = $this->newsRepository->findSingleNews($id, $this->translator->getLocale());
 	}
 
 

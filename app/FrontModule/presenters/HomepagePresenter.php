@@ -42,11 +42,11 @@ class HomepagePresenter extends BasePresenter
 	public function actionPage($slug = NULL) {
 
 		if (is_null($slug)) {
-			$slug = $this->pages->findFirstPage()->slug; //vracia prvý záznam z tabuľky pages
+			$slug = $this->pages->findFirstPage($this->translator->getLocale())->slug; //vracia prvý záznam z tabuľky pages
 		}
 
-		$this->page = $this->pages->findBySlug($slug);
-		$this->menu = $this->pages->getMenu();
+		$this->page = $this->pages->findBySlug($slug, $this->translator->getLocale());
+		//$this->menu = $this->pages->getMenu($this->translator->getLocale());
 
 		if (!$this->page) {
 			throw new BadRequestException($this->translator->translate("messages.requests.404"), 404);
@@ -112,7 +112,7 @@ class HomepagePresenter extends BasePresenter
 	 */
 	public function renderPage($slug = NULL) {
 		if (is_null($slug)) {
-			$slug = $this->pages->findFirstPage()->slug; // Vyberie prvý záznam z tabuľky pages
+			$slug = $this->pages->findFirstPage($this->translator->getLocale())->slug; // Vyberie prvý záznam z tabuľky pages
 		}
 
 		$vp = new \VisualPaginator($this, 'vp');
@@ -122,9 +122,9 @@ class HomepagePresenter extends BasePresenter
 
 		$this->template->page = $this->page;
 
-		$this->template->menu = $this->menu;
+		$this->template->menu = $this->pages->getMenu($this->translator->getLocale());
 
-		$this->template->news = $this->newsRepository->getAllNews()->limit($paginator->itemsPerPage, $paginator->offset);
+		$this->template->news = $this->newsRepository->getAllNews($this->translator->getLocale())->limit($paginator->itemsPerPage, $paginator->offset);
 
 	}
 

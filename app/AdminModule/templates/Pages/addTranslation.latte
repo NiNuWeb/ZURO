@@ -1,0 +1,31 @@
+{block #content}
+
+<div class="col-md-6">
+	<h2 n:block="title">{_messages.admin.menu.translatePage}: {$translatePage->title}</h2>
+	<p></p>
+	<p>{!$translatePage->text|texy}</p>	
+</div>
+
+<div class="col-md-6">
+	<h2>{_messages.admin.menu.translateTo}:
+		{if $translatePage->language_code == "en"}
+		Slovak
+		{else}
+		English
+		{/if}
+	</h2>
+	{control addTranslationForm}
+</div>
+
+<a n:href="default">{_messages.admin.menu.backToManagePages}</a>
+{/block}
+
+{block scripts}
+	<script src="{$basePath}/js/jquery.js"></script>
+	<script src="{$basePath}/js/bootstrap.js"></script>
+	<script src="{$basePath}/js/jquery.nette.js"></script>
+	<script src="{$basePath}/js/live-form-validation.js"></script>
+	<script src="{$basePath}/js/jquery.ajaxform.js"></script>
+	<script src="{$basePath}/js/nextras.datetimepicker.init.js"></script>
+	<script src="{$basePath}/js/nextras.netteForms.js"></script>
+{/block}

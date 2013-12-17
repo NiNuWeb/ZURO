@@ -31,11 +31,11 @@
 							<div class="new">
 								<div class="news-header">
 									<h3>{$new->title}</h3>
-									<small>{_messages.news.addedBy}: {$new->users->username} - {$new->date|date:'j.n.Y H:i:s'}</small>
+									<small>{_messages.news.addedBy}: {$new->news->users->username} - {$new->news->date|date:'j.n.Y H:i:s'}</small>
 								</div>
 								<p></p>
 								<p>{!$new->body|truncate:310|texy|striptags}</p>
-								<a n:href="News:single $new->id" class="btn btn-primary">{_messages.news.readMore}</a>
+								<a n:href="News:single $new->news_id" class="btn btn-primary">{_messages.news.readMore}</a>
 							</div>
 						</div>
 					{/foreach}

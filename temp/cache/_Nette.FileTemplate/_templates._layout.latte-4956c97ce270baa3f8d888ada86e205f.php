@@ -1,37 +1,37 @@
-<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.89288000 1386324580";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"C:\xampp\htdocs\ZURO\app\FrontModule\templates\@layout.latte";i:2;i:1386324579;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.64061400 1387291530";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"C:\xampp\htdocs\ZURO\app\FrontModule\templates\@layout.latte";i:2;i:1387291528;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\xampp\htdocs\ZURO\app\FrontModule\templates\@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '12pqhwypcg')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '6kn3ral4zr')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbebfcc80f82_title')) { function _lbebfcc80f82_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb5a5c6c98ed_title')) { function _lb5a5c6c98ed_title($_l, $_args) { extract($_args)
 ?>ZURO App<?php
 }}
 
 //
 // block MiniLogin
 //
-if (!function_exists($_l->blocks['MiniLogin'][] = '_lb6cd91e1e13_MiniLogin')) { function _lb6cd91e1e13_MiniLogin($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['MiniLogin'][] = '_lb694e1f7459_MiniLogin')) { function _lb694e1f7459_MiniLogin($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block news
 //
-if (!function_exists($_l->blocks['news'][] = '_lbb666a27cf9_news')) { function _lbb666a27cf9_news($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['news'][] = '_lb2289bac585_news')) { function _lb2289bac585_news($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lbca89af048e_scripts')) { function _lbca89af048e_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb379ac934c4_scripts')) { function _lb379ac934c4_scripts($_l, $_args) { extract($_args)
 ?>	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/jquery.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/bootstrap.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/netteForms.js"></script>
@@ -111,14 +111,15 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
 
 				<div class="navbar-collapse collapse">
 					<ul class="nav nav-pills">
-<?php $iterations = 0; foreach ($iterator = $_l->its[] = new Nette\Iterators\CachingIterator($menu) as $slug => $title): ?>						<li>
-							<?php if ($iterator->isFirst()): ?><a href="<?php echo htmlSpecialChars($_control->link("this", array('slug' => $slug))) ?>
+<?php $iterations = 0; foreach ($iterator = $_l->its[] = new Nette\Iterators\CachingIterator($menu) as $item): ?>						<li>
+							<?php if ($iterator->isFirst()): ?><a href="<?php echo htmlSpecialChars($_control->link("this", array('slug' => $item->slug))) ?>
 "<?php if ($_l->tmp = array_filter(array($presenter->linkCurrent ? 'active':null))) echo ' class="' . htmlSpecialChars(implode(" ", array_unique($_l->tmp))) . '"' ?>
->Home</a><?php endif ?>
+><?php echo Nette\Templating\Helpers::escapeHtml($template->translate("messages.page.home"), ENT_NOQUOTES) ?>
+</a><?php endif ?>
 
-							<?php if (!$iterator->first): ?><a href="<?php echo htmlSpecialChars($_control->link("this", array('slug' => $slug))) ?>
+							<?php if (!$iterator->first): ?><a href="<?php echo htmlSpecialChars($_control->link("this", array('slug' => $item->slug))) ?>
 "<?php if ($_l->tmp = array_filter(array($presenter->linkCurrent ? 'active':null))) echo ' class="' . htmlSpecialChars(implode(" ", array_unique($_l->tmp))) . '"' ?>
-><?php echo Nette\Templating\Helpers::escapeHtml($title, ENT_NOQUOTES) ?></a><?php endif ?>
+><?php echo Nette\Templating\Helpers::escapeHtml($item->title, ENT_NOQUOTES) ?></a><?php endif ?>
 
 						</li>
 <?php $iterations++; endforeach; array_pop($_l->its); $iterator = end($_l->its) ?>

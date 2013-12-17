@@ -29,6 +29,10 @@ html.js .jshidden {
 	margin-left: 10px;
 }
 
+.translated {
+	color: #0F9C00;
+}
+
 /* ===== HEADER ===== */
 .header-a a, .header-a a:hover {
 	text-decoration: none;

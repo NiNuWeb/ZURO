@@ -6,6 +6,12 @@
 #
 common:
 	parameters:
+		database:
+			driver: mysql
+			host: localhost
+			dbname: zuro_db
+			user: zuro
+			password: zuro
 
 	php:
 		date.timezone: Europe/Prague
@@ -17,6 +23,13 @@ common:
 		whitelist: ['en', 'sk']
 
 	nette:
+		database:
+			default:
+				dsn: '%database.driver%:host=%database.host%;dbname=%database.dbname%'
+				user: %database.user%
+				password: %database.password%
+				debugger: true
+
 		application:
 			errorPresenter: Error
 
@@ -39,9 +52,6 @@ common:
 		listRepository: ToDo\ListRepository
 		texy: Texy
 
-		database:
-			class: Nette\Database\Connection
-			arguments: ['mysql:host=localhost;dbname=zuro_db', zuro, zuro]
 
 		authenticator: Acl\Security\Authenticator
 
